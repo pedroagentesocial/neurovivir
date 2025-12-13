@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup, Build, and Upload
-        uses: withastro/action@v1
+        uses: withastro/action@v2
         with:
           node-version: 20
           package-manager: npm
@@ -35,4 +35,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
