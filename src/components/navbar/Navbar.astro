@@ -1,8 +1,11 @@
+---
+const base = import.meta.env.BASE_URL || '/';
+---
 <header id="site-header" class="w-full bg-neuro-background fixed top-0 z-50 transition-colors">
   <div class="w-full px-4 py-4 flex items-center justify-between">
     <!-- Izquierda: Logo -->
-    <a href="/" class="inline-flex items-center hover:scale-105 transition-transform">
-      <img src="/images/logo.png" alt="NeuroVivir" class="logo-img h-10 md:h-12 object-contain" fetchpriority="high" />
+    <a href={base} class="inline-flex items-center hover:scale-105 transition-transform">
+      <img src={`${base}images/logo.png`} alt="NeuroVivir" class="logo-img h-10 md:h-12 object-contain" fetchpriority="high" />
     </a>
 
     <!-- Centro: Navegación (desktop) -->
@@ -27,26 +30,26 @@
             <div class="w-px bg-neuro-detail/40 mx-2 md:mx-3"></div>
             <div class="flex-1 pl-2 md:pl-3">
               <ul id="svc-list-therapies" class="grid grid-cols-1 gap-2">
-                <li><a href="/services/individual-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Individual therapy</a></li>
-                <li><a href="/services/couples-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Couples therapy</a></li>
-                <li><a href="/therapies/teen-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Teen therapy</a></li>
-                <li><a href="/therapies/domestic-violence" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Domestic violence</a></li>
-                <li><a href="/services/evaluations" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Psychological evaluation</a></li>
+                <li><a href={`${base}services/individual-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Individual therapy</a></li>
+                <li><a href={`${base}services/couples-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Couples therapy</a></li>
+                <li><a href={`${base}therapies/teen-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Teen therapy</a></li>
+                <li><a href={`${base}therapies/domestic-violence`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Domestic violence</a></li>
+                <li><a href={`${base}services/evaluations`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Psychological evaluation</a></li>
               </ul>
               <ul id="svc-list-treatments" class="grid grid-cols-1 gap-2 hidden">
-                <li><a href="/treatments/migration-stress" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Migration stress</a></li>
-                <li><a href="/treatments/anxiety" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Anxiety</a></li>
-                <li><a href="/treatments/depression" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Depression</a></li>
-                <li><a href="/treatments/grief" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Grief</a></li>
-                <li><a href="/treatments/self-esteem" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Self-esteem</a></li>
+                <li><a href={`${base}treatments/migration-stress`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Migration stress</a></li>
+                <li><a href={`${base}treatments/anxiety`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Anxiety</a></li>
+                <li><a href={`${base}treatments/depression`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Depression</a></li>
+                <li><a href={`${base}treatments/grief`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Grief</a></li>
+                <li><a href={`${base}treatments/self-esteem`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Self-esteem</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <a href="/blog" class="hover:text-neuro-title transition-colors">Blog</a>
-      <a href="/faq" class="hover:text-neuro-title transition-colors">FAQ</a>
-      <a href="/contact" class="hover:text-neuro-title transition-colors">Contact</a>
+      <a href={`${base}blog`} class="hover:text-neuro-title transition-colors">Blog</a>
+      <a href={`${base}faq`} class="hover:text-neuro-title transition-colors">FAQ</a>
+      <a href={`${base}contact`} class="hover:text-neuro-title transition-colors">Contact</a>
     </nav>
 
     <!-- Derecha: Teléfono + CTA + Redes + Idioma (desktop) -->
