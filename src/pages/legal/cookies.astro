@@ -1,0 +1,23 @@
+---
+import LegalPage from "../../components/legal/LegalPage.astro";
+const introEs = [
+  "Este aviso explica el uso de cookies y tecnologías similares en NeuroVivir.",
+  "Buscamos equilibrar funcionalidad y respeto por tu privacidad."
+];
+const introEn = [
+  "This notice explains the use of cookies and similar technologies at NeuroVivir.",
+  "We aim to balance functionality and respect for your privacy."
+];
+const sectionsEs = [
+  { title: "Qué son las cookies", paragraphs: ["Pequeños archivos que ayudan a recordar preferencias y medir uso del sitio."] },
+  { title: "Tipos", list: ["Esenciales: para funciones básicas","Preferencias: recordar idioma","Analíticas: mejorar contenidos"] },
+  { title: "Gestión", paragraphs: ["Puedes controlar cookies desde la configuración de tu navegador. Algunas funciones pueden verse afectadas." ] }
+];
+const sectionsEn = [
+  { title: "What are cookies", paragraphs: ["Small files that help remember preferences and measure site usage."] },
+  { title: "Types", list: ["Essential: basic functions","Preferences: remember language","Analytics: improve content"] },
+  { title: "Management", paragraphs: ["You can control cookies in your browser settings. Some functions may be affected." ] }
+];
+---
+<LegalPage id="legal-cookies" titleEs="Aviso de cookies" titleEn="Cookies Notice" introEs={introEs} introEn={introEn} sectionsEs={sectionsEs} sectionsEn={sectionsEn} lastUpdated="2025-12-12" />
+

@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Card from "../../components/common/Card.astro";
+import TestimonialsCarousel from "../../components/sections/TestimonialsCarousel.astro";
+import CallInvite from "../../components/sections/CallInvite.astro";
+const { slug } = Astro.params;
+const posts = (await import("../../content/blog/posts.json")).default.posts;
+const post = posts.find((p) => p.slug === slug);
+const esMap = import.meta.glob("../../content/blog/*.es.json", { eager: true });
+const enMap = import.meta.glob("../../content/blog/*.en.json", { eager: true });
+const esModule = esMap[`../../content/blog/${slug}.es.json`] ?? null;
+const enModule = enMap[`../../content/blog/${slug}.en.json`] ?? null;
+const esData = esModule ? (esModule as any).default : null;
+const enData = enModule ? (enModule as any).default : null;
+const titleEs = esData?.title ?? post?.title ?? 'Artículo';
+const titleEn = enData?.title ?? post?.title ?? 'Article';
+const excerptEs = esData?.excerpt ?? post?.excerpt ?? '';
+const excerptEn = enData?.excerpt ?? post?.excerpt ?? '';
+const date = post?.date ?? '';
+const tags = post?.tags ?? [];
+export async function getStaticPaths() {
+  const posts = (await import("../../content/blog/posts.json")).default.posts;
+  return posts.map((p) => ({ params: { slug: p.slug } }));
+}
+---
+<BaseLayout title={(post?.title ?? titleEs) + " - NeuroVivir"}>
+  <section class="w-full bg-neuro-title py-12 md:py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div id="bp-hero-es" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEs}</h1>
+          <p class="text-white/90">{excerptEs}</p>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="rounded-4xl bg-white text-neuro-title px-3.5 py-1.5 text-xs">{new Date(date).toLocaleDateString()}</span>
+            {tags.map((t) => (
+              <span class="rounded-4xl bg-white text-neuro-title border border-neuro-detail px-3.5 py-1.5 text-xs">{t}</span>
+            ))}
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="rounded-[48px] bg-white/10 backdrop-blur-sm p-6 md:p-8 inline-flex items-center gap-4">
+            <div class="space-y-1">
+              <div class="text-white/90 text-sm">NeuroVivir Blog</div>
+              <div class="font-heading text-white text-xl md:text-2xl">Salud mental y bienestar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="bp-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEn}</h1>
+          <p class="text-white/90">{excerptEn}</p>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="rounded-4xl bg-white text-neuro-title px-3.5 py-1.5 text-xs">{new Date(date).toLocaleDateString()}</span>
+            {tags.map((t) => (
+              <span class="rounded-4xl bg-white text-neuro-title border border-neuro-detail px-3.5 py-1.5 text-xs">{t}</span>
+            ))}
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="rounded-[48px] bg-white/10 backdrop-blur-sm p-6 md:p-8 inline-flex items-center gap-4">
+            <div class="space-y-1">
+              <div class="text-white/90 text-sm">NeuroVivir Blog</div>
+              <div class="font-heading text-white text-xl md:text-2xl">Mental health and wellbeing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 mt-3">
+    <nav class="text-sm">
+      <div id="bp-bc-es" class="flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Inicio</a>
+        <span class="text-neuro-paragraph">/</span>
+        <a href="/blog" class="text-neuro-paragraph hover:underline">Blog</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">{titleEs}</span>
+      </div>
+      <div id="bp-bc-en" class="hidden flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Home</a>
+        <span class="text-neuro-paragraph">/</span>
+        <a href="/blog" class="text-neuro-paragraph hover:underline">Blog</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">{titleEn}</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <article class="prose prose-lg max-w-none leading-[1.5]">
+      <div id="bp-body-es" class={esData ? '' : 'hidden'}>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Introducción</h2>
+        {(esData?.intro ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Ideas clave del artículo original</h2>
+        {(esData?.keyIdeas ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Punto de vista NeuroVivir</h2>
+        {esData?.neuroView?.sections ? (
+          esData.neuroView.sections.map((s) => (
+            <Fragment>
+              <h3 class="font-heading text-neuro-title text-xl">{s.title}</h3>
+              <p class="text-neuro-paragraph">{s.body}</p>
+            </Fragment>
+          ))
+        ) : (
+          <Fragment>
+            <h3 class="font-heading text-neuro-title text-xl">Estrés migratorio en la comunidad latina</h3>
+            <p class="text-neuro-paragraph">{esData?.neuroView?.stress}</p>
+            <h3 class="font-heading text-neuro-title text-xl">Duelo migratorio</h3>
+            <p class="text-neuro-paragraph">{esData?.neuroView?.grief}</p>
+            <h3 class="font-heading text-neuro-title text-xl">Identidad y pertenencia</h3>
+            <p class="text-neuro-paragraph">{esData?.neuroView?.identity}</p>
+          </Fragment>
+        )}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{esData?.signalsTitle ?? "Señales comunes"}</h2>
+        <ul class="list-disc pl-6">
+          {(esData?.signals ?? []).map((s) => (<li class="text-neuro-paragraph">{s}</li>))}
+        </ul>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{esData?.actionsTitle ?? "Qué puede ayudar"}</h2>
+        <ul class="list-disc pl-6">
+          {(esData?.actions ?? []).map((a) => (<li class="text-neuro-paragraph">{a}</li>))}
+        </ul>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Cierre</h2>
+        <p class="text-neuro-paragraph">{esData?.closure}</p>
+        {esData?.disclaimer ? (
+          <div class="mt-6 rounded-4xl border border-neuro-detail bg-white p-4">
+            <div class="text-neuro-title font-heading">Aviso de seguridad</div>
+            <p class="text-neuro-paragraph">{esData.disclaimer}</p>
+          </div>
+        ) : null}
+        <div class="mt-6 rounded-4xl border border-neuro-detail bg-neuro-background p-4">
+          <div class="text-neuro-title font-heading">Fuente original</div>
+          {post?.sourceName ? (<div class="text-neuro-paragraph">{post.sourceName}</div>) : null}
+          <a href={esData?.sourceUrl ?? ''} class="text-neuro-title underline" target="_blank" rel="noreferrer">{esData?.sourceUrl ?? ''}</a>
+        </div>
+      </div>
+      <div id="bp-body-en" class={enData ? '' : 'hidden'}>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Introduction</h2>
+        {(enData?.intro ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Key ideas from the original article</h2>
+        {(enData?.keyIdeas ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">NeuroVivir’s point of view</h2>
+        {enData?.neuroView?.sections ? (
+          enData.neuroView.sections.map((s) => (
+            <Fragment>
+              <h3 class="font-heading text-neuro-title text-xl">{s.title}</h3>
+              <p class="text-neuro-paragraph">{s.body}</p>
+            </Fragment>
+          ))
+        ) : (
+          <Fragment>
+            <h3 class="font-heading text-neuro-title text-xl">Migration stress in the Latino community</h3>
+            <p class="text-neuro-paragraph">{enData?.neuroView?.stress}</p>
+            <h3 class="font-heading text-neuro-title text-xl">Migration grief</h3>
+            <p class="text-neuro-paragraph">{enData?.neuroView?.grief}</p>
+            <h3 class="font-heading text-neuro-title text-xl">Identity and belonging</h3>
+            <p class="text-neuro-paragraph">{enData?.neuroView?.identity}</p>
+          </Fragment>
+        )}
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{enData?.signalsTitle ?? "Common signs"}</h2>
+        <ul class="list-disc pl-6">
+          {(enData?.signals ?? []).map((s) => (<li class="text-neuro-paragraph">{s}</li>))}
+        </ul>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{enData?.actionsTitle ?? "What can help"}</h2>
+        <ul class="list-disc pl-6">
+          {(enData?.actions ?? []).map((a) => (<li class="text-neuro-paragraph">{a}</li>))}
+        </ul>
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Closing</h2>
+        <p class="text-neuro-paragraph">{enData?.closure}</p>
+        {enData?.disclaimer ? (
+          <div class="mt-6 rounded-4xl border border-neuro-detail bg-white p-4">
+            <div class="text-neuro-title font-heading">Safety notice</div>
+            <p class="text-neuro-paragraph">{enData.disclaimer}</p>
+          </div>
+        ) : null}
+        <div class="mt-6 rounded-4xl border border-neuro-detail bg-neuro-background p-4">
+          <div class="text-neuro-title font-heading">Original source</div>
+          {post?.sourceName ? (<div class="text-neuro-paragraph">{post.sourceName}</div>) : null}
+          <a href={enData?.sourceUrl ?? ''} class="text-neuro-title underline" target="_blank" rel="noreferrer">{enData?.sourceUrl ?? ''}</a>
+        </div>
+      </div>
+    </article>
+
+    <TestimonialsCarousel />
+    <CallInvite />
+    <script type="module">
+      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+      initLang();
+      const heroEs = document.getElementById('bp-hero-es');
+      const heroEn = document.getElementById('bp-hero-en');
+      const bodyEs = document.getElementById('bp-body-es');
+      const bodyEn = document.getElementById('bp-body-en');
+      const bcEs = document.getElementById('bp-bc-es');
+      const bcEn = document.getElementById('bp-bc-en');
+      const update = (lang) => {
+        heroEs?.classList.toggle('hidden', lang !== 'es');
+        heroEn?.classList.toggle('hidden', lang !== 'en');
+        bodyEs?.classList.toggle('hidden', lang !== 'es');
+        bodyEn?.classList.toggle('hidden', lang !== 'en');
+        bcEs?.classList.toggle('hidden', lang !== 'es');
+        bcEn?.classList.toggle('hidden', lang !== 'en');
+      };
+      update(getLang());
+      onLangChange(update);
+    </script>
+  </div>
+</BaseLayout>

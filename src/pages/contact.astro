@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import TestimonialsCarousel from "../components/sections/TestimonialsCarousel.astro";
+import CallInvite from "../components/sections/CallInvite.astro";
+---
+<BaseLayout title="Contact - NeuroVivir">
+  <section class="w-full bg-neuro-title py-12 md:py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div id="ct-hero-es" class="flex items-center justify-center mt-8 md:mt-12">
+        <div class="space-y-6 text-center">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Contacto</h1>
+          <p class="text-white/90">Escríbenos y te respondemos pronto.</p>
+          <div class="flex gap-3 pt-2 justify-center">
+            <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">Agendar ahora</a>
+            <a href="tel:+15551234567" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(555) 123-4567</a>
+          </div>
+        </div>
+      </div>
+      <div id="ct-hero-en" class="flex items-center justify-center mt-8 md:mt-12 hidden">
+        <div class="space-y-6 text-center">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Contact</h1>
+          <p class="text-white/90">Send us a message and we will reply soon.</p>
+          <div class="flex gap-3 pt-2 justify-center">
+            <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">Book now</a>
+            <a href="tel:+15551234567" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(555) 123-4567</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div id="ct-form-es" class="space-y-4">
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Envíanos un mensaje</h2>
+        <form class="space-y-4">
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Nombre" />
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" />
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Asunto" />
+          <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Mensaje"></textarea>
+          <button type="button" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Enviar</button>
+        </form>
+      </div>
+      <div id="ct-info-es" class="space-y-4">
+        <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
+          <h3 class="font-heading text-neuro-title">Datos de contacto</h3>
+          <p class="text-neuro-paragraph">Email: info@neurovivir.com</p>
+          <p class="text-neuro-paragraph">Teléfono: (555) 123-4567</p>
+          <p class="text-neuro-paragraph">Ciudad: Miami, FL</p>
+        </div>
+        <div class="rounded-4xl border border-neuro-detail bg-white p-6 text-neuro-paragraph">Mapa próximamente</div>
+      </div>
+
+      <div id="ct-form-en" class="space-y-4 hidden">
+        <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Send us a message</h2>
+        <form class="space-y-4">
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Name" />
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" />
+          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Subject" />
+          <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Message"></textarea>
+          <button type="button" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Send</button>
+        </form>
+      </div>
+      <div id="ct-info-en" class="space-y-4 hidden">
+        <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
+          <h3 class="font-heading text-neuro-title">Contact info</h3>
+          <p class="text-neuro-paragraph">Email: info@neurovivir.com</p>
+          <p class="text-neuro-paragraph">Phone: (555) 123-4567</p>
+          <p class="text-neuro-paragraph">City: Miami, FL</p>
+        </div>
+        <div class="rounded-4xl border border-neuro-detail bg-white p-6 text-neuro-paragraph">Map coming soon</div>
+      </div>
+    </section>
+
+    <TestimonialsCarousel />
+    <CallInvite />
+
+    <script type="module">
+      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+      initLang();
+      const esBlocks = ['ct-hero-es','ct-form-es','ct-info-es'];
+      const enBlocks = ['ct-hero-en','ct-form-en','ct-info-en'];
+      const setVisible = (ids, visible) => ids.forEach(id => {
+        document.getElementById(id)?.classList.toggle('hidden', !visible);
+      });
+      const update = (lang) => {
+        setVisible(esBlocks, lang === 'es');
+        setVisible(enBlocks, lang === 'en');
+      };
+      update(getLang());
+      onLangChange(update);
+    </script>
+  </div>
+</BaseLayout>

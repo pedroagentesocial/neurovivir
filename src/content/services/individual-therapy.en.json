@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Individual therapy for Latinos in the U.S.",
+  "heroSubtitle": "A safe, confidential and culturally sensitive space for your personal process.",
+  "trustNote": "We work with clinical ethics and respect for your story and context.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "summary": [
+    { "label": "Modality", "value": "Online (video)" },
+    { "label": "Population", "value": "Latino adults" },
+    { "label": "Duration", "value": "50 minutes" },
+    { "label": "Frequency", "value": "Weekly / Adjustable" }
+  ],
+  "whatIs": "Individual therapy is a clinical conversation space to explore emotions, thoughts and behaviors to foster wellbeing and change.",
+  "howWeWork": "We start with a brief intake, define goals and work with a human approach integrating evidence-based techniques and cultural sensitivity.",
+  "whatToExpect": "Close support, practical exercises and tools to regulate stress, improve relationships and strengthen your life project.",
+  "forWhom": {
+    "is": "For those seeking understanding, wellbeing and working topics like anxiety, depression, grief or migration adaptation.",
+    "not": "Not for medical/psychiatric emergencies nor crises requiring immediate care."
+  },
+  "faq": [
+    { "question": "How are sessions conducted?", "answer": "Secure video calls with clear guidelines and goals agreed with you." },
+    { "question": "What therapeutic approach?", "answer": "An integrative approach grounded in evidence and cultural understanding." },
+    { "question": "Can I pause the process?", "answer": "Yes, frequency and agreements are adjusted to your situation." }
+  ],
+  "emergencyNote": "NeuroVivir is not an emergency service. If in danger, call 911 or local crisis services."
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Risk and protective factors: building safe relationships in childhood",
+  "excerpt": "What increases risk, what protects, and how to foster caring environments.",
+  "intro": [
+    "Understanding risk and protective factors helps prevent child maltreatment and promote wellbeing. This is not about blame, but about identifying conditions that raise or lower risk to act prudently and with care.",
+    "In Latino homes, strengthening networks, everyday habits and community resources is key to building safe, stable relationships."
+  ],
+  "keyIdeas": [
+    "Risk and protection operate across multiple levels: individual, relationship/family, community and society.",
+    "Some factors increase vulnerability (economic stress, isolation, lack of support); others reduce it (support networks, sensitive parenting, access to services).",
+    "Prevention means increasing what protects and reducing what puts at risk, with coordinated actions at home and in the community."
+  ],
+  "neuroView": {
+    "sections": [
+      { "title": "Prevention and safe relationships", "body": "Safe relationships are built with presence, clear limits and consistent emotional support. Prevention is everyday work: listening, respectful monitoring and modeling care reduce exposure to risks." }
+    ]
+  },
+  "signalsTitle": "Common risk factors",
+  "signals": [
+    "High economic stress and limited social support",
+    "Family isolation and frequent conflict",
+    "Caregiver mental health or substance use challenges",
+    "Community environments with violence and few safe activities"
+  ],
+  "actionsTitle": "Protective factors",
+  "actions": [
+    "Positive bonds and active caregiver presence",
+    "Sensitive parenting and clear rules with monitoring",
+    "Support networks: extended family, school, neighbors and mentors",
+    "Access to services: health, mental health, after-school programs and economic help"
+  ],
+  "closure": "Every family and community can add protection by strengthening networks, habits and access to resources. Small, sustained steps create safer, more hopeful environments.",
+  "sourceUrl": "https://www.cdc.gov/child-abuse-neglect/risk-factors/index.html"
+}
+

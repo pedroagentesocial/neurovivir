@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Clinical support for domestic violence",
+  "heroSubtitle": "Sensitive, safe care for those who have experienced home abuse.",
+  "trustNote": "We prioritize emotional safety, ethics and cultural perspective.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1200&auto=format&fit=crop",
+  "whatIs": "Therapeutic support to understand the impact of abuse, regain personal resources and plan safe steps.",
+  "howWeWork": "We assess risks, design a clinical plan and coordinate resources when needed, focusing on your autonomy.",
+  "whatToExpect": "Confidential sessions, psychoeducation, coping strategies and strengthening support networks.",
+  "forWhom": {
+    "is": "People who have experienced psychological, emotional, economic or physical violence seeking clinical support.",
+    "not": "Not an emergency service; for immediate risk contact 911 or local crisis lines."
+  },
+  "faq": [
+    { "question": "Do you work with protection orders?", "answer": "We can coordinate with legal and community resources depending on context." },
+    { "question": "What if I still live with the aggressor?", "answer": "We work on safety strategies and an emotional care plan." },
+    { "question": "Do you make referrals?", "answer": "Yes, we coordinate with community and medical services when appropriate." }
+  ],
+  "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
+}
+

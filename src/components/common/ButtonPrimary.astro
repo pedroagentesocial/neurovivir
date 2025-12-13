@@ -1,0 +1,9 @@
+---
+const { href, label = "", type = "button" } = Astro.props;
+const base = "inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-sm md:text-base transition duration-200 hover:opacity-90 hover:scale-105";
+---
+{href ? (
+  <a href={href} class={base}>{label}<slot /></a>
+) : (
+  <button type={type} class={base}>{label}<slot /></button>
+)}

@@ -1,0 +1,23 @@
+---
+import Navbar from "../navbar/Navbar.astro";
+import Footer from "../footer/Footer.astro";
+import "../../styles/fonts.css";
+import "../../styles/theme.css";
+const { title = "NeuroVivir" } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/icons/cerebro-neuro.svg" />
+    <link rel="mask-icon" href="/icons/cerebro-neuro.svg" color="#42A8AF" />
+  </head>
+  <body class="font-body bg-neuro-background text-neuro-paragraph">
+    <Navbar />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

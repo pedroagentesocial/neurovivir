@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "question": "How do I book an appointment?", "answer": "You can book online using the Book button or by phone." },
+    { "question": "Are sessions over video?", "answer": "Yes, we primarily work via secure video calls." },
+    { "question": "Do you see teens?", "answer": "Yes, we offer teen therapy and family guidance." },
+    { "question": "Can I pause the process?", "answer": "Yes, session frequency can be adjusted to your situation." },
+    { "question": "How long are sessions?", "answer": "Typically 50 minutes per session." },
+    { "question": "Do you use a cultural approach?", "answer": "Yes, our care is culturally sensitive to the Latino context." },
+    { "question": "How is confidentiality handled?", "answer": "We protect your privacy under professional ethical standards." },
+    { "question": "What payment methods do you accept?", "answer": "Credit and debit cards; ask about available insurance." },
+    { "question": "Do you provide psychological evaluations?", "answer": "Yes, we conduct clinical assessments with reports." }
+  ]
+}
+

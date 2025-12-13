@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layout/BaseLayout.astro";
+const {
+  id = "legal",
+  titleEs = "Legal",
+  titleEn = "Legal",
+  introEs = [],
+  introEn = [],
+  sectionsEs = [],
+  sectionsEn = [],
+  lastUpdated = "",
+} = Astro.props;
+---
+<BaseLayout title={(titleEs || titleEn) + " - NeuroVivir"}>
+  <section class="w-full bg-neuro-title py-12 md:py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div id={`${id}-hero-es`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEs}</h1>
+          {introEs.map((p) => (<p class="text-white/90">{p}</p>))}
+          {lastUpdated ? (<p class="text-white/70 text-sm">Actualizado: {lastUpdated}</p>) : null}
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="rounded-[48px] bg-white/10 backdrop-blur-sm p-6 md:p-8 inline-flex items-center gap-4">
+            <div class="space-y-1">
+              <div class="text-white/90 text-sm">NeuroVivir Legal</div>
+              <div class="font-heading text-white text-xl md:text-2xl">Transparencia y cuidado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id={`${id}-hero-en`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEn}</h1>
+          {introEn.map((p) => (<p class="text-white/90">{p}</p>))}
+          {lastUpdated ? (<p class="text-white/70 text-sm">Last updated: {lastUpdated}</p>) : null}
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="rounded-[48px] bg-white/10 backdrop-blur-sm p-6 md:p-8 inline-flex items-center gap-4">
+            <div class="space-y-1">
+              <div class="text-white/90 text-sm">NeuroVivir Legal</div>
+              <div class="font-heading text-white text-xl md:text-2xl">Transparency and care</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 mt-3">
+    <nav class="text-sm">
+      <div id={`${id}-bc-es`} class="flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Inicio</a>
+        <span class="text-neuro-paragraph">/</span>
+        <a href="/legal/terms" class="text-neuro-paragraph hover:underline">Legal</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">{titleEs}</span>
+      </div>
+      <div id={`${id}-bc-en`} class="hidden flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Home</a>
+        <span class="text-neuro-paragraph">/</span>
+        <a href="/legal/terms" class="text-neuro-paragraph hover:underline">Legal</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">{titleEn}</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
+      <div class="flex flex-wrap gap-2">
+        <a href="/legal/terms" class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Términos</a>
+        <a href="/legal/privacy" class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Privacidad</a>
+        <a href="/legal/cookies" class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Cookies</a>
+      </div>
+    </div>
+
+    <article class="prose prose-lg max-w-none leading-[1.5] mt-6">
+      <div id={`${id}-body-es`}>
+        {sectionsEs.map((s) => (
+          <Fragment>
+            <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
+            {(s.paragraphs ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+            {s.list ? (
+              <ul class="list-disc pl-6">
+                {s.list.map((li) => (<li class="text-neuro-paragraph">{li}</li>))}
+              </ul>
+            ) : null}
+          </Fragment>
+        ))}
+      </div>
+      <div id={`${id}-body-en`} class="hidden">
+        {sectionsEn.map((s) => (
+          <Fragment>
+            <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
+            {(s.paragraphs ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+            {s.list ? (
+              <ul class="list-disc pl-6">
+                {s.list.map((li) => (<li class="text-neuro-paragraph">{li}</li>))}
+              </ul>
+            ) : null}
+          </Fragment>
+        ))}
+      </div>
+    </article>
+
+    <script type="module">
+      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+      initLang();
+      const heroEs = document.getElementById(`${"" + id}-hero-es`);
+      const heroEn = document.getElementById(`${"" + id}-hero-en`);
+      const bcEs = document.getElementById(`${"" + id}-bc-es`);
+      const bcEn = document.getElementById(`${"" + id}-bc-en`);
+      const bodyEs = document.getElementById(`${"" + id}-body-es`);
+      const bodyEn = document.getElementById(`${"" + id}-body-en`);
+      const update = (lang) => {
+        heroEs?.classList.toggle('hidden', lang !== 'es');
+        heroEn?.classList.toggle('hidden', lang !== 'en');
+        bcEs?.classList.toggle('hidden', lang !== 'es');
+        bcEn?.classList.toggle('hidden', lang !== 'en');
+        bodyEs?.classList.toggle('hidden', lang !== 'es');
+        bodyEn?.classList.toggle('hidden', lang !== 'en');
+      };
+      update(getLang());
+      onLangChange(update);
+    </script>
+  </div>
+</BaseLayout>
+

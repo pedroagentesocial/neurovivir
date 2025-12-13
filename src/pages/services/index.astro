@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import SectionWrapper from "../../components/common/SectionWrapper.astro";
+import Card from "../../components/common/Card.astro";
+const es = await import("../../content/services/index.es.json");
+const en = await import("../../content/services/index.en.json");
+---
+<BaseLayout title="Services - NeuroVivir">
+  <SectionWrapper>
+    <div id="services-es">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">{es.default.title}</h1>
+      <p class="mt-3 text-neuro-paragraph">{es.default.subtitle}</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {es.default.items.map(item => (
+          <Card>
+            <h3 class="font-heading text-neuro-title">{item.name}</h3>
+            <p class="text-neuro-paragraph">{item.description}</p>
+            <a href={item.href} class="text-neuro-title underline">Ver más</a>
+          </Card>
+        ))}
+      </div>
+    </div>
+
+    <div id="services-en" class="hidden">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">{en.default.title}</h1>
+      <p class="mt-3 text-neuro-paragraph">{en.default.subtitle}</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {en.default.items.map(item => (
+          <Card>
+            <h3 class="font-heading text-neuro-title">{item.name}</h3>
+            <p class="text-neuro-paragraph">{item.description}</p>
+            <a href={item.href} class="text-neuro-title underline">Learn more</a>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const esEl = document.getElementById('services-es');
+    const enEl = document.getElementById('services-en');
+    const update = (lang) => {
+      esEl?.classList.toggle('hidden', lang !== 'es');
+      enEl?.classList.toggle('hidden', lang !== 'en');
+    };
+    update(getLang());
+    onLangChange(update);
+  </script>
+</BaseLayout>

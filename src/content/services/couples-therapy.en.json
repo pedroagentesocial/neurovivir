@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Couples therapy for Latinos in the U.S.",
+  "heroSubtitle": "A safe, respectful space to improve communication, bond and shared goals.",
+  "trustNote": "We work with clinical ethics, professional care and cultural sensitivity.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "heroImage": "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?q=80&w=1200&auto=format&fit=crop",
+  "whatIs": "Couples therapy is a joint process to address conflicts, strengthen communication and agree on change strategies.",
+  "howWeWork": "We conduct a brief intake, set goals and train skills for dialogue, negotiation and repairing the bond.",
+  "whatToExpect": "Structured sessions, practical homework and tools for conflict management and emotional reconnection.",
+  "forWhom": {
+    "is": "Couples seeking to improve their relationship, address jealousy, infidelity, parenting, finances or migration adaptation.",
+    "not": "Not for active violence or risk situations; immediate safety-oriented services are recommended."
+  },
+  "faq": [
+    { "question": "Are sessions together?", "answer": "Usually yes; sometimes brief individual interviews are included if clinically appropriate." },
+    { "question": "How long does it take?", "answer": "Weekly for 8–12 weeks is common; adjusted to goals and progress." },
+    { "question": "What if one partner refuses?", "answer": "We explore individual alternatives and agree on healthy boundaries." }
+  ],
+  "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
+}
+

@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "question": "¿Cómo agendo una cita?", "answer": "Puedes agendar en línea desde el botón Agendar o por teléfono." },
+    { "question": "¿Las sesiones son por video?", "answer": "Sí, trabajamos principalmente por videollamada segura." },
+    { "question": "¿Atienden a adolescentes?", "answer": "Sí, contamos con terapia para adolescentes y acompañamiento familiar." },
+    { "question": "¿Puedo pausar el proceso?", "answer": "Sí, ajustamos la frecuencia según tu situación." },
+    { "question": "¿Qué duración tienen las sesiones?", "answer": "Usualmente 50 minutos por sesión." },
+    { "question": "¿Trabajan con enfoque cultural?", "answer": "Sí, nuestra atención es sensible al contexto latino." },
+    { "question": "¿Cómo funciona la confidencialidad?", "answer": "Cuidamos tu privacidad bajo estándares éticos profesionales." },
+    { "question": "¿Qué métodos de pago aceptan?", "answer": "Tarjeta de crédito y débito; consulta por seguros disponibles." },
+    { "question": "¿Hacen evaluaciones psicológicas?", "answer": "Sí, realizamos procesos de evaluación clínica con informe." }
+  ]
+}
+

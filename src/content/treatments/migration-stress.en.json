@@ -1,0 +1,20 @@
+{
+  "heroTitle": "Migration and acculturation stress",
+  "heroSubtitle": "Clinical support to adapt, process migration grief and strengthen identity.",
+  "trustNote": "Cultural understanding and practical tools for your process.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "summary": [
+    { "label": "Scope", "value": "Adaptation and wellbeing" },
+    { "label": "Population", "value": "Latino adults and families" },
+    { "label": "Modality", "value": "Online (video)" }
+  ],
+  "whatIs": "Migration stress arises from cultural changes, language, networks and life project.",
+  "howItFeels": "Nostalgia, anxiety, uncertainty and emotional fatigue.",
+  "howWeHelp": "We work on emotional regulation, support resources and adaptation strategies with a human lens.",
+  "forWhom": { "is": "Those going through migration processes seeking wellbeing.", "not": "Does not include administrative migration procedures." },
+  "faq": [
+    { "question": "How long does it take?", "answer": "Depends on goals and pace; usually weekly at the beginning." },
+    { "question": "Do you include community resources?", "answer": "Yes, we connect you to useful networks and tools." }
+  ],
+  "emergencyNote": "For immediate help, contact local emergency services."
+}

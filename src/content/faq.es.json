@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "question": "¿Cuál es la duración y frecuencia típica de la terapia?", "answer": "Generalmente 50 minutos por sesión, con frecuencia semanal ajustable según tu proceso." },
+    { "question": "¿Cómo manejan la confidencialidad?", "answer": "Seguimos normas éticas y legales; tu información se protege y solo se comparte con tu consentimiento o según la ley." },
+    { "question": "¿Terapia online vs presencial?", "answer": "La terapia online ofrece accesibilidad y flexibilidad; trabajamos para crear una experiencia segura y cercana." },
+    { "question": "¿Cómo son los precios?", "answer": "Los precios dependen del servicio y profesional; te los compartiremos antes de iniciar y siempre con transparencia." },
+    { "question": "¿Qué pasa si no conecto con mi terapeuta?", "answer": "Podemos explorar un cambio de profesional para asegurar el mejor ajuste a tu necesidad." }
+  ]
+}

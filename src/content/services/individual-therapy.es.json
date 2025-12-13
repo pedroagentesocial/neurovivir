@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Terapia individual para latinos en Estados Unidos",
+  "heroSubtitle": "Un espacio seguro, confidencial y culturalmente sensible para tu proceso personal.",
+  "trustNote": "Trabajamos con ética clínica y respeto por tu historia y contexto.",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "summary": [
+    { "label": "Modalidad", "value": "Online (video)" },
+    { "label": "Población", "value": "Adultos latinoamericanos" },
+    { "label": "Duración", "value": "50 minutos" },
+    { "label": "Frecuencia", "value": "Semanal / Ajustable" }
+  ],
+  "whatIs": "La terapia individual es un espacio de conversación clínica donde exploramos tus emociones, pensamientos y conductas para promover bienestar y cambio.",
+  "howWeWork": "Empezamos con una evaluación breve, definimos objetivos y trabajamos con un enfoque humano, integrando técnicas basadas en evidencia y sensibilidad cultural.",
+  "whatToExpect": "Acompañamiento cercano, ejercicios prácticos y herramientas para regular el estrés, mejorar relaciones y fortalecer tu proyecto de vida.",
+  "forWhom": {
+    "is": "Para quienes buscan comprenderse, mejorar su bienestar y trabajar temas como ansiedad, depresión, duelo o adaptación migratoria.",
+    "not": "No es para emergencias médicas/psiquiátricas ni crisis que requieran atención inmediata."
+  },
+  "faq": [
+    { "question": "¿Cómo son las sesiones?", "answer": "Por videollamada segura, con pautas claras y objetivos acordados contigo." },
+    { "question": "¿Qué enfoque utilizan?", "answer": "Un enfoque integrativo con base en evidencia y comprensión cultural." },
+    { "question": "¿Puedo pausar el proceso?", "answer": "Sí, ajustamos frecuencia y acuerdos según tu situación." }
+  ],
+  "emergencyNote": "NeuroVivir no es un servicio de emergencia. Si estás en peligro, llama al 911 o a servicios locales de crisis."
+}

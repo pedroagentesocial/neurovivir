@@ -1,0 +1,409 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SectionWrapper from "../components/common/SectionWrapper.astro";
+import Card from "../components/common/Card.astro";
+import ButtonPrimary from "../components/common/ButtonPrimary.astro";
+import ButtonSecondary from "../components/common/ButtonSecondary.astro";
+import FAQSection from "../components/sections/FAQSection.astro";
+import TestimonialsCarousel from "../components/sections/TestimonialsCarousel.astro";
+import ProvidersSection from "../components/providers/ProvidersSection.astro";
+const posts = (await import("../content/blog/posts.json")).default.posts;
+---
+<BaseLayout title="NeuroVivir">
+  <section class="w-full bg-neuro-secondaryButton min-h-[64vh] md:min-h-[70vh] relative overflow-visible">
+    <div class="w-full px-4 py-10 md:py-16 pb-24 md:pb-32 flex flex-col items-center justify-center gap-0 translate-y-[10vh] md:translate-y-[12vh] relative z-10">
+      <div id="hero-slides" class="relative max-w-5xl w-full text-center min-h-[64vh] md:min-h-[70vh] overflow-hidden">
+        <div id="hero-slide-1" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-100 translate-y-0 scale-100">
+          <div id="hero-es" class="space-y-7">
+            <h1 class="font-heading text-white text-5xl md:text-6xl">Mereces sentirte bien</h1>
+            <p class="text-white/90 text-lg md:text-xl">¿Qué tipo de terapia buscas?</p>
+          </div>
+          <div id="hero-en" class="space-y-7 hidden">
+            <h1 class="font-heading text-white text-5xl md:text-6xl">You deserve to feel well</h1>
+            <p class="text-white/90 text-lg md:text-xl">What kind of therapy are you seeking?</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
+          <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia individual</h3>
+              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Proceso personal y seguro.</p>
+              <a href="/services/individual-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </Card>
+          <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia de pareja</h3>
+              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Mejoren su comunicación y vínculo.</p>
+              <a href="/services/couples-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </Card>
+          <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia para niños</h3>
+              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Acompañamiento sensible y adecuado.</p>
+              <a href="/services/child-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </Card>
+          </div>
+          
+        </div>
+        <div id="hero-slide-2" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden">
+          <div class="mx-auto max-w-6xl px-4 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="relative z-10">
+              <div id="hero2-es" class="text-center md:text-left flex flex-col items-center md:items-start space-y-7">
+                <h1 class="font-heading text-white text-5xl md:text-6xl">Apoyo en casos de maltrato infantil</h1>
+                <p class="text-white/90 text-xl md:text-2xl">Acompañamiento seguro y profesional para niños y familias.</p>
+                <div class="flex justify-center md:justify-start">
+                  <ButtonPrimary href="/services/child-therapy" label="Conoce el servicio" />
+                </div>
+              </div>
+              <div id="hero2-en" class="hidden text-center md:text-left flex flex-col items-center md:items-start space-y-7">
+                <h1 class="font-heading text-white text-5xl md:text-6xl">Support for childhood abuse</h1>
+                <p class="text-white/90 text-xl md:text-2xl">Safe, professional care for children and families.</p>
+                <div class="flex justify-center md:justify-start">
+                  <ButtonPrimary href="/services/child-therapy" label="Explore service" />
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <img src="/images/teen-therapy.png" alt="Child illustration" class="rounded-[48px] w-full max-w-xl md:max-w-2xl h-64 md:h-96 object-cover" />
+            </div>
+          </div>
+        </div>
+        <div id="hero-slide-3" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160" class="absolute -right-6 md:-right-12 lg:-right-16 bottom-0 w-36 md:w-56 lg:w-72 opacity-85 pointer-events-none select-none z-0">
+            <circle cx="70" cy="36" r="18" fill="#D3EBF5"/>
+            <path d="M56 38 q14 -10 28 0" stroke="#2C6268" stroke-width="2" fill="none"/>
+            <rect x="50" y="54" width="40" height="42" rx="10" fill="#82C4CE"/>
+            <circle cx="70" cy="75" r="14" fill="#42A8AF" opacity="0.8"/>
+            <path d="M64 75 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0" fill="#D3EBF5"/>
+            <rect x="40" y="60" width="12" height="24" rx="6" fill="#82C4CE"/>
+            <rect x="88" y="60" width="12" height="24" rx="6" fill="#82C4CE"/>
+            <rect x="54" y="96" width="12" height="30" rx="6" fill="#D3EBF5"/>
+            <rect x="74" y="96" width="12" height="30" rx="6" fill="#D3EBF5"/>
+          </svg>
+          <div id="hero3-es" class="relative z-10 text-center flex flex-col items-center space-y-7 max-w-3xl mx-auto">
+            <h1 class="font-heading text-white text-4xl md:text-5xl">Manejo de ansiedad y estrés</h1>
+            <p class="text-white/90 text-lg md:text-xl">Herramientas prácticas y apoyo clínico para tu bienestar.</p>
+            <div class="flex justify-center">
+              <ButtonPrimary href="/treatments/anxiety" label="Ver tratamiento" />
+            </div>
+          </div>
+          <div id="hero3-en" class="hidden relative z-10 text-center flex flex-col items-center space-y-7 max-w-3xl mx-auto">
+            <h1 class="font-heading text-white text-4xl md:text-5xl">Anxiety & stress management</h1>
+            <p class="text-white/90 text-lg md:text-xl">Practical tools and clinical support for your wellbeing.</p>
+            <div class="flex justify-center">
+              <ButtonPrimary href="/treatments/anxiety" label="View treatment" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hero-controls" class="absolute bottom-1 md:bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center gap-4">
+      <div id="hero-dots" class="flex items-center gap-2">
+        <button aria-label="Slide 1" data-index="0" class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+        <button aria-label="Slide 2" data-index="1" class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+        <button aria-label="Slide 3" data-index="2" class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+      </div>
+      <button id="hero-toggle" class="rounded-4xl bg-white/20 text-white px-3 py-2 transition-all duration-300 hover:bg-white/30 hover:scale-105">Pause</button>
+    </div>
+    <div class="absolute left-0 right-0 bottom-0 translate-y-20 md:translate-y-24 z-0 pointer-events-none">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-40 md:h-48 rotate-180">
+        <path d="M0,32 C240,80 480,0 720,32 C960,64 1200,24 1440,48 L1440,100 L0,100 Z" style="fill: var(--neuro-secondaryButton)"></path>
+      </svg>
+    </div>
+  </section>
+
+  
+
+  <SectionWrapper>
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+        <div class="flex justify-center">
+          <img src="https://picsum.photos/seed/neuro-included/720/540" alt="Therapy illustration" class="rounded-4xl w-full max-w-lg object-contain" />
+        </div>
+        <div class="text-left mx-auto max-w-lg">
+          <h2 class="font-heading text-4xl md:text-5xl mb-8">
+            <span class="text-neuro-paragraph">What’s included</span>
+            <span class="text-neuro-title block">with Neurovivir</span>
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M12 8v5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+              <span class="text-neuro-paragraph text-lg md:text-xl">Access to a licensed therapist in 2 days (or sooner)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="text-neuro-paragraph text-lg md:text-xl">Therapy sessions over video, voice, or live chat (your choice)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 5h12a4 4 0 014 4v6a4 4 0 01-4 4H9l-5 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph text-lg md:text-xl">Unlimited messaging with your therapist, 24/7*</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M3 7h7l-2 3 2 3H3V7zM21 17h-7l2-3-2-3h7v6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph text-lg md:text-xl">Switch therapists any time at no cost</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 16V8m8 8V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="text-neuro-paragraph text-lg md:text-xl">Between-session support with Talkcast personalized podcasts</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper>
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-yellow-100 rounded-4xl px-6 py-10 md:px-8 md:py-12 text-center">
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Human-centered care, measurable impact</h2>
+        <p class="text-neuro-paragraph mt-2">Outcomes that matter with Neurovivir</p>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
+            <div class="flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 12a5 5 0 100-10 5 5 0 000 10z" stroke="currentColor" stroke-width="2"/><path d="M3 22a9 9 0 1118 0H3z" stroke="currentColor" stroke-width="2"/></svg>
+              <span class="font-heading text-neuro-title text-4xl md:text-5xl">5,000+</span>
+            </div>
+            <div class="mt-2 text-neuro-paragraph">members helped</div>
+          </div>
+          <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
+            <div class="flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="font-heading text-neuro-title text-4xl md:text-5xl">25,000+</span>
+            </div>
+            <div class="mt-2 text-neuro-paragraph">therapy sessions</div>
+          </div>
+          <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
+            <div class="flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 17.5l-5.5 3 1-6-4.5-4 6.2-.9L12 3l2.8 6.6 6.2.9-4.5 4 1 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span class="font-heading text-neuro-title text-4xl md:text-5xl">4.8/5</span>
+            </div>
+            <div class="mt-2 text-neuro-paragraph">average satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <SectionWrapper>
+    <div id="howto-container" class="rounded-4xl transition-colors transition-opacity duration-300 p-2 md:p-3 bg-neuro-background opacity-100">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
+        <div id="howto-steps" class="space-y-4 w-full max-w-lg md:max-w-xl">
+          <h2 class="font-heading text-4xl md:text-5xl">
+            <span class="text-neuro-paragraph">How works</span>
+            <span class="text-neuro-title block">with NeuroVivir</span>
+          </h2>
+          <div id="howto-steps-cards" class="space-y-4">
+            <Card class="cursor-pointer hover:bg-neuro-detail" data-img="https://picsum.photos/seed/eligibility/720/540" data-bgclass="bg-neuro-detail">
+              <h3 class="font-heading text-neuro-title">Check eligibility</h3>
+              <p class="text-neuro-paragraph">Confirm coverage and get started fast.</p>
+            </Card>
+            <Card class="cursor-pointer hover:bg-yellow-100 hover:border-transparent" data-img="https://picsum.photos/seed/match/720/540" data-bgclass="bg-yellow-100">
+              <h3 class="font-heading text-neuro-title">Get matched with a Therapist</h3>
+              <p class="text-neuro-paragraph">We pair you with the right professional.</p>
+            </Card>
+            <Card class="cursor-pointer hover:bg-orange-100 hover:border-transparent" data-img="https://picsum.photos/seed/start/720/540" data-bgclass="bg-orange-100">
+              <h3 class="font-heading text-neuro-title">Start therapy</h3>
+              <p class="text-neuro-paragraph">Begin sessions via video, voice or chat.</p>
+            </Card>
+            <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img="https://picsum.photos/seed/switch/720/540" data-bgclass="bg-green-100">
+              <h3 class="font-heading text-neuro-title">Switch providers any time</h3>
+              <p class="text-neuro-paragraph">Change therapists at no additional cost.</p>
+            </Card>
+          </div>
+        </div>
+        <div id="howto-image-wrap" class="flex justify-center rounded-4xl self-start mt-20 md:mt-28">
+          <img id="howto-image" src="https://picsum.photos/seed/eligibility/720/540" alt="How it works" class="rounded-4xl w-full max-w-lg md:max-w-xl object-cover transition-all duration-200" />
+        </div>
+      </div>
+    </div>
+  </SectionWrapper>
+
+  <ProvidersSection posts={posts} />
+
+  <FAQSection title="Answers you can trust" subtitle="Find trust-worthy answers on all things mental health at Neurovivir." items={[
+    { question: '¿Las sesiones son online?', answer: 'Sí, trabajamos por videollamada segura.' },
+    { question: '¿Atienden fuera de EUA?', answer: 'Por ahora nuestra atención está enfocada en residentes de EUA.' },
+    { question: '¿Cómo elijo a mi terapeuta?', answer: 'Te guiamos según tu necesidad y preferencias.' },
+    { question: '¿Qué frecuencia recomiendan?', answer: 'Suele ser semanal, ajustable según el proceso.' },
+    { question: '¿Aceptan seguros médicos?', answer: 'Validamos cobertura y te guiamos con tu plan de salud.' }
+  ]} />
+
+  <TestimonialsCarousel />
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const esBlocks = ['hero-es','hero2-es','hero3-es'];
+    const enBlocks = ['hero-en','hero2-en','hero3-en'];
+    const setVisible = (ids, visible) => ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('hidden', !visible);
+    });
+    const update = (lang) => {
+      setVisible(esBlocks, lang === 'es');
+      setVisible(enBlocks, lang === 'en');
+    };
+    update(getLang());
+    onLangChange(update);
+
+    const slides = Array.from(document.querySelectorAll('#hero-slides [data-slide]'));
+    let hi = 0;
+    let hTimer;
+    const showSlide = (i) => {
+      const DUR = 500;
+      hi = (i + slides.length) % slides.length;
+      slides.forEach((el, idx) => {
+        if (idx === hi) {
+          el.classList.remove('hidden','opacity-0','translate-y-2','scale-95');
+          void el.offsetWidth;
+          el.classList.add('opacity-100','translate-y-0','scale-100');
+        } else {
+          el.classList.remove('opacity-100','translate-y-0','scale-100');
+          el.classList.add('opacity-0','translate-y-2','scale-95');
+          setTimeout(() => el.classList.add('hidden'), DUR);
+        }
+      });
+      const dots = Array.from(document.querySelectorAll('#hero-dots [data-index]'));
+      dots.forEach((d, idx) => {
+        const active = idx === hi;
+        d.classList.toggle('bg-white', active);
+        d.classList.toggle('bg-white/40', !active);
+        d.classList.toggle('drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]', active);
+        d.classList.toggle('ring-2', active);
+        d.classList.toggle('ring-white', active);
+      });
+    };
+    const startHero = () => { stopHero(); hTimer = setInterval(() => showSlide(hi + 1), 30000); };
+    const stopHero = () => { if (hTimer) clearInterval(hTimer); };
+    showSlide(0);
+    startHero();
+    document.querySelectorAll('#hero-dots [data-index]')?.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.getAttribute('data-index') || '0');
+        showSlide(idx);
+      });
+    });
+    const toggleBtn = document.getElementById('hero-toggle');
+    let paused = false;
+    toggleBtn?.addEventListener('click', () => {
+      paused = !paused;
+      toggleBtn.textContent = paused ? 'Play' : 'Pause';
+      if (paused) {
+        stopHero();
+        toggleBtn.classList.add('animate-pulse','ring-2','ring-white');
+      } else {
+        startHero();
+        toggleBtn.classList.remove('animate-pulse','ring-2','ring-white');
+      }
+    });
+
+    const howtoImg = document.getElementById('howto-image');
+    const howtoWrap = document.getElementById('howto-image-wrap');
+    const howtoContainer = document.getElementById('howto-container');
+    const howtoCardsBox = document.getElementById('howto-steps-cards');
+    const stepEls = document.querySelectorAll('#howto-steps [data-img]');
+
+    const fitImageHeight = () => {
+      if (howtoImg && howtoCardsBox) {
+        howtoImg.style.height = `${howtoCardsBox.clientHeight}px`;
+      }
+    };
+    window.addEventListener('load', fitImageHeight);
+    window.addEventListener('resize', fitImageHeight);
+
+    const bgClasses = ['bg-neuro-secondaryButton','bg-neuro-primaryButton','bg-neuro-detail','bg-neuro-background','bg-yellow-100','bg-orange-100','bg-green-100'];
+    stepEls.forEach(el => {
+      const url = el.getAttribute('data-img');
+      const bgc = el.getAttribute('data-bgclass');
+      el.addEventListener('mouseenter', () => {
+        if (howtoImg && url) howtoImg.src = url;
+        if (howtoContainer && bgc) {
+          howtoContainer.classList.remove(...bgClasses);
+          howtoContainer.classList.add(bgc);
+          howtoContainer.classList.remove('opacity-100');
+          howtoContainer.classList.add('opacity-90');
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        if (howtoContainer) {
+          howtoContainer.classList.remove(...bgClasses);
+          howtoContainer.classList.add('bg-neuro-background');
+          howtoContainer.classList.remove('opacity-90');
+          howtoContainer.classList.add('opacity-100');
+        }
+      });
+      el.addEventListener('focus', () => {
+        if (howtoImg && url) howtoImg.src = url;
+        if (howtoContainer && bgc) {
+          howtoContainer.classList.remove(...bgClasses);
+          howtoContainer.classList.add(bgc);
+          howtoContainer.classList.remove('opacity-100');
+          howtoContainer.classList.add('opacity-90');
+        }
+      });
+      el.addEventListener('blur', () => {
+        if (howtoContainer) {
+          howtoContainer.classList.remove(...bgClasses);
+          howtoContainer.classList.add('bg-neuro-background');
+          howtoContainer.classList.remove('opacity-90');
+          howtoContainer.classList.add('opacity-100');
+        }
+      });
+    });
+
+    const homeBlogGrid = document.getElementById('home-blog-grid');
+    const filterHomeBlog = (lang) => {
+      homeBlogGrid?.querySelectorAll('[data-lang]').forEach((el) => {
+        const l = el.getAttribute('data-lang');
+        el.classList.toggle('hidden', l !== lang);
+      });
+    };
+    filterHomeBlog(getLang());
+    onLangChange(filterHomeBlog);
+
+    const track = document.getElementById('testimonials-track');
+    let ti = 0;
+    let timer;
+    const start = () => {
+      stop();
+      timer = setInterval(() => {
+        if (!track) return;
+        const items = Array.from(track.children);
+        if (items.length === 0) return;
+        ti = (ti + 1) % items.length;
+        const el = items[ti];
+        const left = (el && (el).offsetLeft) || 0;
+        track.scrollTo({ left, behavior: 'smooth' });
+      }, 4000);
+    };
+    const stop = () => { if (timer) clearInterval(timer); };
+    start();
+    track?.addEventListener('mouseenter', stop);
+    track?.addEventListener('mouseleave', start);
+  </script>
+</BaseLayout>
+  <style>
+    .card-bg-1 { background-image: url('https://cdn-icons-png.flaticon.com/512/4140/4140048.png') }
+    .card-bg-2 { background-image: url('https://cdn-icons-png.flaticon.com/512/4140/4140062.png') }
+    .card-bg-3 { background-image: url('https://cdn-icons-png.flaticon.com/512/4140/4140040.png') }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none }
+    .no-scrollbar::-webkit-scrollbar { display: none }
+  </style>

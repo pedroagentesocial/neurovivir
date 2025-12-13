@@ -1,0 +1,20 @@
+{
+  "heroTitle": "Domestic violence and harmful relationships",
+  "heroSubtitle": "Safe psychological support to understand, protect yourself and regain wellbeing.",
+  "trustNote": "We work confidentially with sensitivity to your context.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "summary": [
+    { "label": "Scope", "value": "Relationships and safety" },
+    { "label": "Population", "value": "Latino adults" },
+    { "label": "Modality", "value": "Online (video)" }
+  ],
+  "whatIs": "Domestic violence involves patterns of control, aggression and harm impacting emotional and physical health.",
+  "howItFeels": "It may feel like constant fear, isolation, guilt and confusion.",
+  "howWeHelp": "We strengthen your support network, work on safety and rebuild self-esteem and life project.",
+  "forWhom": { "is": "Those seeking to understand their situation and make safe decisions.", "not": "Does not replace legal or immediate emergency services." },
+  "faq": [
+    { "question": "Does therapy replace legal help?", "answer": "No, it complements emotional care and guides you to resources." },
+    { "question": "Can I attend if I remain in the relationship?", "answer": "Yes, we work on safety and options at your pace." }
+  ],
+  "emergencyNote": "If in immediate danger, call 911 or seek local emergency services."
+}

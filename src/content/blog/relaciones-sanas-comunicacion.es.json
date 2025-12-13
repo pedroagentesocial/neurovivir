@@ -1,0 +1,35 @@
+{
+  "title": "Factores de riesgo y protección: construir relaciones seguras en la infancia",
+  "excerpt": "Qué aumenta el riesgo, qué protege y cómo fomentar entornos de cuidado.",
+  "intro": [
+    "Comprender factores de riesgo y protección ayuda a prevenir el maltrato infantil y promover bienestar. No se trata de culpabilizar, sino de identificar condiciones que elevan o reducen el riesgo para actuar con prudencia y cuidado.",
+    "En hogares latinos, fortalecer redes, hábitos cotidianos y acceso a recursos comunitarios es clave para construir relaciones seguras y estables."
+  ],
+  "keyIdeas": [
+    "El riesgo y la protección operan en varios niveles: individuo, familia/relación, comunidad y sociedad.",
+    "Algunos factores aumentan vulnerabilidad (estrés económico, aislamiento, falta de apoyo); otros la reducen (redes de apoyo, crianza sensible, acceso a servicios).",
+    "Prevenir implica aumentar lo que protege y reducir lo que pone en riesgo, con acciones coordinadas en casa y comunidad."
+  ],
+  "neuroView": {
+    "sections": [
+      { "title": "Prevención y relaciones seguras", "body": "Relaciones seguras se construyen con presencia, límites claros y apoyo emocional constante. La prevención es cotidiana: escuchar, monitorear con respeto y ofrecer modelos de cuidado reduce la exposición a riesgos." }
+    ]
+  },
+  "signalsTitle": "Factores de riesgo comunes",
+  "signals": [
+    "Estrés económico alto y falta de apoyo social",
+    "Aislamiento familiar y conflicto frecuente",
+    "Dificultades de salud mental o consumo en cuidadores",
+    "Entornos comunitarios con violencia y pocas actividades seguras"
+  ],
+  "actionsTitle": "Factores protectores",
+  "actions": [
+    "Vínculos positivos y presencia activa de cuidadores",
+    "Crianza sensible y reglas claras con monitoreo",
+    "Redes de apoyo: familia extendida, escuela, vecinos y mentores",
+    "Acceso a servicios: salud, salud mental, programas extraescolares y ayuda económica"
+  ],
+  "closure": "Cada familia y comunidad puede sumar protección fortaleciendo redes, hábitos y acceso a recursos. Pequeños pasos sostenidos crean entornos más seguros y esperanzadores.",
+  "sourceUrl": "https://www.cdc.gov/child-abuse-neglect/risk-factors/index.html"
+}
+

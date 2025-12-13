@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import SectionWrapper from "../../components/common/SectionWrapper.astro";
+import Card from "../../components/common/Card.astro";
+const posts = (await import("../../content/blog/posts.json")).default.posts;
+---
+<BaseLayout title="Blog - NeuroVivir">
+  <SectionWrapper data-animate="fade-up" class="opacity-0 translate-y-4">
+    <div class="flex items-end justify-between">
+      <div>
+        <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">Blog</h1>
+        <p class="text-neuro-paragraph">Notas y artículos breves.</p>
+      </div>
+    </div>
+    <div id="blog-grid" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {posts.map((p) => (
+        <Card class="transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5" data-lang={p.lang}>
+          <h3 class="font-heading text-neuro-title text-xl">{p.title}</h3>
+          <p class="text-neuro-paragraph text-sm">{p.date}</p>
+          <p class="text-neuro-paragraph mt-2">{p.excerpt}</p>
+          <a href={`/blog/${p.slug}`} class="text-neuro-title underline mt-3 inline-block">Leer más</a>
+        </Card>
+      ))}
+    </div>
+  </SectionWrapper>
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const grid = document.getElementById('blog-grid');
+    const filter = (lang) => {
+      grid?.querySelectorAll('[data-lang]').forEach((el) => {
+        const l = el.getAttribute('data-lang');
+        el.classList.toggle('hidden', l !== lang);
+      });
+    };
+    filter(getLang());
+    onLangChange(filter);
+  </script>
+</BaseLayout>

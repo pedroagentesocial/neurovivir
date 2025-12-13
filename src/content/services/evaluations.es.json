@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Evaluaciones psicológicas",
+  "heroSubtitle": "Procesos claros, éticos y culturalmente sensibles para informes clínicos y de bienestar.",
+  "trustNote": "Trabajamos con estándares profesionales y comunicación transparente en cada etapa.",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "whatIs": "Evaluaciones clínicas estructuradas para comprender tu historia, funcionamiento actual y necesidades de apoyo.",
+  "howWeWork": "Entrevista inicial, aplicación de instrumentos, integración de resultados y devolución con recomendaciones.",
+  "whatToExpect": "Citas puntuales, guía clara de cada paso y un informe útil para decisiones de cuidado.",
+  "forWhom": {
+    "is": "Personas que requieren un diagnóstico clínico, seguimiento de tratamiento o documentación para servicios.",
+    "not": "No sustituye atención de emergencia ni dictámenes legales; articulamos si es necesario."
+  },
+  "faq": [
+    { "question": "¿Incluye informe escrito?", "answer": "Sí, entregamos un resumen clínico con recomendaciones." },
+    { "question": "¿Cuánto dura?", "answer": "Puede requerir 2–3 citas según instrumentos aplicados." },
+    { "question": "¿Aceptan seguros?", "answer": "Verificamos cobertura y te orientamos en tu plan." }
+  ],
+  "emergencyNote": "NeuroVivir no es servicio de emergencia. Si hay riesgo, contacta 911 o servicios locales."
+}
+

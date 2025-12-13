@@ -1,0 +1,136 @@
+{
+  "posts": [
+    {
+      "slug": "terapia-online-beneficios",
+      "title": "Depresión adolescente: señales y cuidado en familias latinas",
+      "excerpt": "Cómo reconocer la depresión en jóvenes biculturales y apoyar sin estigma.",
+      "date": "2025-12-12",
+      "tags": ["teen","depression","parents","latinos"],
+      "lang": "es",
+      "content": "Artículo educativo para padres y cuidadores sobre depresión adolescente en jóvenes latinos.",
+      "sourceName": "National Institute of Mental Health (NIMH)",
+      "sourceUrl": "https://www.nimh.nih.gov/health/publications/teen-depression"
+    },
+    {
+      "slug": "online-therapy-benefits",
+      "title": "Benefits of online therapy for Latinos",
+      "excerpt": "Accessibility, flexibility and cultural focus in psychological care.",
+      "date": "2025-11-02",
+      "tags": ["therapy","online","latinos"],
+      "lang": "en",
+      "content": "Online therapy enables access to suitable professionals without distance barriers. At NeuroVivir we work with cultural focus and practical tools.",
+      "sourceName": "NeuroVivir Editorial",
+      "sourceUrl": "https://neurovivir.example/blog"
+    },
+    {
+      "slug": "estrategias-ansiedad-diaria",
+      "title": "Salud mental infantil y adolescente: claves para cuidar desde casa",
+      "excerpt": "Por qué la atención temprana importa y cómo apoyar sin alarmismo en hogares latinos.",
+      "date": "2025-12-12",
+      "tags": ["child","adolescent","parents","prevention"],
+      "lang": "es",
+      "content": "Artículo psicoeducativo para padres, cuidadores y educadores latinos sobre salud mental temprana.",
+      "sourceName": "National Institute of Mental Health (NIMH)",
+      "sourceUrl": "https://www.nimh.nih.gov/health/topics/child-and-adolescent-mental-health"
+    },
+    {
+      "slug": "duelo-procesos-saludables",
+      "title": "Abuso infantil: reconocer y actuar con cuidado",
+      "excerpt": "Información clara para familias latinas: señales generales y orientación.",
+      "date": "2025-12-12",
+      "tags": ["child-abuse","safety","parents"],
+      "lang": "es",
+      "content": "Artículo psicoeducativo sobre abuso infantil y orientación general para actuar con cuidado.",
+      "sourceName": "Centers for Disease Control and Prevention (CDC)",
+      "sourceUrl": "https://www.cdc.gov/child-abuse-neglect/about/index.html"
+    },
+    {
+      "slug": "self-esteem-tools",
+      "title": "Tools to strengthen self-esteem",
+      "excerpt": "Daily practices to recognize achievements and set kind limits.",
+      "date": "2025-11-15",
+      "tags": ["self-esteem","habits"],
+      "lang": "en",
+      "content": "Self-esteem grows with consistent, small steps: recognizing efforts, tracking progress and practicing self-compassion.",
+      "sourceName": "NeuroVivir Editorial",
+      "sourceUrl": "https://neurovivir.example/blog"
+    },
+    {
+      "slug": "relaciones-sanas-comunicacion",
+      "title": "Factores de riesgo y protección: relaciones seguras en la infancia",
+      "excerpt": "Qué aumenta el riesgo, qué protege y cómo fomentar entornos de cuidado.",
+      "date": "2025-12-12",
+      "tags": ["risk","protective","parents","safety"],
+      "lang": "es",
+      "content": "Artículo psicoeducativo basado en CDC: factores de riesgo y protección.",
+      "sourceName": "Centers for Disease Control and Prevention (CDC)",
+      "sourceUrl": "https://www.cdc.gov/child-abuse-neglect/risk-factors/index.html"
+    },
+    {
+      "slug": "sleep-habits-mental-health",
+      "title": "Sleep habits and mental health",
+      "excerpt": "Why consistent routines lower stress and improve mood.",
+      "date": "2025-11-20",
+      "tags": ["sleep","habits","stress"],
+      "lang": "en",
+      "content": "Sleep aligns body and mind. Routine, light exposure and device hygiene are powerful levers.",
+      "sourceName": "NeuroVivir Editorial",
+      "sourceUrl": "https://neurovivir.example/blog"
+    },
+    {
+      "slug": "mindfulness-inicio",
+      "title": "Cuatro patrones que dañan la comunicación en pareja",
+      "excerpt": "Crítica, desprecio, defensividad y bloqueo: cómo identificarlos y qué hacer.",
+      "date": "2025-12-12",
+      "tags": ["couples","communication","skills"],
+      "lang": "es",
+      "content": "Artículo accesible para parejas latinas sobre los ‘Four Horsemen’ y alternativas saludables.",
+      "sourceName": "The Gottman Institute",
+      "sourceUrl": "https://www.gottman.com/blog/the-four-horsemen-recognizing-criticism-contempt-defensiveness-and-stonewalling/"
+    },
+    {
+      "slug": "salud-mental-migracion-latina-usa",
+      "title": "Migrar y cuidarte: salud mental para latinos en EE.UU.",
+      "excerpt": "Cómo la migración afecta el bienestar emocional y qué hacer al respecto.",
+      "date": "2025-12-12",
+      "tags": ["migration","stress","identity","grief"],
+      "lang": "es",
+      "content": "Resumen interpretado y punto de vista NeuroVivir sobre migración y salud mental.",
+      "sourceName": "American Psychological Association (APA)",
+      "sourceUrl": "https://www.apa.org/topics/immigration-refugees"
+    },
+    {
+      "slug": "impacto-psicologico-politicas-migratorias",
+      "title": "Políticas migratorias y salud mental: cómo cuidarte en la incertidumbre",
+      "excerpt": "Por qué cambios y discursos restrictivos elevan el miedo y el estrés, y qué puedes hacer.",
+      "date": "2025-12-12",
+      "tags": ["immigration","policy","stress","anxiety"],
+      "lang": "es",
+      "content": "Resumen interpretado y punto de vista NeuroVivir sobre políticas migratorias y salud mental.",
+      "sourceName": "American Psychological Association (APA)",
+      "sourceUrl": "https://www.apa.org/monitor/2025/07-08/mental-health-immigration-policy"
+    },
+    {
+      "slug": "violencia-pareja-salud-mental",
+      "title": "Violencia en pareja: entender y cuidar la salud psicológica",
+      "excerpt": "Qué es la violencia en relaciones, señales emocionales y cómo buscar apoyo.",
+      "date": "2025-12-12",
+      "tags": ["IPV","safety","emotional-abuse","parents"],
+      "lang": "es",
+      "content": "Artículo serio y empático sobre violencia en pareja, señales y orientación psicológica.",
+      "sourceName": "Centers for Disease Control and Prevention (CDC)",
+      "sourceUrl": "https://www.cdc.gov/intimate-partner-violence/about/index.html"
+    },
+    {
+      "slug": "ansiedad-adultos-estrategias",
+      "title": "Ansiedad en adultos: comprender y cuidarte en el día a día",
+      "excerpt": "Qué es la ansiedad, cómo se siente en cuerpo y mente y pasos prácticos.",
+      "date": "2025-12-12",
+      "tags": ["anxiety","stress","self-help"],
+      "lang": "es",
+      "content": "Artículo práctico para adultos latinos sobre ansiedad y estrategias iniciales.",
+      "sourceName": "National Institute of Mental Health (NIMH)",
+      "sourceUrl": "https://www.nimh.nih.gov/health/topics/anxiety-disorders"
+    }
+  ]
+}

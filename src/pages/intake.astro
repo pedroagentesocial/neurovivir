@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+---
+<BaseLayout title="Intake - NeuroVivir">
+  <section class="mx-auto max-w-6xl px-4 py-10" data-animate="fade-up">
+    <div id="intake-es" class="space-y-6 opacity-0 translate-y-4">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">Cuestionario inicial</h1>
+      <p class="text-neuro-paragraph">Responde estas preguntas para comprender tu necesidad.</p>
+      <div class="space-y-4" id="wizard-es">
+        <div class="step-es" data-step="1">
+          <h2 class="font-heading text-neuro-title text-2xl">Motivo principal</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Ansiedad','Depresión','Pareja','Adolescentes','Violencia doméstica','Migración/Acculturación'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continuar</button>
+          </div>
+        </div>
+        <div class="step-es hidden" data-step="2">
+          <h2 class="font-heading text-neuro-title text-2xl">Modalidad preferida</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Video','Chat','Audio'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl border border-neuro-detail px-6 py-3 transition duration-200 hover:bg-neuro-detail" data-prev>Volver</button>
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continuar</button>
+          </div>
+        </div>
+        <div class="step-es hidden" data-step="3">
+          <h2 class="font-heading text-neuro-title text-2xl">Rango de horario disponible</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Mañana','Tarde','Noche'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl border border-neuro-detail px-6 py-3 transition duration-200 hover:bg-neuro-detail" data-prev>Volver</button>
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continuar</button>
+          </div>
+        </div>
+        <div class="step-es hidden" data-step="4">
+          <h2 class="font-heading text-neuro-title text-2xl">Idioma preferido</h2>
+          <div class="grid grid-cols-2 gap-3">
+            {['Español','English'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="mt-6 rounded-4xl border border-neuro-detail bg-neuro-background p-4">
+            <h3 class="font-heading text-neuro-title">Resumen</h3>
+            <p class="text-neuro-paragraph">Verás tu información resumida aquí.</p>
+          </div>
+          <div class="flex gap-3 mt-4">
+            <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Ir a agendar</a>
+          </div>
+          <!-- Aquí se podría enviar el cuestionario a una API y redirigir a /book -->
+        </div>
+      </div>
+    </div>
+
+    <div id="intake-en" class="space-y-6 hidden opacity-0 translate-y-4">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">Initial questionnaire</h1>
+      <p class="text-neuro-paragraph">Answer these questions to understand your need.</p>
+      <div class="space-y-4" id="wizard-en">
+        <div class="step-en" data-step="1">
+          <h2 class="font-heading text-neuro-title text-2xl">Main reason</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Anxiety','Depression','Couples','Teens','Domestic violence','Migration/Acculturation'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continue</button>
+          </div>
+        </div>
+        <div class="step-en hidden" data-step="2">
+          <h2 class="font-heading text-neuro-title text-2xl">Preferred modality</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Video','Chat','Audio'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl border border-neuro-detail px-6 py-3 transition duration-200 hover:bg-neuro-detail" data-prev>Back</button>
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continue</button>
+          </div>
+        </div>
+        <div class="step-en hidden" data-step="3">
+          <h2 class="font-heading text-neuro-title text-2xl">Available time range</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {['Morning','Afternoon','Evening'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="flex gap-3 mt-4">
+            <button class="rounded-4xl border border-neuro-detail px-6 py-3 transition duration-200 hover:bg-neuro-detail" data-prev>Back</button>
+            <button class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105" data-next>Continue</button>
+          </div>
+        </div>
+        <div class="step-en hidden" data-step="4">
+          <h2 class="font-heading text-neuro-title text-2xl">Preferred language</h2>
+          <div class="grid grid-cols-2 gap-3">
+            {['Español','English'].map(opt => (
+              <button class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 transition duration-200 hover:bg-neuro-detail hover:-translate-y-0.5">{opt}</button>
+            ))}
+          </div>
+          <div class="mt-6 rounded-4xl border border-neuro-detail bg-neuro-background p-4">
+            <h3 class="font-heading text-neuro-title">Summary</h3>
+            <p class="text-neuro-paragraph">Your information will be summarized here.</p>
+          </div>
+          <div class="flex gap-3 mt-4">
+            <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Go to booking</a>
+          </div>
+          <!-- The questionnaire could be sent to an API and redirect to /book -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const esEl = document.getElementById('intake-es');
+    const enEl = document.getElementById('intake-en');
+    const updateLang = (lang) => {
+      esEl?.classList.toggle('hidden', lang !== 'es');
+      enEl?.classList.toggle('hidden', lang !== 'en');
+    };
+    updateLang(getLang());
+    onLangChange(updateLang);
+
+    const bindWizard = (rootId, stepClass) => {
+      const root = document.getElementById(rootId);
+      if (!root) return;
+      let step = 1;
+      const showStep = () => {
+        root.querySelectorAll(`.${stepClass}`).forEach((el) => {
+          const s = Number(el.getAttribute('data-step'));
+          el.classList.toggle('hidden', s !== step);
+        });
+      };
+      root.addEventListener('click', (e) => {
+        const t = e.target;
+        if (!(t instanceof HTMLElement)) return;
+        if (t.hasAttribute('data-next')) { step = Math.min(step + 1, 4); showStep(); }
+        if (t.hasAttribute('data-prev')) { step = Math.max(step - 1, 1); showStep(); }
+      });
+      showStep();
+    };
+    bindWizard('wizard-es','step-es');
+    bindWizard('wizard-en','step-en');
+  </script>
+</BaseLayout>

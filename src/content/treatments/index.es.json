@@ -1,0 +1,12 @@
+{
+  "title": "Tratamientos",
+  "subtitle": "Problemas y temas que trabajamos",
+  "items": [
+    { "name": "Violencia doméstica", "description": "Apoyo seguro y confidencial.", "href": "/treatments/domestic-violence" },
+    { "name": "Estrés por migración", "description": "Adaptación y duelo migratorio.", "href": "/treatments/migration-stress" },
+    { "name": "Ansiedad", "description": "Regulación y manejo del estrés.", "href": "/treatments/anxiety" },
+    { "name": "Depresión", "description": "Acompañamiento integral.", "href": "/treatments/depression" },
+    { "name": "Duelo", "description": "Procesos respetuosos.", "href": "/treatments/grief" },
+    { "name": "Autoestima", "description": "Construcción de autoconfianza.", "href": "/treatments/self-esteem" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Terapia para adolescentes",
+  "heroSubtitle": "Acompañamiento clínico y sensible para jóvenes y sus familias.",
+  "trustNote": "Trabajamos con ética profesional, enfoque basado en evidencia y respeto por la etapa evolutiva.",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "heroImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+  "whatIs": "Espacio terapéutico para adolescentes donde abordamos emociones, relaciones, escuela y redes sociales, promoviendo bienestar y desarrollo saludable.",
+  "howWeWork": "Realizamos una evaluación breve, acordamos objetivos con el adolescente y, cuando procede, involucramos a la familia en pautas y seguimiento.",
+  "whatToExpect": "Sesiones confidenciales, ejercicios prácticos y herramientas para regular ansiedad, mejorar habilidades sociales y afrontar cambios.",
+  "forWhom": {
+    "is": "Adolescentes que requieren apoyo emocional, académico, social o conductual.",
+    "not": "No es atención de emergencia ni sustituto de intervención de riesgo inmediato."
+  },
+  "faq": [
+    { "question": "¿Participan padres/madres?", "answer": "Sí, en momentos específicos y con acuerdos claros según el caso." },
+    { "question": "¿Cómo manejan la confidencialidad?", "answer": "Priorizamos la confianza del adolescente y coordinamos información esencial con su familia." },
+    { "question": "¿Frecuencia de sesiones?", "answer": "Suele ser semanal, ajustable según avance y necesidad." }
+  ],
+  "emergencyNote": "NeuroVivir no es servicio de emergencia. Si hay riesgo, contacta 911 o servicios locales."
+}
+

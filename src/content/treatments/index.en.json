@@ -1,0 +1,12 @@
+{
+  "title": "Treatments",
+  "subtitle": "Issues we help with",
+  "items": [
+    { "name": "Domestic violence", "description": "Safe and confidential support.", "href": "/treatments/domestic-violence" },
+    { "name": "Migration stress", "description": "Adaptation and migration grief.", "href": "/treatments/migration-stress" },
+    { "name": "Anxiety", "description": "Stress regulation and coping.", "href": "/treatments/anxiety" },
+    { "name": "Depression", "description": "Comprehensive support.", "href": "/treatments/depression" },
+    { "name": "Grief", "description": "Respectful processes.", "href": "/treatments/grief" },
+    { "name": "Self-esteem", "description": "Confidence building.", "href": "/treatments/self-esteem" }
+  ]
+}

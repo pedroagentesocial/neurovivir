@@ -1,0 +1,24 @@
+:root {
+  --neuro-background: #F7F4EE;
+  --neuro-detail: #D3EBF5;
+  --neuro-paragraph: #82C4CE;
+  --neuro-title: #42A8AF;
+  --neuro-primaryButton: #DC692E;
+  --neuro-secondaryButton: #2C6268;
+}
+
+.bg-neuro-background { background-color: var(--neuro-background); }
+.bg-neuro-detail { background-color: var(--neuro-detail); }
+.text-neuro-paragraph { color: var(--neuro-paragraph); }
+.text-neuro-title { color: var(--neuro-title); }
+.bg-neuro-primaryButton { background-color: var(--neuro-primaryButton); }
+.bg-neuro-secondaryButton { background-color: var(--neuro-secondaryButton); }
+.border-neuro-detail { border-color: var(--neuro-detail); }
+
+body { line-height: 1.5; }
+p, li { line-height: 1.5; }
+p { margin-bottom: 1.25rem; }
+.prose p { margin-bottom: 1.25rem; }
+.prose h2 { margin-top: 1.5rem; margin-bottom: 1rem; }
+.prose h3 { margin-top: 1rem; margin-bottom: 0.75rem; }
+.prose ul { margin-bottom: 1.5rem; }

@@ -1,0 +1,13 @@
+{
+  "heroTitle": "Ansiedad: apoyo práctico y sensible",
+  "heroSubtitle": "Comprender la ansiedad y regular el sistema de alerta con hábitos sostenibles.",
+  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención informada en cultura y evidencia, con estrategias claras para el día a día.",
+  "faq": [
+    { "question": "¿Cómo sé si necesito ayuda?", "answer": "Si la ansiedad interfiere con sueño, trabajo o relaciones por semanas, hablarlo puede darte claridad y herramientas." },
+    { "question": "¿La atención es online?", "answer": "Trabajamos principalmente por videollamada segura y flexible." },
+    { "question": "¿Qué haremos en sesión?", "answer": "Psicoeducación, estrategias de regulación breve, ajuste de hábitos y plan paso a paso." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, sigue los recursos de tu localidad."
+}

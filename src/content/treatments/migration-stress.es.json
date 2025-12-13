@@ -1,0 +1,20 @@
+{
+  "heroTitle": "Estrés por migración y aculturación",
+  "heroSubtitle": "Acompañamiento clínico para adaptarte, elaborar el duelo migratorio y fortalecer tu identidad.",
+  "trustNote": "Comprensión cultural y herramientas prácticas para tu proceso.",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "summary": [
+    { "label": "Ámbito", "value": "Adaptación y bienestar" },
+    { "label": "Población", "value": "Adultos y familias latinoamericanas" },
+    { "label": "Modalidad", "value": "Online (video)" }
+  ],
+  "whatIs": "El estrés migratorio surge por cambios culturales, idioma, redes y proyecto de vida.",
+  "howItFeels": "Nostalgia, ansiedad, incertidumbre y agotamiento emocional.",
+  "howWeHelp": "Trabajamos regulación emocional, recursos de apoyo y estrategias de adaptación con mirada humana.",
+  "forWhom": { "is": "Quienes atraviesan procesos de migración y buscan bienestar.", "not": "No cubre gestiones administrativas migratorias." },
+  "faq": [
+    { "question": "¿Cuánto dura el proceso?", "answer": "Depende de objetivos y ritmo; solemos trabajar semanalmente al inicio." },
+    { "question": "¿Incluyen recursos comunitarios?", "answer": "Sí, te acercamos a redes y herramientas útiles." }
+  ],
+  "emergencyNote": "Si necesitas ayuda inmediata, contacta servicios locales de emergencia."
+}

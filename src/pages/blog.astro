@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Card from "../components/common/Card.astro";
+import FAQSection from "../components/sections/FAQSection.astro";
+import CallInvite from "../components/sections/CallInvite.astro";
+import TestimonialsCarousel from "../components/sections/TestimonialsCarousel.astro";
+const posts = (await import("../content/blog/posts.json")).default.posts;
+const initialVisible = 3;
+---
+<BaseLayout title="Blog - NeuroVivir">
+  <section class="w-full bg-neuro-title py-12 md:py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div id="blog-hero-es" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Historias y herramientas para tu bienestar</h1>
+          <p class="text-white/90">Lecturas breves, prácticas y sensibles a nuestro contexto latino.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop" alt="Blog" class="rounded-4xl w-full max-w-md object-cover" />
+        </div>
+      </div>
+      <div id="blog-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Stories and tools for your wellbeing</h1>
+          <p class="text-white/90">Short, practical reads with cultural sensitivity for our community.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop" alt="Blog" class="rounded-4xl w-full max-w-md object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 mt-3">
+    <nav class="text-sm">
+      <div id="blog-bc-es" class="flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Inicio</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">Blog</span>
+      </div>
+      <div id="blog-bc-en" class="hidden flex items-center gap-2">
+        <a href="/" class="text-neuro-paragraph hover:underline">Home</a>
+        <span class="text-neuro-paragraph">/</span>
+        <span class="text-neuro-title">Blog</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <section class="mt-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mb-10">
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Blog</h2>
+        <div class="flex items-center gap-3 md:gap-2">
+          <input id="blog-search" type="text" placeholder="Buscar / Search" class="rounded-4xl border border-neuro-detail px-4 py-2 text-neuro-title bg-white shadow-sm" />
+        </div>
+      </div>
+      <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
+        {posts.map((post, idx) => (
+          <Card class={`bg-neuro-detail hover:translate-y-0 ${idx >= initialVisible ? 'extra-post hidden' : ''}`} id={`post-${post.slug}`} data-lang={post.lang} data-idx={idx}>
+            <a href={`/blog/${post.slug}`} class="block">
+              <div class="space-y-4 leading-[1.5]">
+                <div class="text-neuro-paragraph text-sm">{new Date(post.date).toLocaleDateString()}</div>
+                <h3 class="font-heading text-neuro-title text-xl">{post.title}</h3>
+                <p class="text-neuro-paragraph">{post.excerpt}</p>
+                <div class="flex flex-wrap gap-3 mt-2">
+                  {(post.tags ?? []).map((t) => (
+                    <span class="rounded-4xl bg-white border border-neuro-detail px-4 py-2 text-sm text-neuro-title drop-shadow-sm hover:scale-105 transition-transform">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </Card>
+        ))}
+      </div>
+      <div class="mt-8 flex justify-center">
+        <button id="blog-load-more" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">Ver más</button>
+      </div>
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
+        <input id="blog-subscribe-email" type="email" placeholder="Tu correo / Your email" class="rounded-4xl border border-neuro-detail px-5 py-3 text-neuro-title bg-white/80 w-full md:flex-1 md:max-w-xl" />
+        <button id="blog-subscribe-btn" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform w-full md:w-auto">Suscribirme</button>
+      </div>
+    </section>
+
+    <TestimonialsCarousel />
+    <CallInvite />
+
+    <script type="module">
+      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+      initLang();
+      const heroEs = document.getElementById('blog-hero-es');
+      const heroEn = document.getElementById('blog-hero-en');
+      const bcEs = document.getElementById('blog-bc-es');
+      const bcEn = document.getElementById('blog-bc-en');
+      const cards = () => Array.from(document.querySelectorAll('#blog-list [id^="post-"]'));
+      let loadedAll = false;
+      const applyLang = (lang) => {
+        heroEs?.classList.toggle('hidden', lang !== 'es');
+        heroEn?.classList.toggle('hidden', lang !== 'en');
+        bcEs?.classList.toggle('hidden', lang !== 'es');
+        bcEn?.classList.toggle('hidden', lang !== 'en');
+        const all = cards();
+        const matching = all.filter((el) => {
+          const plang = el.getAttribute('data-lang') || 'es';
+          return plang === lang && !el.classList.contains('search-hidden');
+        });
+        const nonMatching = all.filter(el => !matching.includes(el));
+        matching.forEach((el, i) => {
+          const hide = !loadedAll && i >= 3;
+          el.classList.toggle('hidden', hide);
+        });
+        nonMatching.forEach(el => el.classList.add('hidden'));
+        updateLoadMoreVisibility();
+      };
+      const updateLoadMoreVisibility = () => {
+        const btn = document.getElementById('blog-load-more');
+        const lang = getLang();
+        const visibleSet = cards().filter(el => {
+          const plang = el.getAttribute('data-lang') || 'es';
+          return plang === lang && !el.classList.contains('search-hidden');
+        });
+        const hasExtras = visibleSet.length > 3;
+        if (btn) {
+          btn.classList.toggle('hidden', !hasExtras);
+          btn.textContent = loadedAll ? 'Ver menos' : 'Ver más';
+        }
+      };
+      const applySearch = (q) => {
+        cards().forEach((el) => {
+          const text = el.textContent?.toLowerCase() || '';
+          const match = text.includes(q);
+          el.classList.toggle('search-hidden', !match);
+        });
+        applyLang(getLang());
+      };
+      const currentLang = getLang();
+      applyLang(currentLang);
+      onLangChange(applyLang);
+      const search = document.getElementById('blog-search');
+      search?.addEventListener('input', (e) => {
+        const q = (e.target?.value || '').toLowerCase();
+        applySearch(q);
+      });
+      const loadMore = document.getElementById('blog-load-more');
+      loadMore?.addEventListener('click', () => {
+        loadedAll = !loadedAll;
+        applyLang(getLang());
+      });
+    </script>
+  </div>
+</BaseLayout>

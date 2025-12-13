@@ -1,0 +1,20 @@
+{
+  "heroTitle": "Violencia doméstica y relaciones dañinas",
+  "heroSubtitle": "Apoyo psicológico seguro para comprender, protegerte y recuperar tu bienestar.",
+  "trustNote": "Trabajo con confidencialidad y enfoque sensible a tu contexto.",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "summary": [
+    { "label": "Ámbito", "value": "Relaciones y seguridad" },
+    { "label": "Población", "value": "Adultos latinoamericanos" },
+    { "label": "Modalidad", "value": "Online (video)" }
+  ],
+  "whatIs": "La violencia doméstica implica patrones de control, agresión y daño que afectan la salud emocional y física.",
+  "howItFeels": "Puede sentirse como miedo constante, aislamiento, culpa y confusión.",
+  "howWeHelp": "Fortalecemos tu red de apoyo, trabajamos en seguridad y en reconstruir tu autoestima y proyecto de vida.",
+  "forWhom": { "is": "Quienes buscan comprender su situación y tomar decisiones seguras.", "not": "No sustituye servicios legales o de emergencia inmediata." },
+  "faq": [
+    { "question": "¿La terapia reemplaza ayuda legal?", "answer": "No, complementa el cuidado emocional y te orienta a recursos." },
+    { "question": "¿Puedo asistir si sigo en la relación?", "answer": "Sí, trabajamos tu seguridad y opciones a tu ritmo." }
+  ],
+  "emergencyNote": "Si estás en peligro inmediato, llama al 911 o busca servicios locales de emergencia."
+}

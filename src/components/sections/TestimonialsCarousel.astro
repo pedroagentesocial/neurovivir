@@ -1,0 +1,53 @@
+---
+import SectionWrapper from "../common/SectionWrapper.astro";
+import Card from "../common/Card.astro";
+interface Testimonial { name: string; location: string; avatar: string; quote: string }
+const { items = [] as Testimonial[] } = Astro.props;
+const defaults: Testimonial[] = [
+  { name: "María G.", location: "Mexico City", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Encontré apoyo profesional y humano. La atención fue culturalmente sensible y efectiva." },
+  { name: "Carlos R.", location: "San Antonio, TX", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "Mi terapeuta me dio herramientas prácticas para manejar ansiedad y estrés del trabajo." },
+  { name: "Lucía P.", location: "Los Angeles, CA", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "La plataforma es fácil y rápida. Sentí progreso desde las primeras sesiones." },
+  { name: "Andrés T.", location: "Chicago, IL", avatar: "https://randomuser.me/api/portraits/men/32.jpg", quote: "La flexibilidad de horarios y el enfoque cultural hicieron la diferencia." },
+  { name: "Sofía L.", location: "Miami, FL", avatar: "https://randomuser.me/api/portraits/women/41.jpg", quote: "Me sentí escuchada y acompañada. Recomiendo NeuroVivir sin dudas." },
+  { name: "Javier M.", location: "Austin, TX", avatar: "https://randomuser.me/api/portraits/men/52.jpg", quote: "El proceso fue claro y efectivo. Noté cambios en pocas semanas." },
+];
+const list = (items && items.length > 0) ? items : defaults;
+---
+<SectionWrapper>
+  <div class="max-w-6xl mx-auto">
+    <div id="testimonials-track" class="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4">
+      {list.map((t) => (
+        <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
+          <div class="flex items-center gap-4">
+            <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />
+            <div>
+              <h4 class="font-heading text-neuro-title text-2xl md:text-3xl">{t.name}</h4>
+              <p class="text-neuro-paragraph text-base md:text-lg">{t.location}</p>
+            </div>
+          </div>
+          <p class="text-neuro-paragraph mt-4 text-lg md:text-xl">{t.quote}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</SectionWrapper>
+<script type="module">
+  const track = document.getElementById('testimonials-track');
+  let timer;
+  const start = () => {
+    stop();
+    timer = setInterval(() => {
+      if (!track) return;
+      const items = Array.from(track.children);
+      if (items.length === 0) return;
+      const next = items[Math.floor(Math.random() * items.length)];
+      const left = next?.offsetLeft || 0;
+      track.scrollTo({ left, behavior: 'smooth' });
+    }, 4000);
+  };
+  const stop = () => { if (timer) clearInterval(timer); };
+  start();
+  track?.addEventListener('mouseenter', stop);
+  track?.addEventListener('mouseleave', start);
+</script>
+

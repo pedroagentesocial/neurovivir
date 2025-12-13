@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import SectionWrapper from "../components/common/SectionWrapper.astro";
+const es = await import("../content/emergency.es.json");
+const en = await import("../content/emergency.en.json");
+---
+<BaseLayout title="Emergency - NeuroVivir">
+  <SectionWrapper data-animate="fade-up" class="opacity-0 translate-y-4">
+    <div id="em-es" class="space-y-4">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">{es.default.heroTitle}</h1>
+      <p class="text-neuro-paragraph">{es.default.heroSubtitle}</p>
+      <ul class="mt-4 space-y-2">
+        {es.default.items.map((t) => (
+          <li class="rounded-4xl border border-neuro-detail bg-neuro-background p-4">{t}</li>
+        ))}
+      </ul>
+    </div>
+    <div id="em-en" class="space-y-4 hidden">
+      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">{en.default.heroTitle}</h1>
+      <p class="text-neuro-paragraph">{en.default.heroSubtitle}</p>
+      <ul class="mt-4 space-y-2">
+        {en.default.items.map((t) => (
+          <li class="rounded-4xl border border-neuro-detail bg-neuro-background p-4">{t}</li>
+        ))}
+      </ul>
+    </div>
+  </SectionWrapper>
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const esEl = document.getElementById('em-es');
+    const enEl = document.getElementById('em-en');
+    const update = (lang) => {
+      esEl?.classList.toggle('hidden', lang !== 'es');
+      enEl?.classList.toggle('hidden', lang !== 'en');
+    };
+    update(getLang());
+    onLangChange(update);
+  </script>
+</BaseLayout>

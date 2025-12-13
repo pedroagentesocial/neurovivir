@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Psychological evaluations",
+  "heroSubtitle": "Clear, ethical and culturally sensitive processes for clinical and wellbeing reports.",
+  "trustNote": "We work with professional standards and transparent communication at each stage.",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "whatIs": "Structured clinical assessments to understand your history, current functioning and support needs.",
+  "howWeWork": "Initial interview, instruments administration, results integration and feedback with recommendations.",
+  "whatToExpect": "On-time appointments, clear guidance and a useful report for care decisions.",
+  "forWhom": {
+    "is": "People needing clinical diagnosis, treatment follow-up or documentation for services.",
+    "not": "Not a substitute for emergency care or legal rulings; we coordinate if needed."
+  },
+  "faq": [
+    { "question": "Is a written report included?", "answer": "Yes, we deliver a clinical summary with recommendations." },
+    { "question": "How long does it take?", "answer": "It may require 2–3 appointments depending on instruments used." },
+    { "question": "Do you accept insurance?", "answer": "We verify coverage and guide you through your plan." }
+  ],
+  "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
+}
+

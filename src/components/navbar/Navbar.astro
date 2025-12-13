@@ -1,0 +1,251 @@
+<header id="site-header" class="w-full bg-neuro-background fixed top-0 z-50 transition-colors">
+  <div class="w-full px-4 py-4 flex items-center justify-between">
+    <!-- Izquierda: Logo -->
+    <a href="/" class="inline-flex items-center hover:scale-105 transition-transform">
+      <img src="/images/logo.png" alt="NeuroVivir" class="logo-img h-10 md:h-12 object-contain" fetchpriority="high" />
+    </a>
+
+    <!-- Centro: Navegación (desktop) -->
+  <nav class="hidden md:flex gap-6 text-lg">
+      <div class="relative" id="svc-dd">
+        <button id="svc-trigger" class="inline-flex items-center gap-2 rounded-4xl border border-transparent px-0 py-0 bg-transparent hover:text-neuro-title transition-colors">
+          <span>Services</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="svc-menu" class="absolute left-0 top-full mt-2 hidden">
+          <div class="rounded-4xl shadow-lg border border-neuro-detail bg-white text-neuro-title p-2 md:p-4 flex min-w-[640px]">
+            <div class="w-52 pr-3 md:pr-4 space-y-2">
+              <button id="svc-tab-therapies" class="w-full inline-flex items-center justify-between rounded-4xl px-3 py-2 bg-white text-neuro-title opacity-80 hover:bg-neuro-detail/10 hover:opacity-100">
+                <span>Therapies</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button id="svc-tab-treatments" class="w-full inline-flex items-center justify-between rounded-4xl px-3 py-2 bg-white text-neuro-title opacity-80 hover:bg-neuro-detail/10 hover:opacity-100">
+                <span>Treatments</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="w-px bg-neuro-detail/40 mx-2 md:mx-3"></div>
+            <div class="flex-1 pl-2 md:pl-3">
+              <ul id="svc-list-therapies" class="grid grid-cols-1 gap-2">
+                <li><a href="/services/individual-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Individual therapy</a></li>
+                <li><a href="/services/couples-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Couples therapy</a></li>
+                <li><a href="/therapies/teen-therapy" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Teen therapy</a></li>
+                <li><a href="/therapies/domestic-violence" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Domestic violence</a></li>
+                <li><a href="/services/evaluations" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Psychological evaluation</a></li>
+              </ul>
+              <ul id="svc-list-treatments" class="grid grid-cols-1 gap-2 hidden">
+                <li><a href="/treatments/migration-stress" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Migration stress</a></li>
+                <li><a href="/treatments/anxiety" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Anxiety</a></li>
+                <li><a href="/treatments/depression" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Depression</a></li>
+                <li><a href="/treatments/grief" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Grief</a></li>
+                <li><a href="/treatments/self-esteem" class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Self-esteem</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/blog" class="hover:text-neuro-title transition-colors">Blog</a>
+      <a href="/faq" class="hover:text-neuro-title transition-colors">FAQ</a>
+      <a href="/contact" class="hover:text-neuro-title transition-colors">Contact</a>
+    </nav>
+
+    <!-- Derecha: Teléfono + CTA + Redes + Idioma (desktop) -->
+    <div class="hidden md:flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <a href="#" aria-label="Instagram" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2.21 0-4 1.79-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.55.45-1 1-1z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <div class="flex items-center gap-2" id="lang-toggle-desktop">
+        <button id="lang-es" class="text-neuro-title">ES</button>
+        <span class="text-neuro-paragraph">|</span>
+        <button id="lang-en" class="text-neuro-paragraph">EN</button>
+      </div>
+      <a href="tel:+15551234567" class="phone text-lg md:text-xl ml-auto hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
+      <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base md:text-lg hover:scale-105 transition-transform">
+        <span id="cta-es">Agendar ahora</span>
+        <span id="cta-en" class="hidden">Book now</span>
+      </a>
+    </div>
+
+    <!-- Mobile: Logo + Idioma + Hamburguesa -->
+    <div class="flex md:hidden items-center gap-3">
+      <div class="flex items-center gap-2" id="lang-toggle-mobile">
+        <button id="m-lang-es" class="text-neuro-title">ES</button>
+        <span class="text-neuro-paragraph">|</span>
+        <button id="m-lang-en" class="text-neuro-paragraph">EN</button>
+      </div>
+      <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-4xl border border-neuro-detail hover:scale-105 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-neuro-detail">
+      <div class="w-full px-4 py-4 flex flex-col gap-4">
+        <a href="/services" class="hover:text-neuro-title transition-colors">Services</a>
+        <a href="/blog" class="hover:text-neuro-title transition-colors">Blog</a>
+        <a href="/faq" class="hover:text-neuro-title transition-colors">FAQ</a>
+        <a href="/contact" class="hover:text-neuro-title transition-colors">Contact</a>
+        <div class="flex items-center justify-between pt-2">
+          <a href="tel:+15551234567" class="phone hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
+          <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-5 py-2 text-sm hover:scale-105 transition-transform">
+            <span id="m-cta-es">Agendar ahora</span>
+            <span id="m-cta-en" class="hidden">Book now</span>
+          </a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2.21 0-4 1.79-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.55.45-1 1-1z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+</header>
+
+<style>
+  #site-header.nav-top { background-color: transparent }
+  #site-header.nav-solid { background-color: var(--neuro-background) }
+  #site-header.nav-top nav > a { color: #fff !important }
+  #site-header.nav-top #svc-trigger { color: #fff }
+  #site-header.nav-top #svc-trigger.is-open { color: var(--neuro-title) !important }
+  #site-header.nav-top .phone { color: #fff !important }
+  #site-header.nav-top #lang-toggle-desktop button, #site-header.nav-top #lang-toggle-desktop span, #site-header.nav-top #lang-toggle-mobile button, #site-header.nav-top #lang-toggle-mobile span { color: #fff !important }
+  #site-header.nav-top .social svg { color: #fff }
+  #site-header.nav-top .logo-img { filter: brightness(0) invert(1) }
+</style>
+
+<script type="module">
+  import { initLang, getLang, setLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+  initLang();
+  const updateLangUI = (lang) => {
+    const esBtn = document.getElementById('lang-es');
+    const enBtn = document.getElementById('lang-en');
+    const mEsBtn = document.getElementById('m-lang-es');
+    const mEnBtn = document.getElementById('m-lang-en');
+    const ctaEs = document.getElementById('cta-es');
+    const ctaEn = document.getElementById('cta-en');
+    const mCtaEs = document.getElementById('m-cta-es');
+    const mCtaEn = document.getElementById('m-cta-en');
+
+    if (!esBtn || !enBtn || !mEsBtn || !mEnBtn) return;
+
+    if (lang === 'es') {
+      esBtn.classList.add('text-neuro-title');
+      esBtn.classList.remove('text-neuro-paragraph');
+      enBtn.classList.add('text-neuro-paragraph');
+      enBtn.classList.remove('text-neuro-title');
+      mEsBtn.classList.add('text-neuro-title');
+      mEsBtn.classList.remove('text-neuro-paragraph');
+      mEnBtn.classList.add('text-neuro-paragraph');
+      mEnBtn.classList.remove('text-neuro-title');
+      if (ctaEs && ctaEn) { ctaEs.classList.remove('hidden'); ctaEn.classList.add('hidden'); }
+      if (mCtaEs && mCtaEn) { mCtaEs.classList.remove('hidden'); mCtaEn.classList.add('hidden'); }
+    } else {
+      enBtn.classList.add('text-neuro-title');
+      enBtn.classList.remove('text-neuro-paragraph');
+      esBtn.classList.add('text-neuro-paragraph');
+      esBtn.classList.remove('text-neuro-title');
+      mEnBtn.classList.add('text-neuro-title');
+      mEnBtn.classList.remove('text-neuro-paragraph');
+      mEsBtn.classList.add('text-neuro-paragraph');
+      mEsBtn.classList.remove('text-neuro-title');
+      if (ctaEs && ctaEn) { ctaEs.classList.add('hidden'); ctaEn.classList.remove('hidden'); }
+      if (mCtaEs && mCtaEn) { mCtaEs.classList.add('hidden'); mCtaEn.classList.remove('hidden'); }
+    }
+  };
+
+  updateLangUI(getLang());
+  onLangChange(updateLangUI);
+
+  const bindToggle = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => setLang(value));
+  };
+  bindToggle('lang-es', 'es');
+  bindToggle('lang-en', 'en');
+  bindToggle('m-lang-es', 'es');
+  bindToggle('m-lang-en', 'en');
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', (!open).toString());
+    });
+  }
+
+  const headerEl = document.getElementById('site-header');
+  const setTopState = () => {
+    const atTop = window.scrollY < 10;
+    if (!headerEl) return;
+    headerEl.classList.toggle('nav-top', atTop);
+    headerEl.classList.toggle('nav-solid', !atTop);
+  };
+  setTopState();
+  window.addEventListener('scroll', setTopState);
+
+  const svcDd = document.getElementById('svc-dd');
+  const svcTrigger = document.getElementById('svc-trigger');
+  const svcMenu = document.getElementById('svc-menu');
+  const tabTherapies = document.getElementById('svc-tab-therapies');
+  const tabTreatments = document.getElementById('svc-tab-treatments');
+  const listTherapies = document.getElementById('svc-list-therapies');
+  const listTreatments = document.getElementById('svc-list-treatments');
+  let svcHideTimer;
+  const openSvc = () => {
+    if (!svcMenu) return;
+    clearTimeout(svcHideTimer);
+    svcMenu.classList.remove('hidden');
+    svcTrigger?.classList.add('text-neuro-title','is-open');
+  };
+  const closeSvc = () => {
+    if (!svcMenu) return;
+    svcMenu.classList.add('hidden');
+    svcTrigger?.classList.remove('text-neuro-title','is-open');
+  };
+  const showTherapies = () => {
+    tabTherapies?.classList.add('bg-neuro-detail/10');
+    tabTherapies?.classList.remove('bg-white','border','border-neuro-detail','border-transparent');
+    tabTreatments?.classList.add('bg-white');
+    tabTreatments?.classList.remove('bg-neuro-detail/10','border','border-neuro-detail','border-transparent');
+    listTherapies?.classList.remove('hidden');
+    listTreatments?.classList.add('hidden');
+  };
+  const showTreatments = () => {
+    tabTreatments?.classList.add('bg-neuro-detail/10');
+    tabTreatments?.classList.remove('bg-white','border','border-neuro-detail','border-transparent');
+    tabTherapies?.classList.add('bg-white');
+    tabTherapies?.classList.remove('bg-neuro-detail/10','border','border-neuro-detail','border-transparent');
+    listTreatments?.classList.remove('hidden');
+    listTherapies?.classList.add('hidden');
+  };
+  showTherapies();
+  if (svcDd && svcMenu) {
+    svcDd.addEventListener('pointerenter', openSvc);
+    svcDd.addEventListener('pointerleave', () => {
+      clearTimeout(svcHideTimer);
+      svcHideTimer = setTimeout(closeSvc, 160);
+    });
+    svcTrigger?.addEventListener('click', () => {
+      if (!svcMenu) return;
+      const hidden = svcMenu.classList.contains('hidden');
+      if (hidden) { openSvc(); }
+      else { closeSvc(); }
+    });
+  }
+  tabTherapies?.addEventListener('click', showTherapies);
+  tabTreatments?.addEventListener('click', showTreatments);
+  tabTherapies?.addEventListener('pointerenter', showTherapies);
+  tabTreatments?.addEventListener('pointerenter', showTreatments);
+
+  
+</script>

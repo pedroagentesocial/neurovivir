@@ -1,0 +1,13 @@
+{
+  "heroTitle": "Anxiety: practical, culturally sensitive care",
+  "heroSubtitle": "Understand anxiety and regulate the alert system with sustainable habits.",
+  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Care informed by culture and evidence, with clear day-to-day strategies.",
+  "faq": [
+    { "question": "How do I know I need help?", "answer": "If anxiety disrupts sleep, work or relationships for weeks, talking can offer clarity and tools." },
+    { "question": "Is care online?", "answer": "We primarily work via secure, flexible video sessions." },
+    { "question": "What will we do in sessions?", "answer": "Psychoeducation, brief regulation strategies, habit adjustments and a step-by-step plan." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, follow local resources."
+}

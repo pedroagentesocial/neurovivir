@@ -1,0 +1,119 @@
+---
+import Card from "../common/Card.astro";
+import ButtonSecondary from "../common/ButtonSecondary.astro";
+import ProvidersSection from "../providers/ProvidersSection.astro";
+import FAQSection from "../sections/FAQSection.astro";
+import TestimonialsCarousel from "../sections/TestimonialsCarousel.astro";
+interface Props { treatmentId: string }
+const { treatmentId } = Astro.props as Props;
+const es = await import(`../../content/treatments/${treatmentId}.es.json`).catch(() => ({ default: null }));
+const en = await import(`../../content/treatments/${treatmentId}.en.json`).catch(() => ({ default: null }));
+const heroImage = es.default?.heroImage ?? en.default?.heroImage ?? 'https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop';
+const posts = (await import(`../../content/blog/posts.json`)).default.posts;
+---
+<section class="w-full bg-neuro-title py-12 md:py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <div id="tp-hero-es" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+      <div class="space-y-6 text-center md:text-left">
+        <h1 class="font-heading text-white text-3xl md:text-5xl">{es.default?.heroTitle}</h1>
+        <p class="text-white/90">{es.default?.heroSubtitle}</p>
+        <div class="flex gap-3 pt-2 justify-center md:justify-start">
+          <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
+          <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
+        </div>
+        <p class="text-white/80">{es.default?.trustNote}</p>
+      </div>
+      <div class="flex justify-center">
+        <img src={heroImage} alt="Tratamiento" class="rounded-4xl w-full max-w-md object-cover" />
+      </div>
+    </div>
+    <div id="tp-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+      <div class="space-y-6 text-center md:text-left">
+        <h1 class="font-heading text-white text-3xl md:text-5xl">{en.default?.heroTitle}</h1>
+        <p class="text-white/90">{en.default?.heroSubtitle}</p>
+        <div class="flex gap-3 pt-2 justify-center md:justify-start">
+          <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.book ?? 'Book now'}</a>
+          <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.intake ?? 'Complete intake'}</a>
+        </div>
+        <p class="text-white/80">{en.default?.trustNote}</p>
+      </div>
+      <div class="flex justify-center">
+        <img src={heroImage} alt="Treatment" class="rounded-4xl w-full max-w-md object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+<div class="mx-auto max-w-6xl px-4 py-10">
+  <section class="mt-8">
+    <h2 id="tp-benefits-es" class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Beneficios de <span class="text-neuro-secondaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h2>
+    <h2 id="tp-benefits-en" class="hidden font-heading text-neuro-title text-3xl md:text-4xl text-center">Benefits of <span class="text-neuro-secondaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="text-neuro-paragraph">Eliminate commute time and scheduling hassles</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 21s-7-4.35-7-9a4 4 0 018-1 4 4 0 018 1c0 4.65-7 9-7 9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 14h10a3 3 0 013 3v2H6l-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span class="text-neuro-paragraph">No search for a therapist or long wait for an appointment</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="2"/><path d="M6 18a6 6 0 0112 0" stroke="currentColor" stroke-width="2"/></svg>
+          <span class="text-neuro-paragraph">Seamlessly switch providers, at no extra cost</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v2M12 15v2M10 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="text-neuro-paragraph">Receive affordable, high-quality mental health care</span>
+        </div>
+      </Card>
+    </div>
+  </section>
+
+  <ProvidersSection posts={posts} />
+
+  <div id="tp-faq-es">
+    <FAQSection title="FAQ" items={(es.default?.faq ?? [])} />
+  </div>
+  <div id="tp-faq-en" class="hidden">
+    <FAQSection title="FAQ" items={(en.default?.faq ?? [])} />
+  </div>
+
+  <TestimonialsCarousel />
+
+  <section class="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div id="tp-cta-es">
+      <h3 class="font-heading text-neuro-title">¿Listo para agendar?</h3>
+      <p class="text-neuro-paragraph">{es.default?.emergencyNote}</p>
+    </div>
+    <div id="tp-cta-en" class="hidden">
+      <h3 class="font-heading text-neuro-title">Ready to book?</h3>
+      <p class="text-neuro-paragraph">{en.default?.emergencyNote}</p>
+    </div>
+    <div class="flex gap-3">
+      <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
+      <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
+    </div>
+  </section>
+
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+    const blocksEs = ['tp-hero-es','tp-faq-es','tp-cta-es','tp-benefits-es'];
+    const blocksEn = ['tp-hero-en','tp-faq-en','tp-cta-en','tp-benefits-en'];
+    const setVisible = (ids, visible) => ids.forEach(id => {
+      document.getElementById(id)?.classList.toggle('hidden', !visible);
+    });
+    const update = (lang) => {
+      setVisible(blocksEs, lang === 'es');
+      setVisible(blocksEn, lang === 'en');
+    };
+    update(getLang());
+    onLangChange(update);
+  </script>
+</div>

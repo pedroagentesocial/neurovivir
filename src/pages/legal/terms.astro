@@ -1,0 +1,44 @@
+---
+import LegalPage from "../../components/legal/LegalPage.astro";
+const introEs = [
+  "Estos términos establecen las reglas de uso del sitio y servicios de NeuroVivir.",
+  "Buscan transparencia y cuidado en la relación con la comunidad."
+];
+const introEn = [
+  "These terms set the rules for using NeuroVivir’s website and services.",
+  "They aim for transparency and care in our relationship with the community."
+];
+const sectionsEs = [
+  { title: "Definiciones", list: ["‘Sitio’: plataforma web de NeuroVivir","‘Usuario’: persona que accede o utiliza el sitio","‘Contenido’: textos, imágenes, recursos descargables","‘Cuenta’: registro opcional para gestionar servicios"] },
+  { title: "Aceptación", paragraphs: ["Al usar el sitio aceptas estos términos y la política de privacidad. Si no estás de acuerdo, no uses el servicio."] },
+  { title: "Ámbito y propósito", paragraphs: ["El sitio ofrece información psicoeducativa, contenidos y detalles de servicios. No sustituye evaluación clínica individual ni atención de emergencia." ] },
+  { title: "Elegibilidad", paragraphs: ["Debes ser mayor de edad según tu jurisdicción para usar funciones que requieren registro o envío de datos personales."] },
+  { title: "Uso aceptable", list: ["No publicar contenido ilegal, ofensivo o que vulnere derechos","No intentar acceder sin autorización a sistemas o cuentas","No usar el sitio para hostigar, amenazar o suplantar identidad"] },
+  { title: "Cuenta y seguridad", paragraphs: ["Eres responsable de la veracidad de los datos y la confidencialidad de credenciales. Informa de accesos no autorizados." ] },
+  { title: "Propiedad intelectual", paragraphs: ["Marcas, textos y diseños pertenecen a NeuroVivir o licenciantes. Puedes compartir con atribución sin fines comerciales salvo autorización expresa."] },
+  { title: "Enlaces y terceros", paragraphs: ["El sitio puede contener enlaces a terceros. No controlamos ni garantizamos sus prácticas o contenidos." ] },
+  { title: "Disclaimers profesionales", paragraphs: ["El contenido es educativo y no reemplaza evaluación clínica individual. Para decisiones de salud, consulta profesionales cualificados." ] },
+  { title: "Limitación de responsabilidad", paragraphs: ["La información se ofrece ‘tal cual’. No garantizamos disponibilidad continua ni resultados específicos. NeuroVivir no responde por daños derivados del uso del sitio más allá de lo permitido por ley." ] },
+  { title: "Privacidad y cookies", paragraphs: ["El tratamiento de datos se rige por la Política de privacidad y el Aviso de cookies. Consulta dichas páginas para detalles." ] },
+  { title: "Cambios y disponibilidad", paragraphs: ["Podemos actualizar contenidos, funciones y estos términos. Intentaremos avisar cambios relevantes. Puede haber interrupciones por mantenimiento." ] },
+  { title: "Jurisdicción y contacto", paragraphs: ["Estos términos se rigen por la legislación aplicable en nuestro lugar de operación. Contacto: contacto@neurovivir.com." ] },
+  { title: "Aviso", paragraphs: ["Si estás en riesgo inmediato, sigue recursos y protocolos de tu localidad. NeuroVivir no ofrece intervención de emergencia desde este sitio." ] }
+];
+const sectionsEn = [
+  { title: "Definitions", list: ["‘Site’: NeuroVivir’s web platform","‘User’: person who accesses or uses the site","‘Content’: texts, images, downloadable resources","‘Account’: optional registration to manage services"] },
+  { title: "Acceptance", paragraphs: ["By using the site you accept these terms and the privacy policy. If you disagree, please do not use the service."] },
+  { title: "Scope and purpose", paragraphs: ["The site provides psychoeducational information, content and service details. It does not replace individual clinical assessment or emergency care." ] },
+  { title: "Eligibility", paragraphs: ["You must be of legal age in your jurisdiction to use functions that require registration or submission of personal data."] },
+  { title: "Acceptable use", list: ["Do not post illegal, offensive or rights-infringing content","Do not attempt unauthorized access to systems or accounts","Do not use the site to harass, threaten or impersonate"] },
+  { title: "Account and security", paragraphs: ["You are responsible for accurate data and credential confidentiality. Report unauthorized access." ] },
+  { title: "Intellectual property", paragraphs: ["Marks, texts and designs belong to NeuroVivir or licensors. You may share with attribution for non-commercial purposes unless expressly authorized otherwise."] },
+  { title: "Links and third parties", paragraphs: ["The site may contain links to third-party resources. We do not control or guarantee their practices or content." ] },
+  { title: "Professional disclaimers", paragraphs: ["Content is educational and does not replace individual clinical assessment. For health decisions, consult qualified professionals." ] },
+  { title: "Limitation of liability", paragraphs: ["Information is provided ‘as is’. We do not guarantee continuous availability or specific outcomes. NeuroVivir is not liable for damages arising from site use beyond what the law allows." ] },
+  { title: "Privacy and cookies", paragraphs: ["Data processing is governed by the Privacy Policy and Cookies Notice. See those pages for details." ] },
+  { title: "Changes and availability", paragraphs: ["We may update content, features and these terms. We will try to notify relevant changes. Maintenance may cause downtime." ] },
+  { title: "Jurisdiction and contact", paragraphs: ["These terms are governed by the applicable law at our place of operation. Contact: contacto@neurovivir.com." ] },
+  { title: "Notice", paragraphs: ["If you are at immediate risk, follow local resources and protocols. NeuroVivir does not provide emergency intervention from this site." ] }
+];
+---
+<LegalPage id="legal-terms" titleEs="Términos de uso" titleEn="Terms of Use" introEs={introEs} introEn={introEn} sectionsEs={sectionsEs} sectionsEn={sectionsEn} lastUpdated="2025-12-12" />

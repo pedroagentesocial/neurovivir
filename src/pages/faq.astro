@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Card from "../components/common/Card.astro";
+import TestimonialsCarousel from "../components/sections/TestimonialsCarousel.astro";
+import CallInvite from "../components/sections/CallInvite.astro";
+import ProvidersSection from "../components/providers/ProvidersSection.astro";
+const es = (await import("../content/faq/index.es.json")).default.items;
+const en = (await import("../content/faq/index.en.json")).default.items;
+const posts = (await import("../content/blog/posts.json")).default.posts;
+---
+<BaseLayout title="FAQ - NeuroVivir">
+  <section class="w-full bg-neuro-title py-12 md:py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div id="faq-hero-es" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Preguntas frecuentes</h1>
+          <p class="text-white/90">Respuestas claras y prácticas sobre cómo trabajamos.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop" alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
+        </div>
+      </div>
+      <div id="faq-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="font-heading text-white text-3xl md:text-5xl">Frequently asked questions</h1>
+          <p class="text-white/90">Clear, practical answers about our care and process.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop" alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 py-10">
+    <section class="mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-3 md:space-y-4">
+          <h2 class="font-heading text-neuro-title text-5xl md:text-6xl">FAQ</h2>
+          <p class="text-neuro-paragraph">Encuentra respuestas rápidas sobre nuestro proceso clínico y atención.</p>
+        </div>
+        <div id="faq-list" class="space-y-4">
+            {es.map((qa, idx) => (
+              <Card class="bg-neuro-detail hover:translate-y-0" data-lang="es" data-idx={idx}>
+                <details class="space-y-2">
+                  <summary class="font-heading text-neuro-title text-xl md:text-2xl cursor-pointer">{qa.question}</summary>
+                  <p class="text-neuro-paragraph text-lg">{qa.answer}</p>
+                </details>
+              </Card>
+            ))}
+            {en.map((qa, idx) => (
+              <Card class="bg-neuro-detail hover:translate-y-0 hidden" data-lang="en" data-idx={idx}>
+                <details class="space-y-2">
+                  <summary class="font-heading text-neuro-title text-xl md:text-2xl cursor-pointer">{qa.question}</summary>
+                  <p class="text-neuro-paragraph text-lg">{qa.answer}</p>
+                </details>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <ProvidersSection posts={posts} />
+    <TestimonialsCarousel />
+    <CallInvite />
+
+    <script type="module">
+      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+      initLang();
+      const heroEs = document.getElementById('faq-hero-es');
+      const heroEn = document.getElementById('faq-hero-en');
+      const cards = () => Array.from(document.querySelectorAll('#faq-list [data-lang]'));
+      const applyLang = (lang) => {
+        heroEs?.classList.toggle('hidden', lang !== 'es');
+        heroEn?.classList.toggle('hidden', lang !== 'en');
+        cards().forEach((el) => {
+          const plang = el.getAttribute('data-lang') || 'es';
+          const match = plang === lang;
+          el.classList.toggle('hidden', !match || el.classList.contains('search-hidden'));
+        });
+      };
+      
+      applyLang(getLang());
+      onLangChange(applyLang);
+      
+    </script>
+  </div>
+</BaseLayout>
