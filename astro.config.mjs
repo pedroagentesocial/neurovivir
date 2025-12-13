@@ -1,9 +1,9 @@
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
-/** @type {import('astro').AstroUserConfig} */
-export default {
-  integrations: [tailwind({})],
-  server: {
-    port: 4321
-  }
-};
+export default defineConfig({
+  site: "https://pedroagentesocial.github.io/neurovivir/",
+  base: "/neurovivir",
+  integrations: [tailwind()],
+  server: { port: 4321 }
+});
