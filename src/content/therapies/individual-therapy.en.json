@@ -3,6 +3,11 @@
   "heroSubtitle": "A safe, confidential and culturally sensitive space for your personal process.",
   "trustNote": "We work with clinical ethics and respect for your story and context.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
+  "heroBullets": [
+    "Integrative, evidence-based approach",
+    "Personalized goal plan",
+    "Stress regulation and practical tools"
+  ],
   "summary": [
     { "label": "Modality", "value": "Online (video)" },
     { "label": "Population", "value": "Latino adults" },

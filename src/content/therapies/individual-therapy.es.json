@@ -3,6 +3,11 @@
   "heroSubtitle": "Un espacio seguro, confidencial y culturalmente sensible para tu proceso personal.",
   "trustNote": "Trabajamos con ética clínica y respeto por tu historia y contexto.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "heroBullets": [
+    "Enfoque integrativo basado en evidencia",
+    "Plan de objetivos personalizado",
+    "Regulación del estrés y herramientas prácticas"
+  ],
   "summary": [
     { "label": "Modalidad", "value": "Online (video)" },
     { "label": "Población", "value": "Adultos latinoamericanos" },

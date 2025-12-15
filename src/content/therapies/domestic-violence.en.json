@@ -4,6 +4,11 @@
   "trustNote": "We prioritize emotional safety, ethics and cultural perspective.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
   "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1200&auto=format&fit=crop",
+  "heroBullets": [
+    "Psychoeducation and coping strategies",
+    "Safety planning and support networks",
+    "Coordination with community resources"
+  ],
   "whatIs": "Therapeutic support to understand the impact of abuse, regain personal resources and plan safe steps.",
   "howWeWork": "We assess risks, design a clinical plan and coordinate resources when needed, focusing on your autonomy.",
   "whatToExpect": "Confidential sessions, psychoeducation, coping strategies and strengthening support networks.",
@@ -18,4 +23,3 @@
   ],
   "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
 }
-

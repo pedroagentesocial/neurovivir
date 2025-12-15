@@ -4,6 +4,11 @@
   "trustNote": "We work with professional standards and transparent communication at each stage.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
   "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "heroBullets": [
+    "Clear, ethical process",
+    "Clinical instruments and criteria",
+    "Useful report with recommendations"
+  ],
   "whatIs": "Structured clinical assessments to understand your history, current functioning and support needs.",
   "howWeWork": "Initial interview, instruments administration, results integration and feedback with recommendations.",
   "whatToExpect": "On-time appointments, clear guidance and a useful report for care decisions.",
@@ -18,4 +23,3 @@
   ],
   "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
 }
-

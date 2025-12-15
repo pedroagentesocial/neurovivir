@@ -4,6 +4,11 @@
   "trustNote": "Priorizamos tu seguridad emocional, trabajamos con ética y perspectiva cultural.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
   "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1200&auto=format&fit=crop",
+  "heroBullets": [
+    "Psicoeducación y estrategias de afrontamiento",
+    "Plan de seguridad y redes de apoyo",
+    "Coordinación con recursos comunitarios"
+  ],
   "whatIs": "Acompañamiento terapéutico para comprender el impacto del maltrato, recuperar recursos personales y planear pasos seguros.",
   "howWeWork": "Evaluamos riesgos, diseñamos un plan clínico y coordinamos recursos cuando es necesario, con foco en tu autonomía.",
   "whatToExpect": "Sesiones confidenciales, psicoeducación, estrategias de afrontamiento y fortalecimiento de redes de apoyo.",
@@ -18,4 +23,3 @@
   ],
   "emergencyNote": "NeuroVivir no es servicio de emergencia. Si hay riesgo, contacta 911 o servicios locales."
 }
-

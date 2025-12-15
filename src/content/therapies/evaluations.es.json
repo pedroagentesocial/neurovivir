@@ -4,6 +4,11 @@
   "trustNote": "Trabajamos con estándares profesionales y comunicación transparente en cada etapa.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
   "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "heroBullets": [
+    "Proceso claro y ético",
+    "Instrumentos y criterios clínicos",
+    "Informe útil con recomendaciones"
+  ],
   "whatIs": "Evaluaciones clínicas estructuradas para comprender tu historia, funcionamiento actual y necesidades de apoyo.",
   "howWeWork": "Entrevista inicial, aplicación de instrumentos, integración de resultados y devolución con recomendaciones.",
   "whatToExpect": "Citas puntuales, guía clara de cada paso y un informe útil para decisiones de cuidado.",
@@ -18,4 +23,3 @@
   ],
   "emergencyNote": "NeuroVivir no es servicio de emergencia. Si hay riesgo, contacta 911 o servicios locales."
 }
-

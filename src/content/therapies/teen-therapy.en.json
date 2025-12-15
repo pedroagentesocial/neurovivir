@@ -4,6 +4,11 @@
   "trustNote": "We work with professional ethics, evidence-based care and respect for the developmental stage.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
   "heroImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+  "heroBullets": [
+    "Confidentiality with clear family agreements",
+    "Anxiety regulation and social skills",
+    "Development-sensitive care"
+  ],
   "whatIs": "Therapeutic space for adolescents to address emotions, relationships, school and social media, fostering wellbeing and healthy development.",
   "howWeWork": "We conduct a brief intake, set goals with the teen and, when appropriate, involve family with clear guidelines and follow-ups.",
   "whatToExpect": "Confidential sessions, practical exercises and tools to regulate anxiety, improve social skills and cope with changes.",
@@ -18,4 +23,3 @@
   ],
   "emergencyNote": "NeuroVivir is not an emergency service. If at risk, contact 911 or local crisis services."
 }
-
