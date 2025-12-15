@@ -29,7 +29,7 @@ const base = import.meta.env.BASE_URL || "/";
             <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
               <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia individual</h3>
               <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Proceso personal y seguro.</p>
-              <a href="/services/individual-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+              <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -41,7 +41,7 @@ const base = import.meta.env.BASE_URL || "/";
             <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
               <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia de pareja</h3>
               <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Mejoren su comunicación y vínculo.</p>
-              <a href="/services/couples-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+              <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -53,7 +53,7 @@ const base = import.meta.env.BASE_URL || "/";
             <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
               <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia para niños</h3>
               <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Acompañamiento sensible y adecuado.</p>
-              <a href="/services/child-therapy" class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+              <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -70,14 +70,14 @@ const base = import.meta.env.BASE_URL || "/";
                 <h1 class="font-heading text-white text-5xl md:text-6xl">Apoyo en casos de maltrato infantil</h1>
                 <p class="text-white/90 text-xl md:text-2xl">Acompañamiento seguro y profesional para niños y familias.</p>
                 <div class="flex justify-center md:justify-start">
-                  <ButtonPrimary href={`${base}services/child-therapy`} label="Conoce el servicio" />
+                  <ButtonPrimary href={`${base}therapies/teen-therapy`} label="Conoce el servicio" />
                 </div>
               </div>
               <div id="hero2-en" class="hidden text-center md:text-left flex flex-col items-center md:items-start space-y-7">
                 <h1 class="font-heading text-white text-5xl md:text-6xl">Support for childhood abuse</h1>
                 <p class="text-white/90 text-xl md:text-2xl">Safe, professional care for children and families.</p>
                 <div class="flex justify-center md:justify-start">
-                  <ButtonPrimary href={`${base}services/child-therapy`} label="Explore service" />
+                  <ButtonPrimary href={`${base}therapies/teen-therapy`} label="Explore service" />
                 </div>
               </div>
             </div>
@@ -102,14 +102,14 @@ const base = import.meta.env.BASE_URL || "/";
             <h1 class="font-heading text-white text-4xl md:text-5xl">Manejo de ansiedad y estrés</h1>
             <p class="text-white/90 text-lg md:text-xl">Herramientas prácticas y apoyo clínico para tu bienestar.</p>
             <div class="flex justify-center">
-              <ButtonPrimary href="/treatments/anxiety" label="Ver tratamiento" />
+              <ButtonPrimary href={`${base}treatments/anxiety`} label="Ver tratamiento" />
             </div>
           </div>
           <div id="hero3-en" class="hidden relative z-10 text-center flex flex-col items-center space-y-7 max-w-3xl mx-auto">
             <h1 class="font-heading text-white text-4xl md:text-5xl">Anxiety & stress management</h1>
             <p class="text-white/90 text-lg md:text-xl">Practical tools and clinical support for your wellbeing.</p>
             <div class="flex justify-center">
-              <ButtonPrimary href="/treatments/anxiety" label="View treatment" />
+              <ButtonPrimary href={`${base}treatments/anxiety`} label="View treatment" />
             </div>
           </div>
         </div>

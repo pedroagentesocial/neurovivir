@@ -254,6 +254,16 @@ declare module 'astro:content' {
 };
 };
 "services": {
+"accidente-post-choque.en": {
+	id: "accidente-post-choque.en";
+  collection: "services";
+  data: any
+};
+"accidente-post-choque.es": {
+	id: "accidente-post-choque.es";
+  collection: "services";
+  data: any
+};
 "couples-therapy.en": {
 	id: "couples-therapy.en";
   collection: "services";

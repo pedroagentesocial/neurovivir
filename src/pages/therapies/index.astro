@@ -2,10 +2,10 @@
 import BaseLayout from "../../components/layout/BaseLayout.astro";
 import SectionWrapper from "../../components/common/SectionWrapper.astro";
 import Card from "../../components/common/Card.astro";
-const es = await import("../../content/services/index.es.json");
-const en = await import("../../content/services/index.en.json");
+const es = await import("../../content/therapies/index.es.json");
+const en = await import("../../content/therapies/index.en.json");
 ---
-<BaseLayout title="Services - NeuroVivir">
+<BaseLayout title="Therapies - NeuroVivir">
   <SectionWrapper>
     <div id="services-es">
       <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">{es.default.title}</h1>

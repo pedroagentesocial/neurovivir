@@ -72,16 +72,16 @@ export async function getStaticPaths() {
   <div class="mx-auto max-w-6xl px-4 mt-3">
     <nav class="text-sm">
       <div id="bp-bc-es" class="flex items-center gap-2">
-        <a href="/" class="text-neuro-paragraph hover:underline">Inicio</a>
+        <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Inicio</a>
         <span class="text-neuro-paragraph">/</span>
-        <a href="/blog" class="text-neuro-paragraph hover:underline">Blog</a>
+        <a href={`${import.meta.env.BASE_URL}blog`} class="text-neuro-paragraph hover:underline">Blog</a>
         <span class="text-neuro-paragraph">/</span>
         <span class="text-neuro-title">{titleEs}</span>
       </div>
       <div id="bp-bc-en" class="hidden flex items-center gap-2">
-        <a href="/" class="text-neuro-paragraph hover:underline">Home</a>
+        <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Home</a>
         <span class="text-neuro-paragraph">/</span>
-        <a href="/blog" class="text-neuro-paragraph hover:underline">Blog</a>
+        <a href={`${import.meta.env.BASE_URL}blog`} class="text-neuro-paragraph hover:underline">Blog</a>
         <span class="text-neuro-paragraph">/</span>
         <span class="text-neuro-title">{titleEn}</span>
       </div>
