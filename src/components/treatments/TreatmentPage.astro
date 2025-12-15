@@ -18,8 +18,8 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
         <h1 class="font-heading text-white text-3xl md:text-5xl">{es.default?.heroTitle}</h1>
         <p class="text-white/90">{es.default?.heroSubtitle}</p>
         <div class="flex gap-3 pt-2 justify-center md:justify-start">
-          <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
-          <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
+          <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
+          <a href={`${import.meta.env.BASE_URL}intake`} class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
         </div>
         <p class="text-white/80">{es.default?.trustNote}</p>
       </div>
@@ -32,8 +32,8 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
         <h1 class="font-heading text-white text-3xl md:text-5xl">{en.default?.heroTitle}</h1>
         <p class="text-white/90">{en.default?.heroSubtitle}</p>
         <div class="flex gap-3 pt-2 justify-center md:justify-start">
-          <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.book ?? 'Book now'}</a>
-          <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.intake ?? 'Complete intake'}</a>
+          <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.book ?? 'Book now'}</a>
+          <a href={`${import.meta.env.BASE_URL}intake`} class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{en.default?.cta?.intake ?? 'Complete intake'}</a>
         </div>
         <p class="text-white/80">{en.default?.trustNote}</p>
       </div>
@@ -96,8 +96,8 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
       <p class="text-neuro-paragraph">{en.default?.emergencyNote}</p>
     </div>
     <div class="flex gap-3">
-      <a href="/book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
-      <a href="/intake" class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
+      <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
+      <a href={`${import.meta.env.BASE_URL}intake`} class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
     </div>
   </section>
 

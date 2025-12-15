@@ -10,7 +10,7 @@ const { title = "FAQ", subtitle = "", items = [] as QA[] } = Astro.props;
       <h2 class="font-heading text-neuro-title text-4xl md:text-5xl">{title}</h2>
       {subtitle && (<p class="text-neuro-paragraph mt-2 text-lg md:text-xl">{subtitle}</p>)}
       <div class="mt-6 flex items-center justify-center">
-        <img src="/icons/cerebro-neuro.svg" alt="NeuroVivir" class="w-28 h-28" />
+        <img src={`${import.meta.env.BASE_URL}icons/cerebro-neuro.svg`} alt="NeuroVivir" class="w-28 h-28" />
       </div>
     </div>
     <div class="text-lg md:text-xl">
