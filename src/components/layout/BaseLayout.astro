@@ -10,8 +10,8 @@ const { title = "NeuroVivir" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" sizes="any" href="/icons/cerebro-neuro.svg" />
-    <link rel="mask-icon" href="/icons/cerebro-neuro.svg" color="#42A8AF" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href={`${import.meta.env.BASE_URL}icons/cerebro-neuro.svg`} />
+    <link rel="mask-icon" href={`${import.meta.env.BASE_URL}icons/cerebro-neuro.svg`} color="#42A8AF" />
   </head>
   <body class="font-body bg-neuro-background text-neuro-paragraph">
     <Navbar />
