@@ -5,6 +5,7 @@
     { "name": "Terapia individual", "description": "Trabajo personal y seguro.", "href": "/services/individual-therapy" },
     { "name": "Terapia de pareja", "description": "Fortalezcan su vínculo.", "href": "/services/couples-therapy" },
     { "name": "Adolescentes", "description": "Acompañamiento para jóvenes.", "href": "/services/teen-therapy" },
-    { "name": "Evaluación psicológica", "description": "Procesos claros y profesionales.", "href": "/services/evaluations" }
+    { "name": "Evaluación psicológica", "description": "Procesos claros y profesionales.", "href": "/services/evaluations" },
+    { "name": "Accidente post choque", "description": "Apoyo tras choque: regulación y retorno a la rutina.", "href": "/services/accidente-post-choque" }
   ]
 }

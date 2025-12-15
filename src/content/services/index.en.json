@@ -5,6 +5,7 @@
     { "name": "Individual therapy", "description": "Personal and safe work.", "href": "/services/individual-therapy" },
     { "name": "Couples therapy", "description": "Strengthen your bond.", "href": "/services/couples-therapy" },
     { "name": "Teen therapy", "description": "Support for youth.", "href": "/services/teen-therapy" },
-    { "name": "Psychological evaluation", "description": "Clear and professional processes.", "href": "/services/evaluations" }
+    { "name": "Psychological evaluation", "description": "Clear and professional processes.", "href": "/services/evaluations" },
+    { "name": "Post-crash support", "description": "Care after car crash: regulation and return to routine.", "href": "/services/accidente-post-choque" }
   ]
 }
