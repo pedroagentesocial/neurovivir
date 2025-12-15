@@ -1,4 +1,6 @@
 {
+  "heroTitle": "Post-crash support",
+  "heroSubtitle": "Stress regulation and gradual return to routine after a car accident.",
   "heroImage": "https://images.unsplash.com/photo-1518300672262-887fa88a05fc?q=80&w=1080&auto=format&fit=crop",
   "cta": { "book": "Book now" },
   "trustNote": "Trauma-informed care to regain calm and routine after a car crash.",
@@ -9,4 +11,3 @@
   ],
   "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
 }
-
