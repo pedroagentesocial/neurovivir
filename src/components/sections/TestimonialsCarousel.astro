@@ -15,7 +15,7 @@ const list = (items && items.length > 0) ? items : defaults;
 ---
 <SectionWrapper>
   <div class="max-w-6xl mx-auto">
-    <div class="px-4 text-center">
+    <div class="px-4 text-center mb-6 md:mb-8">
       <div id="tc-title-es">
         <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">
           Testimonios de <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span>
@@ -27,7 +27,7 @@ const list = (items && items.length > 0) ? items : defaults;
         </h2>
       </div>
     </div>
-    <div id="testimonials-track" class="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4">
+    <div id="testimonials-track" class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
       {list.map((t: Testimonial) => (
         <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
           <div class="flex items-center gap-4">
