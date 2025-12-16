@@ -12,45 +12,48 @@ const base = import.meta.env.BASE_URL || '/';
   <nav class="hidden md:flex gap-6 text-lg">
       <div class="relative" id="svc-dd">
         <button id="svc-trigger" class="inline-flex items-center gap-2 rounded-4xl border border-transparent px-0 py-0 bg-transparent hover:text-neuro-title transition-colors">
-          <span>Services</span>
+          <span id="svc-label-es" class="hidden">Servicios</span>
+          <span id="svc-label-en">Services</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div id="svc-menu" class="absolute left-0 top-full mt-2 hidden">
           <div class="rounded-4xl shadow-lg border border-neuro-detail bg-white text-neuro-title p-2 md:p-4 flex min-w-[640px]">
             <div class="w-52 pr-3 md:pr-4 space-y-2">
               <button id="svc-tab-therapies" class="w-full inline-flex items-center justify-between rounded-4xl px-3 py-2 bg-white text-neuro-title opacity-80 hover:bg-neuro-detail/10 hover:opacity-100">
-                <span>Therapies</span>
+                <span id="tab-therapies-es" class="hidden">Terapias</span>
+                <span id="tab-therapies-en">Therapies</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
               <button id="svc-tab-treatments" class="w-full inline-flex items-center justify-between rounded-4xl px-3 py-2 bg-white text-neuro-title opacity-80 hover:bg-neuro-detail/10 hover:opacity-100">
-                <span>Treatments</span>
+                <span id="tab-treatments-es" class="hidden">Tratamientos</span>
+                <span id="tab-treatments-en">Treatments</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
             </div>
             <div class="w-px bg-neuro-detail/40 mx-2 md:mx-3"></div>
             <div class="flex-1 pl-2 md:pl-3">
               <ul id="svc-list-therapies" class="grid grid-cols-1 gap-2">
-                <li><a href={`${base}therapies/individual-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Individual therapy</a></li>
-                <li><a href={`${base}therapies/couples-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Couples therapy</a></li>
-                <li><a href={`${base}therapies/teen-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Teen therapy</a></li>
-                <li><a href={`${base}therapies/domestic-violence`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Domestic violence</a></li>
-                <li><a href={`${base}therapies/evaluations`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Psychological evaluation</a></li>
-                <li><a href={`${base}therapies/post-crash-support`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Post-crash support</a></li>
+                <li><a href={`${base}therapies/individual-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-individual-es" class="hidden">Terapia individual</span><span id="th-individual-en">Individual therapy</span></a></li>
+                <li><a href={`${base}therapies/couples-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-couples-es" class="hidden">Terapia de pareja</span><span id="th-couples-en">Couples therapy</span></a></li>
+                <li><a href={`${base}therapies/teen-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-teen-es" class="hidden">Terapia para adolescentes</span><span id="th-teen-en">Teen therapy</span></a></li>
+                <li><a href={`${base}therapies/domestic-violence`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-domestic-es" class="hidden">Violencia doméstica</span><span id="th-domestic-en">Domestic violence</span></a></li>
+                <li><a href={`${base}therapies/evaluations`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-evaluations-es" class="hidden">Evaluación psicológica</span><span id="th-evaluations-en">Psychological evaluation</span></a></li>
+                <li><a href={`${base}therapies/post-crash-support`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-postcrash-es" class="hidden">Apoyo post choque</span><span id="th-postcrash-en">Post-crash support</span></a></li>
               </ul>
               <ul id="svc-list-treatments" class="grid grid-cols-1 gap-2 hidden">
-                <li><a href={`${base}treatments/migration-stress`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Migration stress</a></li>
-                <li><a href={`${base}treatments/anxiety`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Anxiety</a></li>
-                <li><a href={`${base}treatments/depression`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Depression</a></li>
-                <li><a href={`${base}treatments/grief`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Grief</a></li>
-                <li><a href={`${base}treatments/self-esteem`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline">Self-esteem</a></li>
+                <li><a href={`${base}treatments/migration-stress`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-migration-es" class="hidden">Estrés por migración</span><span id="tr-migration-en">Migration stress</span></a></li>
+                <li><a href={`${base}treatments/anxiety`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-anxiety-es" class="hidden">Ansiedad</span><span id="tr-anxiety-en">Anxiety</span></a></li>
+                <li><a href={`${base}treatments/depression`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-depression-es" class="hidden">Depresión</span><span id="tr-depression-en">Depression</span></a></li>
+                <li><a href={`${base}treatments/grief`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-grief-es" class="hidden">Duelo</span><span id="tr-grief-en">Grief</span></a></li>
+                <li><a href={`${base}treatments/self-esteem`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-selfesteem-es" class="hidden">Autoestima</span><span id="tr-selfesteem-en">Self-esteem</span></a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <a href={`${base}blog`} class="hover:text-neuro-title transition-colors">Blog</a>
-      <a href={`${base}faq`} class="hover:text-neuro-title transition-colors">FAQ</a>
-      <a href={`${base}contact`} class="hover:text-neuro-title transition-colors">Contact</a>
+      <a href={`${base}blog`} class="hover:text-neuro-title transition-colors"><span id="nav-blog-es" class="hidden">Blog</span><span id="nav-blog-en">Blog</span></a>
+      <a href={`${base}faq`} class="hover:text-neuro-title transition-colors"><span id="nav-faq-es" class="hidden">FAQ</span><span id="nav-faq-en">FAQ</span></a>
+      <a href={`${base}contact`} class="hover:text-neuro-title transition-colors"><span id="nav-contact-es" class="hidden">Contacto</span><span id="nav-contact-en">Contact</span></a>
     </nav>
 
     <!-- Derecha: Teléfono + CTA + Redes + Idioma (desktop) -->
@@ -64,9 +67,9 @@ const base = import.meta.env.BASE_URL || '/';
         </a>
       </div>
       <div class="flex items-center gap-2" id="lang-toggle-desktop">
-        <button id="lang-es" class="text-neuro-title">ES</button>
+        <button id="lang-es" class="text-neuro-title opacity-100 font-semibold">ES</button>
         <span class="text-neuro-paragraph">|</span>
-        <button id="lang-en" class="text-neuro-paragraph">EN</button>
+        <button id="lang-en" class="text-neuro-paragraph opacity-60">EN</button>
       </div>
       <a href="tel:+15551234567" class="phone text-lg md:text-xl ml-auto hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
       <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base md:text-lg hover:scale-105 transition-transform">
@@ -78,9 +81,9 @@ const base = import.meta.env.BASE_URL || '/';
     <!-- Mobile: Logo + Idioma + Hamburguesa -->
     <div class="flex md:hidden items-center gap-3">
       <div class="flex items-center gap-2" id="lang-toggle-mobile">
-        <button id="m-lang-es" class="text-neuro-title">ES</button>
+        <button id="m-lang-es" class="text-neuro-title opacity-100 font-semibold">ES</button>
         <span class="text-neuro-paragraph">|</span>
-        <button id="m-lang-en" class="text-neuro-paragraph">EN</button>
+        <button id="m-lang-en" class="text-neuro-paragraph opacity-60">EN</button>
       </div>
       <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-4xl border border-neuro-detail hover:scale-105 transition-transform">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></svg>
@@ -91,10 +94,10 @@ const base = import.meta.env.BASE_URL || '/';
   <!-- Mobile menu panel -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-neuro-detail">
       <div class="w-full px-4 py-4 flex flex-col gap-4">
-        <a href={`${base}services`} class="hover:text-neuro-title transition-colors">Services</a>
-        <a href={`${base}blog`} class="hover:text-neuro-title transition-colors">Blog</a>
-        <a href={`${base}faq`} class="hover:text-neuro-title transition-colors">FAQ</a>
-        <a href={`${base}contact`} class="hover:text-neuro-title transition-colors">Contact</a>
+        <a href={`${base}therapies`} class="hover:text-neuro-title transition-colors"><span id="m-nav-services-es" class="hidden">Terapias</span><span id="m-nav-services-en">Therapies</span></a>
+        <a href={`${base}blog`} class="hover:text-neuro-title transition-colors"><span id="m-nav-blog-es" class="hidden">Blog</span><span id="m-nav-blog-en">Blog</span></a>
+        <a href={`${base}faq`} class="hover:text-neuro-title transition-colors"><span id="m-nav-faq-es" class="hidden">FAQ</span><span id="m-nav-faq-en">FAQ</span></a>
+        <a href={`${base}contact`} class="hover:text-neuro-title transition-colors"><span id="m-nav-contact-es" class="hidden">Contacto</span><span id="m-nav-contact-en">Contact</span></a>
         <div class="flex items-center justify-between pt-2">
           <a href="tel:+15551234567" class="phone hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
           <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-5 py-2 text-sm hover:scale-105 transition-transform">
@@ -138,31 +141,82 @@ const base = import.meta.env.BASE_URL || '/';
     const ctaEn = document.getElementById('cta-en');
     const mCtaEs = document.getElementById('m-cta-es');
     const mCtaEn = document.getElementById('m-cta-en');
+    const pairs = [
+      ['svc-label-es','svc-label-en'],
+      ['tab-therapies-es','tab-therapies-en'],
+      ['tab-treatments-es','tab-treatments-en'],
+      ['th-individual-es','th-individual-en'],
+      ['th-couples-es','th-couples-en'],
+      ['th-teen-es','th-teen-en'],
+      ['th-domestic-es','th-domestic-en'],
+      ['th-evaluations-es','th-evaluations-en'],
+      ['th-postcrash-es','th-postcrash-en'],
+      ['tr-migration-es','tr-migration-en'],
+      ['tr-anxiety-es','tr-anxiety-en'],
+      ['tr-depression-es','tr-depression-en'],
+      ['tr-grief-es','tr-grief-en'],
+      ['tr-selfesteem-es','tr-selfesteem-en'],
+      ['nav-blog-es','nav-blog-en'],
+      ['nav-faq-es','nav-faq-en'],
+      ['nav-contact-es','nav-contact-en'],
+      ['m-nav-services-es','m-nav-services-en'],
+      ['m-nav-blog-es','m-nav-blog-en'],
+      ['m-nav-faq-es','m-nav-faq-en'],
+      ['m-nav-contact-es','m-nav-contact-en'],
+    ];
 
     if (!esBtn || !enBtn || !mEsBtn || !mEnBtn) return;
 
     if (lang === 'es') {
       esBtn.classList.add('text-neuro-title');
       esBtn.classList.remove('text-neuro-paragraph');
+      esBtn.classList.add('opacity-100','font-semibold');
+      esBtn.classList.remove('opacity-60');
       enBtn.classList.add('text-neuro-paragraph');
       enBtn.classList.remove('text-neuro-title');
+      enBtn.classList.add('opacity-60');
+      enBtn.classList.remove('opacity-100','font-semibold');
       mEsBtn.classList.add('text-neuro-title');
       mEsBtn.classList.remove('text-neuro-paragraph');
+      mEsBtn.classList.add('opacity-100','font-semibold');
+      mEsBtn.classList.remove('opacity-60');
       mEnBtn.classList.add('text-neuro-paragraph');
       mEnBtn.classList.remove('text-neuro-title');
+      mEnBtn.classList.add('opacity-60');
+      mEnBtn.classList.remove('opacity-100','font-semibold');
       if (ctaEs && ctaEn) { ctaEs.classList.remove('hidden'); ctaEn.classList.add('hidden'); }
       if (mCtaEs && mCtaEn) { mCtaEs.classList.remove('hidden'); mCtaEn.classList.add('hidden'); }
+      pairs.forEach(([esId, enId]) => {
+        const esEl = document.getElementById(esId);
+        const enEl = document.getElementById(enId);
+        esEl?.classList.remove('hidden');
+        enEl?.classList.add('hidden');
+      });
     } else {
       enBtn.classList.add('text-neuro-title');
       enBtn.classList.remove('text-neuro-paragraph');
+      enBtn.classList.add('opacity-100','font-semibold');
+      enBtn.classList.remove('opacity-60');
       esBtn.classList.add('text-neuro-paragraph');
       esBtn.classList.remove('text-neuro-title');
+      esBtn.classList.add('opacity-60');
+      esBtn.classList.remove('opacity-100','font-semibold');
       mEnBtn.classList.add('text-neuro-title');
       mEnBtn.classList.remove('text-neuro-paragraph');
+      mEnBtn.classList.add('opacity-100','font-semibold');
+      mEnBtn.classList.remove('opacity-60');
       mEsBtn.classList.add('text-neuro-paragraph');
       mEsBtn.classList.remove('text-neuro-title');
+      mEsBtn.classList.add('opacity-60');
+      mEsBtn.classList.remove('opacity-100','font-semibold');
       if (ctaEs && ctaEn) { ctaEs.classList.add('hidden'); ctaEn.classList.remove('hidden'); }
       if (mCtaEs && mCtaEn) { mCtaEs.classList.add('hidden'); mCtaEn.classList.remove('hidden'); }
+      pairs.forEach(([esId, enId]) => {
+        const esEl = document.getElementById(esId);
+        const enEl = document.getElementById(enId);
+        esEl?.classList.add('hidden');
+        enEl?.classList.remove('hidden');
+      });
     }
   };
 
