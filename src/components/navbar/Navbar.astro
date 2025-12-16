@@ -71,7 +71,12 @@ const base = import.meta.env.BASE_URL || '/';
         <span class="text-neuro-paragraph">|</span>
         <button id="lang-en" class="text-neuro-paragraph opacity-60">EN</button>
       </div>
-      <a href="tel:+15551234567" class="phone text-lg md:text-xl ml-auto hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
+      <a href="tel:+15551234567" class="phone inline-flex items-center gap-2 text-lg md:text-xl ml-auto hover:underline" aria-label="Call (555) 123-4567">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M22 16.92v2a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.11 3.2 2 2 0 014.11 1h2a2 2 0 012 1.72 12.66 12.66 0 00.65 2.73 2 2 0 01-.45 2.11L7.11 8.89a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45 12.66 12.66 0 002.73.65A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>(555) 123-4567</span>
+      </a>
       <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base md:text-lg hover:scale-105 transition-transform">
         <span id="cta-es">Agendar ahora</span>
         <span id="cta-en" class="hidden">Book now</span>
@@ -99,7 +104,12 @@ const base = import.meta.env.BASE_URL || '/';
         <a href={`${base}faq`} class="hover:text-neuro-title transition-colors"><span id="m-nav-faq-es" class="hidden">FAQ</span><span id="m-nav-faq-en">FAQ</span></a>
         <a href={`${base}contact`} class="hover:text-neuro-title transition-colors"><span id="m-nav-contact-es" class="hidden">Contacto</span><span id="m-nav-contact-en">Contact</span></a>
         <div class="flex items-center justify-between pt-2">
-          <a href="tel:+15551234567" class="phone hover:underline" aria-label="Call (555) 123-4567">(555) 123-4567</a>
+          <a href="tel:+15551234567" class="phone inline-flex items-center gap-2 hover:underline" aria-label="Call (555) 123-4567">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M22 16.92v2a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.11 3.2 2 2 0 014.11 1h2a2 2 0 012 1.72 12.66 12.66 0 00.65 2.73 2 2 0 01-.45 2.11L7.11 8.89a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45 12.66 12.66 0 002.73.65A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>(555) 123-4567</span>
+          </a>
           <a href="#book" class="rounded-4xl bg-neuro-primaryButton text-white px-5 py-2 text-sm hover:scale-105 transition-transform">
             <span id="m-cta-es">Agendar ahora</span>
             <span id="m-cta-en" class="hidden">Book now</span>
