@@ -4,6 +4,11 @@
   "heroImage": "https://images.unsplash.com/photo-1518300672262-887fa88a05fc?q=80&w=1080&auto=format&fit=crop",
   "cta": { "book": "Book now" },
   "trustNote": "Trauma-informed care to regain calm and routine after a car crash.",
+  "heroBullets": [
+    "Brief post-accident stress regulation",
+    "Safe route planning and gradual exposure",
+    "Rest routines and emotional support"
+  ],
   "faq": [
     { "question": "What do we work on in sessions?", "answer": "Psychoeducation about anxiety and post-accident stress, brief regulation techniques, route planning and rest routines." },
     { "question": "When should I seek help?", "answer": "If you notice intense driving fear, startle responses, insomnia or repetitive thoughts for weeks, talking can help." },

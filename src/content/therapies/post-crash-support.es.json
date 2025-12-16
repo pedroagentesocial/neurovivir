@@ -4,6 +4,11 @@
   "heroImage": "https://images.unsplash.com/photo-1518300672262-887fa88a05fc?q=80&w=1080&auto=format&fit=crop",
   "cta": { "book": "Agendar ahora" },
   "trustNote": "Atención informada en trauma para recuperar calma y ritmo tras un choque.",
+  "heroBullets": [
+    "Regulación breve del estrés postaccidente",
+    "Planificación segura de rutas y exposición gradual",
+    "Rutinas de descanso y apoyo emocional"
+  ],
   "faq": [
     { "question": "¿Qué trabajamos en sesión?", "answer": "Psicoeducación sobre ansiedad y estrés postaccidente, técnicas de regulación breve, planificación de trayectos y rutinas de descanso." },
     { "question": "¿Cuándo conviene pedir ayuda?", "answer": "Si notas miedo intenso al manejar, sobresaltos, insomnio o pensamientos repetitivos por semanas, conversar puede ayudarte." },
