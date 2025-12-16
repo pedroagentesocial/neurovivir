@@ -15,8 +15,20 @@ const list = (items && items.length > 0) ? items : defaults;
 ---
 <SectionWrapper>
   <div class="max-w-6xl mx-auto">
+    <div class="px-4 text-center">
+      <div id="tc-title-es">
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">
+          Testimonios de <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span>
+        </h2>
+      </div>
+      <div id="tc-title-en" class="hidden">
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">
+          Testimonials from <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span>
+        </h2>
+      </div>
+    </div>
     <div id="testimonials-track" class="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4">
-      {list.map((t) => (
+      {list.map((t: Testimonial) => (
         <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
           <div class="flex items-center gap-4">
             <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />
@@ -32,6 +44,16 @@ const list = (items && items.length > 0) ? items : defaults;
   </div>
 </SectionWrapper>
 <script type="module">
+  import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+  initLang();
+  const esEl = document.getElementById('tc-title-es');
+  const enEl = document.getElementById('tc-title-en');
+  const updateTitle = (lang) => {
+    esEl?.classList.toggle('hidden', lang !== 'es');
+    enEl?.classList.toggle('hidden', lang !== 'en');
+  };
+  updateTitle(getLang());
+  onLangChange(updateTitle);
   const track = document.getElementById('testimonials-track');
   let timer;
   const start = () => {
@@ -50,4 +72,3 @@ const list = (items && items.length > 0) ? items : defaults;
   track?.addEventListener('mouseenter', stop);
   track?.addEventListener('mouseleave', start);
 </script>
-
