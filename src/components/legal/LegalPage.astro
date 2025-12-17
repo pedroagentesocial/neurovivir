@@ -17,7 +17,7 @@ const {
       <div id={`${id}-hero-es`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
         <div class="space-y-6 text-center md:text-left">
           <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEs}</h1>
-          {introEs.map((p) => (<p class="text-white/90">{p}</p>))}
+          {introEs.map((p: string) => (<p class="text-white/90">{p}</p>))}
           {lastUpdated ? (<p class="text-white/70 text-sm">Actualizado: {lastUpdated}</p>) : null}
         </div>
         <div class="flex justify-center md:justify-end">
@@ -32,7 +32,7 @@ const {
       <div id={`${id}-hero-en`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
         <div class="space-y-6 text-center md:text-left">
           <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEn}</h1>
-          {introEn.map((p) => (<p class="text-white/90">{p}</p>))}
+          {introEn.map((p: string) => (<p class="text-white/90">{p}</p>))}
           {lastUpdated ? (<p class="text-white/70 text-sm">Last updated: {lastUpdated}</p>) : null}
         </div>
         <div class="flex justify-center md:justify-end">
@@ -68,35 +68,40 @@ const {
 
   <div class="mx-auto max-w-6xl px-4 py-10">
     <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
-      <div class="flex flex-wrap gap-2">
+      <div id={`${id}-links-es`} class="flex flex-wrap gap-2">
         <a href={`${import.meta.env.BASE_URL}legal/terms`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Términos</a>
         <a href={`${import.meta.env.BASE_URL}legal/privacy`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Privacidad</a>
+        <a href={`${import.meta.env.BASE_URL}legal/cookies`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Cookies</a>
+      </div>
+      <div id={`${id}-links-en`} class="hidden flex flex-wrap gap-2">
+        <a href={`${import.meta.env.BASE_URL}legal/terms`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Terms</a>
+        <a href={`${import.meta.env.BASE_URL}legal/privacy`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Privacy</a>
         <a href={`${import.meta.env.BASE_URL}legal/cookies`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Cookies</a>
       </div>
     </div>
 
     <article class="prose prose-lg max-w-none leading-[1.5] mt-6">
       <div id={`${id}-body-es`}>
-        {sectionsEs.map((s) => (
+        {sectionsEs.map((s: { title: string; list?: string[]; paragraphs?: string[] }) => (
           <Fragment>
             <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
-            {(s.paragraphs ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+            {(s.paragraphs ?? []).map((p: string) => (<p class="text-neuro-paragraph">{p}</p>))}
             {s.list ? (
               <ul class="list-disc pl-6">
-                {s.list.map((li) => (<li class="text-neuro-paragraph">{li}</li>))}
+                {s.list.map((li: string) => (<li class="text-neuro-paragraph">{li}</li>))}
               </ul>
             ) : null}
           </Fragment>
         ))}
       </div>
       <div id={`${id}-body-en`} class="hidden">
-        {sectionsEn.map((s) => (
+        {sectionsEn.map((s: { title: string; list?: string[]; paragraphs?: string[] }) => (
           <Fragment>
             <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
-            {(s.paragraphs ?? []).map((p) => (<p class="text-neuro-paragraph">{p}</p>))}
+            {(s.paragraphs ?? []).map((p: string) => (<p class="text-neuro-paragraph">{p}</p>))}
             {s.list ? (
               <ul class="list-disc pl-6">
-                {s.list.map((li) => (<li class="text-neuro-paragraph">{li}</li>))}
+                {s.list.map((li: string) => (<li class="text-neuro-paragraph">{li}</li>))}
               </ul>
             ) : null}
           </Fragment>
@@ -104,15 +109,20 @@ const {
       </div>
     </article>
 
-    <script type="module">
-      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-      initLang();
-      const heroEs = document.getElementById(`${"" + id}-hero-es`);
-      const heroEn = document.getElementById(`${"" + id}-hero-en`);
-      const bcEs = document.getElementById(`${"" + id}-bc-es`);
-      const bcEn = document.getElementById(`${"" + id}-bc-en`);
-      const bodyEs = document.getElementById(`${"" + id}-body-es`);
-      const bodyEn = document.getElementById(`${"" + id}-body-en`);
+  <script type="module">
+    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    initLang();
+      const pageId = "${id}";
+      const titleEsVal = "${titleEs}";
+      const titleEnVal = "${titleEn}";
+      const heroEs = document.getElementById(`${pageId}-hero-es`);
+      const heroEn = document.getElementById(`${pageId}-hero-en`);
+      const bcEs = document.getElementById(`${pageId}-bc-es`);
+      const bcEn = document.getElementById(`${pageId}-bc-en`);
+      const bodyEs = document.getElementById(`${pageId}-body-es`);
+      const bodyEn = document.getElementById(`${pageId}-body-en`);
+      const linksEs = document.getElementById(`${pageId}-links-es`);
+      const linksEn = document.getElementById(`${pageId}-links-en`);
       const update = (lang) => {
         heroEs?.classList.toggle('hidden', lang !== 'es');
         heroEn?.classList.toggle('hidden', lang !== 'en');
@@ -120,8 +130,14 @@ const {
         bcEn?.classList.toggle('hidden', lang !== 'en');
         bodyEs?.classList.toggle('hidden', lang !== 'es');
         bodyEn?.classList.toggle('hidden', lang !== 'en');
+        linksEs?.classList.toggle('hidden', lang !== 'es');
+        linksEn?.classList.toggle('hidden', lang !== 'en');
+        document.title = (lang === 'es' ? `${titleEsVal} - NeuroVivir` : `${titleEnVal} - NeuroVivir`);
       };
-      update(getLang());
+      const initialLang = (() => {
+        try { return getLang() || localStorage.getItem('lang') || 'es'; } catch { return 'es'; }
+      })();
+      update(initialLang);
       onLangChange(update);
     </script>
   </div>

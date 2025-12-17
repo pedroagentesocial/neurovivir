@@ -23,48 +23,87 @@ const base = import.meta.env.BASE_URL || "/";
             <h1 class="font-heading text-white text-5xl md:text-6xl">You deserve to feel well</h1>
             <p class="text-white/90 text-lg md:text-xl">What kind of therapy are you seeking?</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
-          <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia individual</h3>
-              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Proceso personal y seguro.</p>
-              <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </Card>
-          <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia de pareja</h3>
-              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Mejoren su comunicación y vínculo.</p>
-              <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </Card>
-          <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-              <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia para niños</h3>
-              <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Acompañamiento sensible y adecuado.</p>
-              <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </Card>
+          <div id="hero-cards-es" class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
+            <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/individual.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia individual</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Proceso personal y seguro.</p>
+                <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
+            <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/couple.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia de pareja</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Mejoren su comunicación y vínculo.</p>
+                <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
+            <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/teen.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia para niños</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Acompañamiento sensible y adecuado.</p>
+                <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
           </div>
+          <div id="hero-cards-en" class="hidden grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
+            <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/individual.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Individual therapy</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Personal and safe process.</p>
+                <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
+            <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/couple.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Couples therapy</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Improve communication and bond.</p>
+                <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
+            <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/teen.png)`}>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
+                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Teen therapy</h3>
+                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Sensitive and appropriate support.</p>
+                <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </Card>
+          </div>
+          
           
         </div>
         <div id="hero-slide-2" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden">
-          <div class="mx-auto max-w-6xl px-4 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="mx-auto max-w-6xl px-4 py-3 md:py-4 -mt-32 md:-mt-40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="relative z-10">
               <div id="hero2-es" class="text-center md:text-left flex flex-col items-center md:items-start space-y-7">
                 <h1 class="font-heading text-white text-5xl md:text-6xl">Apoyo en casos de maltrato infantil</h1>
@@ -81,9 +120,7 @@ const base = import.meta.env.BASE_URL || "/";
                 </div>
               </div>
             </div>
-            <div class="flex justify-center">
-              <img src={`${base}images/teen-therapy.png`} alt="Child illustration" class="rounded-[48px] w-full max-w-xl md:max-w-2xl h-64 md:h-96 object-cover" />
-            </div>
+            <div class="rounded-[48px] overflow-hidden w-full min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] bg-contain bg-center bg-no-repeat" style={`background-image: url(${base}images/child.png)`}></div>
           </div>
         </div>
         <div id="hero-slide-3" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden flex items-center justify-center">
@@ -99,17 +136,27 @@ const base = import.meta.env.BASE_URL || "/";
             <rect x="74" y="96" width="12" height="30" rx="6" fill="#D3EBF5"/>
           </svg>
           <div id="hero3-es" class="relative z-10 text-center flex flex-col items-center space-y-7 max-w-3xl mx-auto">
-            <h1 class="font-heading text-white text-4xl md:text-5xl">Manejo de ansiedad y estrés</h1>
-            <p class="text-white/90 text-lg md:text-xl">Herramientas prácticas y apoyo clínico para tu bienestar.</p>
+            <h1 class="font-heading text-white text-4xl md:text-5xl">Apoyo post choque</h1>
+            <p class="text-white/90 text-lg md:text-xl">Regulación del estrés y vuelta gradual a la rutina tras un accidente.</p>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Regulación breve</span>
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Exposición gradual segura</span>
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Rutinas de descanso</span>
+            </div>
             <div class="flex justify-center">
-              <ButtonPrimary href={`${base}treatments/anxiety`} label="Ver tratamiento" />
+              <ButtonPrimary href={`${base}therapies/post-crash-support`} label="Conoce el servicio" />
             </div>
           </div>
           <div id="hero3-en" class="hidden relative z-10 text-center flex flex-col items-center space-y-7 max-w-3xl mx-auto">
-            <h1 class="font-heading text-white text-4xl md:text-5xl">Anxiety & stress management</h1>
-            <p class="text-white/90 text-lg md:text-xl">Practical tools and clinical support for your wellbeing.</p>
+            <h1 class="font-heading text-white text-4xl md:text-5xl">Post-crash support</h1>
+            <p class="text-white/90 text-lg md:text-xl">Stress regulation and gradual return to routine after a car accident.</p>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Brief regulation</span>
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Safe gradual exposure</span>
+              <span class="px-3 py-1 rounded-full border border-white/50 bg-white/10 text-white text-sm">Rest routines</span>
+            </div>
             <div class="flex justify-center">
-              <ButtonPrimary href={`${base}treatments/anxiety`} label="View treatment" />
+              <ButtonPrimary href={`${base}therapies/post-crash-support`} label="Explore service" />
             </div>
           </div>
         </div>
@@ -136,35 +183,65 @@ const base = import.meta.env.BASE_URL || "/";
     <div class="max-w-6xl mx-auto text-center">
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
         <div class="flex justify-center">
-          <img src="https://picsum.photos/seed/neuro-included/720/540" alt="Therapy illustration" class="rounded-4xl w-full max-w-lg object-contain" />
+          <img src={`${base}images/included.png`} alt="Therapy illustration" class="rounded-4xl w-full max-w-lg object-contain" />
         </div>
         <div class="text-left mx-auto max-w-lg">
-          <h2 class="font-heading text-4xl md:text-5xl mb-8">
-            <span class="text-neuro-paragraph">What’s included</span>
-            <span class="text-neuro-title block">with Neurovivir</span>
-          </h2>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M12 8v5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
-              <span class="text-neuro-paragraph text-lg md:text-xl">Access to a licensed therapist in 2 days (or sooner)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <span class="text-neuro-paragraph text-lg md:text-xl">Therapy sessions over video, voice, or live chat (your choice)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 5h12a4 4 0 014 4v6a4 4 0 01-4 4H9l-5 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              <span class="text-neuro-paragraph text-lg md:text-xl">Unlimited messaging with your therapist, 24/7*</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M3 7h7l-2 3 2 3H3V7zM21 17h-7l2-3-2-3h7v6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              <span class="text-neuro-paragraph text-lg md:text-xl">Switch therapists any time at no cost</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 16V8m8 8V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <span class="text-neuro-paragraph text-lg md:text-xl">Between-session support with Talkcast personalized podcasts</span>
-            </li>
-          </ul>
+          <div id="included-en">
+            <h2 class="font-heading text-4xl md:text-5xl mb-8">
+              <span class="text-neuro-paragraph">What’s included</span>
+              <span class="text-neuro-title block">with Neurovivir</span>
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M12 8v5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Access to a licensed therapist in 2 days (or sooner)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Therapy sessions over video, voice, or live chat (your choice)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 5h12a4 4 0 014 4v6a4 4 0 01-4 4H9l-5 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Unlimited messaging with your therapist</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M3 7h7l-2 3 2 3H3V7zM21 17h-7l2-3-2-3h7v6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Switch therapists any time at no cost</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="10" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 19c1.5-3 4-5 7-5s5.5 2 7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Between-session support with personalized peer support</span>
+              </li>
+            </ul>
+          </div>
+          <div id="included-es" class="hidden">
+            <h2 class="font-heading text-4xl md:text-5xl mb-8">
+              <span class="text-neuro-paragraph">Qué incluye</span>
+              <span class="text-neuro-title block">con NeuroVivir</span>
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M12 8v5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Acceso a un terapeuta licenciado en 2 días (o antes)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Sesiones por video, voz o chat (tú eliges)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M4 5h12a4 4 0 014 4v6a4 4 0 01-4 4H9l-5 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Mensajería ilimitada con tu terapeuta</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><path d="M3 7h7l-2 3 2 3H3V7zM21 17h-7l2-3-2-3h7v6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Cambia de terapeuta en cualquier momento sin costo</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="mt-0.5 text-neuro-title"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="10" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 19c1.5-3 4-5 7-5s5.5 2 7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="text-neuro-paragraph text-lg md:text-xl">Apoyo entre sesiones con peer support personalizados</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -173,29 +250,35 @@ const base = import.meta.env.BASE_URL || "/";
   <SectionWrapper>
     <div class="max-w-6xl mx-auto">
       <div class="bg-yellow-100 rounded-4xl px-6 py-10 md:px-8 md:py-12 text-center">
-        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Human-centered care, measurable impact</h2>
-        <p class="text-neuro-paragraph mt-2">Outcomes that matter with Neurovivir</p>
+        <div id="impact-en">
+          <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Human-centered care, measurable impact</h2>
+          <p class="text-neuro-paragraph mt-2">Outcomes that matter with Neurovivir</p>
+        </div>
+        <div id="impact-es" class="hidden">
+          <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Atención centrada en las personas, impacto medible</h2>
+          <p class="text-neuro-paragraph mt-2">Resultados que importan con NeuroVivir</p>
+        </div>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
             <div class="flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 12a5 5 0 100-10 5 5 0 000 10z" stroke="currentColor" stroke-width="2"/><path d="M3 22a9 9 0 1118 0H3z" stroke="currentColor" stroke-width="2"/></svg>
               <span class="font-heading text-neuro-title text-4xl md:text-5xl">5,000+</span>
             </div>
-            <div class="mt-2 text-neuro-paragraph">members helped</div>
+            <div class="mt-2 text-neuro-paragraph"><span id="impact-card1-es" class="hidden">personas atendidas</span><span id="impact-card1-en">members helped</span></div>
           </div>
           <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
             <div class="flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               <span class="font-heading text-neuro-title text-4xl md:text-5xl">25,000+</span>
             </div>
-            <div class="mt-2 text-neuro-paragraph">therapy sessions</div>
+            <div class="mt-2 text-neuro-paragraph"><span id="impact-card2-es" class="hidden">sesiones de terapia</span><span id="impact-card2-en">therapy sessions</span></div>
           </div>
           <div class="rounded-4xl border border-neuro-detail bg-white px-6 py-8">
             <div class="flex items-center justify-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 17.5l-5.5 3 1-6-4.5-4 6.2-.9L12 3l2.8 6.6 6.2.9-4.5 4 1 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
               <span class="font-heading text-neuro-title text-4xl md:text-5xl">4.8/5</span>
             </div>
-            <div class="mt-2 text-neuro-paragraph">average satisfaction</div>
+            <div class="mt-2 text-neuro-paragraph"><span id="impact-card3-es" class="hidden">satisfacción promedio</span><span id="impact-card3-en">average satisfaction</span></div>
           </div>
         </div>
       </div>
@@ -206,27 +289,53 @@ const base = import.meta.env.BASE_URL || "/";
     <div id="howto-container" class="rounded-4xl transition-colors transition-opacity duration-300 p-2 md:p-3 bg-neuro-background opacity-100">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
         <div id="howto-steps" class="space-y-4 w-full max-w-lg md:max-w-xl">
-          <h2 class="font-heading text-4xl md:text-5xl">
-            <span class="text-neuro-paragraph">How works</span>
-            <span class="text-neuro-title block">with NeuroVivir</span>
-          </h2>
-          <div id="howto-steps-cards" class="space-y-4">
-            <Card class="cursor-pointer hover:bg-neuro-detail" data-img="https://picsum.photos/seed/eligibility/720/540" data-bgclass="bg-neuro-detail">
-              <h3 class="font-heading text-neuro-title">Check eligibility</h3>
-              <p class="text-neuro-paragraph">Confirm coverage and get started fast.</p>
-            </Card>
-            <Card class="cursor-pointer hover:bg-yellow-100 hover:border-transparent" data-img="https://picsum.photos/seed/match/720/540" data-bgclass="bg-yellow-100">
-              <h3 class="font-heading text-neuro-title">Get matched with a Therapist</h3>
-              <p class="text-neuro-paragraph">We pair you with the right professional.</p>
-            </Card>
-            <Card class="cursor-pointer hover:bg-orange-100 hover:border-transparent" data-img="https://picsum.photos/seed/start/720/540" data-bgclass="bg-orange-100">
-              <h3 class="font-heading text-neuro-title">Start therapy</h3>
-              <p class="text-neuro-paragraph">Begin sessions via video, voice or chat.</p>
-            </Card>
-            <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img="https://picsum.photos/seed/switch/720/540" data-bgclass="bg-green-100">
-              <h3 class="font-heading text-neuro-title">Switch providers any time</h3>
-              <p class="text-neuro-paragraph">Change therapists at no additional cost.</p>
-            </Card>
+          <div id="howto-en">
+            <h2 class="font-heading text-4xl md:text-5xl">
+              <span class="text-neuro-paragraph">How it works</span>
+              <span class="text-neuro-title block">with NeuroVivir</span>
+            </h2>
+            <div id="howto-steps-cards" class="mt-6 md:mt-10 space-y-4">
+              <Card class="cursor-pointer hover:bg-neuro-detail" data-img={`${base}images/check.png`} data-bgclass="bg-neuro-detail">
+                <h3 class="font-heading text-neuro-title">Check eligibility</h3>
+                <p class="text-neuro-paragraph">Confirm coverage and get started fast.</p>
+              </Card>
+              <Card class="cursor-pointer hover:bg-yellow-100 hover:border-transparent" data-img={`${base}images/match.png`} data-bgclass="bg-yellow-100">
+                <h3 class="font-heading text-neuro-title">Get matched with a Therapist</h3>
+                <p class="text-neuro-paragraph">Stay connected with your therapist between sessions.</p>
+              </Card>
+              <Card class="cursor-pointer hover:bg-orange-100 hover:border-transparent" data-img={`${base}images/start.png`} data-bgclass="bg-orange-100">
+                <h3 class="font-heading text-neuro-title">Start therapy</h3>
+                <p class="text-neuro-paragraph">Consistent communication helps progress toward your goals.</p>
+              </Card>
+              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/therapist.png`} data-bgclass="bg-green-100">
+                <h3 class="font-heading text-neuro-title">Switch providers any time</h3>
+                <p class="text-neuro-paragraph">Maintain ongoing, professional contact with the right therapist.</p>
+              </Card>
+            </div>
+          </div>
+          <div id="howto-es" class="hidden">
+            <h2 class="font-heading text-4xl md:text-5xl">
+              <span class="text-neuro-paragraph">Cómo funciona</span>
+              <span class="text-neuro-title block">con NeuroVivir</span>
+            </h2>
+            <div class="mt-6 md:mt-10 space-y-4">
+              <Card class="cursor-pointer hover:bg-neuro-detail" data-img={`${base}images/check.png`} data-bgclass="bg-neuro-detail">
+                <h3 class="font-heading text-neuro-title">Verifica elegibilidad</h3>
+                <p class="text-neuro-paragraph">Confirma cobertura y empieza rápido.</p>
+              </Card>
+              <Card class="cursor-pointer hover:bg-yellow-100 hover:border-transparent" data-img={`${base}images/match.png`} data-bgclass="bg-yellow-100">
+                <h3 class="font-heading text-neuro-title">Te asignamos un terapeuta</h3>
+                <p class="text-neuro-paragraph">Mantén comunicación con tu terapeuta entre sesiones.</p>
+              </Card>
+              <Card class="cursor-pointer hover:bg-orange-100 hover:border-transparent" data-img={`${base}images/start.png`} data-bgclass="bg-orange-100">
+                <h3 class="font-heading text-neuro-title">Comienza terapia</h3>
+                <p class="text-neuro-paragraph">Una comunicación constante sostiene tu avance hacia tus metas.</p>
+              </Card>
+              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/therapist.png`} data-bgclass="bg-green-100">
+                <h3 class="font-heading text-neuro-title">Cambia profesionales cuando necesites</h3>
+                <p class="text-neuro-paragraph">Contacto profesional continuo con el terapeuta adecuado.</p>
+              </Card>
+            </div>
           </div>
         </div>
         <div id="howto-image-wrap" class="flex justify-center rounded-4xl self-start mt-20 md:mt-28">
@@ -238,21 +347,32 @@ const base = import.meta.env.BASE_URL || "/";
 
   <ProvidersSection posts={posts} />
 
-  <FAQSection title="Answers you can trust" subtitle="Find trust-worthy answers on all things mental health at Neurovivir." items={[
-    { question: '¿Las sesiones son online?', answer: 'Sí, trabajamos por videollamada segura.' },
-    { question: '¿Atienden fuera de EUA?', answer: 'Por ahora nuestra atención está enfocada en residentes de EUA.' },
-    { question: '¿Cómo elijo a mi terapeuta?', answer: 'Te guiamos según tu necesidad y preferencias.' },
-    { question: '¿Qué frecuencia recomiendan?', answer: 'Suele ser semanal, ajustable según el proceso.' },
-    { question: '¿Aceptan seguros médicos?', answer: 'Validamos cobertura y te guiamos con tu plan de salud.' }
-  ]} />
+  <div id="faq-es">
+    <FAQSection title="Respuestas en las que puedes confiar" items={[
+      { question: '¿Las sesiones son online?', answer: 'Sí, trabajamos por videollamada segura.' },
+      { question: '¿Atienden fuera de EUA?', answer: 'Por ahora nuestra atención está enfocada en residentes de EUA.' },
+      { question: '¿Cómo elijo a mi terapeuta?', answer: 'Te guiamos según tu necesidad y preferencias.' },
+      { question: '¿Qué frecuencia recomiendan?', answer: 'Suele ser semanal, ajustable según el proceso.' },
+      { question: '¿Aceptan seguros médicos?', answer: 'Validamos cobertura y te guiamos con tu plan de salud.' }
+    ]} />
+  </div>
+  <div id="faq-en" class="hidden">
+    <FAQSection title="Answers you can trust" subtitle="Find trust-worthy answers on all things mental health at Neurovivir." items={[
+      { question: 'Are sessions online?', answer: 'Yes, we work via secure video calls.' },
+      { question: 'Do you serve outside the U.S.?', answer: 'Currently our care focuses on U.S. residents.' },
+      { question: 'How do I choose my therapist?', answer: 'We guide you based on your needs and preferences.' },
+      { question: 'What frequency do you recommend?', answer: 'Usually weekly, adjustable to the process.' },
+      { question: 'Do you accept insurance?', answer: 'We validate coverage and guide you through your plan.' }
+    ]} />
+  </div>
 
   <TestimonialsCarousel />
 
   <script type="module">
     import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
     initLang();
-    const esBlocks = ['hero-es','hero2-es','hero3-es'];
-    const enBlocks = ['hero-en','hero2-en','hero3-en'];
+    const esBlocks = ['hero-es','hero2-es','hero3-es','hero-cards-es','included-es','impact-es','howto-es','faq-es'];
+    const enBlocks = ['hero-en','hero2-en','hero3-en','hero-cards-en','included-en','impact-en','howto-en','faq-en'];
     const setVisible = (ids, visible) => ids.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -319,12 +439,17 @@ const base = import.meta.env.BASE_URL || "/";
     const howtoImg = document.getElementById('howto-image');
     const howtoWrap = document.getElementById('howto-image-wrap');
     const howtoContainer = document.getElementById('howto-container');
-    const howtoCardsBox = document.getElementById('howto-steps-cards');
     const stepEls = document.querySelectorAll('#howto-steps [data-img]');
 
     const fitImageHeight = () => {
-      if (howtoImg && howtoCardsBox) {
-        howtoImg.style.height = `${howtoCardsBox.clientHeight}px`;
+      const visibleBlock = document.querySelector('#howto-steps > div:not(.hidden)');
+      if (howtoImg && visibleBlock) {
+      let h = 0;
+      if (visibleBlock) {
+        const r = visibleBlock.getBoundingClientRect();
+        h = r && r.height ? r.height : 0;
+      }
+      if (howtoImg) howtoImg.style.height = `${h}px`;
       }
     };
     window.addEventListener('load', fitImageHeight);

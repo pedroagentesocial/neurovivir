@@ -1,5 +1,5 @@
 {
-  "heroTitle": "Terapia individual para latinos en Estados Unidos",
+  "heroTitle": "Terapia individual",
   "heroSubtitle": "Un espacio seguro, confidencial y culturalmente sensible para tu proceso personal.",
   "trustNote": "Trabajamos con ética clínica y respeto por tu historia y contexto.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
@@ -8,9 +8,22 @@
     "Plan de objetivos personalizado",
     "Regulación del estrés y herramientas prácticas"
   ],
+  "heroImage": "/images/individual.png",
+  "helpBullets": [
+    "Regulación de ansiedad y estrés con ejercicios prácticos",
+    "Fortalecimiento de autoestima y proyecto personal",
+    "Mejora de relaciones y límites saludables",
+    "Acompañamiento en adaptación migratoria y vida bicultural"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Sensibilidad cultural y experiencia con población latina y migrante",
+    "Atención online segura y flexible",
+    "Plan de objetivos y seguimiento claro"
+  ],
   "summary": [
     { "label": "Modalidad", "value": "Online (video)" },
-    { "label": "Población", "value": "Adultos latinoamericanos" },
+    { "label": "Población", "value": "Adultos" },
     { "label": "Duración", "value": "50 minutos" },
     { "label": "Frecuencia", "value": "Semanal / Ajustable" }
   ],

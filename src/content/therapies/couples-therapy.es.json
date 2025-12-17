@@ -1,9 +1,21 @@
 {
-  "heroTitle": "Terapia de pareja para latinos en Estados Unidos",
+  "heroTitle": "Terapia de pareja",
   "heroSubtitle": "Espacio seguro y respetuoso para mejorar comunicación, vínculo y proyecto en común.",
   "trustNote": "Trabajamos con enfoque clínico, ética profesional y sensibilidad cultural.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
-  "heroImage": "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/couple.png",
+  "helpBullets": [
+    "Comunicación efectiva y manejo de conflicto",
+    "Reparación de confianza y reconexión emocional",
+    "Coordinación en crianza y finanzas",
+    "Apoyo en procesos de migración y biculturalidad en pareja"
+  ],
+  "whyUsBullets": [
+    "Terapeutas licenciados con enfoque basado en evidencia",
+    "Sensibilidad cultural y trabajo con parejas latinas y migrantes",
+    "Formato online seguro y flexible",
+    "Ejercicios prácticos y plan de objetivos compartidos"
+  ],
   "heroBullets": [
     "Comunicación y negociación efectiva",
     "Reparación del vínculo y reconexión",

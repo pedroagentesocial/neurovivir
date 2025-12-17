@@ -4,14 +4,46 @@ import ButtonSecondary from "../common/ButtonSecondary.astro";
 import ProvidersSection from "../providers/ProvidersSection.astro";
 import FAQSection from "../sections/FAQSection.astro";
 import TestimonialsCarousel from "../sections/TestimonialsCarousel.astro";
+import CallInvite from "../sections/CallInvite.astro";
 interface Props { therapyId: string }
 const { therapyId } = Astro.props as Props;
 const es = await import(`../../content/therapies/${therapyId}.es.json`).catch(() => ({ default: null }));
 const en = await import(`../../content/therapies/${therapyId}.en.json`).catch(() => ({ default: null }));
 const heroImage = es.default?.heroImage ?? en.default?.heroImage ?? null;
+const resolveHero = (img: string | null) => {
+  if (!img) return null;
+  if (/^https?:\/\//.test(img)) return img;
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base}${img.replace(/^\//,'')}`;
+};
+const heroSrc = resolveHero(heroImage);
 const posts = (await import(`../../content/blog/posts.json`)).default.posts;
 const esBullets = (es.default?.heroBullets ?? []) as string[];
 const enBullets = (en.default?.heroBullets ?? []) as string[];
+const esHelp = (es.default?.helpBullets ?? [
+  "Regulación de ansiedad y estrés con herramientas prácticas",
+  "Mejora de comunicación y relaciones, reparación del vínculo",
+  "Procesamiento de duelo, trauma y cambios vitales",
+  "Acompañamiento en adaptación migratoria y vida bicultural",
+]) as string[];
+const enHelp = (en.default?.helpBullets ?? [
+  "Anxiety and stress regulation with practical tools",
+  "Better communication and relationships, repairing the bond",
+  "Processing grief, trauma and life changes",
+  "Support for migration adaptation and bicultural life",
+]) as string[];
+const esWhy = (es.default?.whyUsBullets ?? [
+  "Profesionales licenciados, enfoque humano y basado en evidencia",
+  "Sensibilidad cultural y experiencia con población latina y migrante",
+  "Atención online segura y flexible, pensada para tu realidad",
+  "Plan de objetivos y seguimiento claro para ver progreso",
+]) as string[];
+const enWhy = (en.default?.whyUsBullets ?? [
+  "Licensed professionals, human care and evidence-based approach",
+  "Cultural sensitivity and experience with Latino and migrant communities",
+  "Secure, flexible online care designed for your context",
+  "Goal-based plan and clear follow-ups to see progress",
+]) as string[];
 ---
 <section class="w-full bg-neuro-title py-12 md:py-16">
   <div class="mx-auto max-w-6xl px-4">
@@ -35,7 +67,7 @@ const enBullets = (en.default?.heroBullets ?? []) as string[];
         <p class="text-white/80">{es.default?.trustNote}</p>
       </div>
       <div class="flex justify-center">
-        <img src={heroImage ?? 'https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop'} alt="Terapeuta" class="rounded-4xl w-full max-w-md object-cover" />
+        <img src={heroSrc ?? 'https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop'} alt="Terapeuta" class="rounded-4xl w-full max-w-md object-cover" />
       </div>
     </div>
     <div id="tp-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
@@ -58,12 +90,12 @@ const enBullets = (en.default?.heroBullets ?? []) as string[];
         <p class="text-white/80">{en.default?.trustNote}</p>
       </div>
       <div class="flex justify-center">
-        <img src={heroImage ?? 'https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop'} alt="Therapist" class="rounded-4xl w-full max-w-md object-cover" />
+        <img src={heroSrc ?? 'https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop'} alt="Therapist" class="rounded-4xl w-full max-w-md object-cover" />
       </div>
     </div>
   </div>
 </section>
-<div class="mx-auto max-w-6xl px-4 py-10">
+  <div class="mx-auto max-w-6xl px-4 py-10">
   <section class="mt-8">
     <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Benefits of <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span></h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -91,6 +123,58 @@ const enBullets = (en.default?.heroBullets ?? []) as string[];
           <span class="text-neuro-paragraph">Receive affordable, high-quality mental health care</span>
         </div>
       </Card>
+    </div>
+  </section>
+  <section id="tp-help-es" class="mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Cómo te ayuda la terapia</h2>
+        <ul class="mt-6 space-y-4">
+          {esHelp.map((t) => (
+            <li class="rounded-4xl border border-neuro-detail bg-white p-5 flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 12l6 6L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph">{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-heading text-neuro-title text-3xl md:text-4xl">Por qué con <span class="text-neuro-primaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h3>
+        <ul class="mt-6 space-y-4">
+          {esWhy.map((t) => (
+            <li class="rounded-4xl border border-neuro-detail bg-white p-5 flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 12l6 6L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph">{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="tp-help-en" class="hidden mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">How therapy helps</h2>
+        <ul class="mt-6 space-y-4">
+          {enHelp.map((t) => (
+            <li class="rounded-4xl border border-neuro-detail bg-white p-5 flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 12l6 6L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph">{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-heading text-neuro-title text-3xl md:text-4xl">Why choose <span class="text-neuro-primaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h3>
+        <ul class="mt-6 space-y-4">
+          {enWhy.map((t) => (
+            <li class="rounded-4xl border border-neuro-detail bg-white p-5 flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M4 12l6 6L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="text-neuro-paragraph">{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -128,27 +212,13 @@ const enBullets = (en.default?.heroBullets ?? []) as string[];
   </div>
 
   <TestimonialsCarousel />
-
-  <section class="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-    <div id="tp-cta-es">
-      <h3 class="font-heading text-neuro-title">¿Listo para agendar?</h3>
-      <p class="text-neuro-paragraph">{es.default?.emergencyNote}</p>
-    </div>
-    <div id="tp-cta-en" class="hidden">
-      <h3 class="font-heading text-neuro-title">Ready to book?</h3>
-      <p class="text-neuro-paragraph">{en.default?.emergencyNote}</p>
-    </div>
-    <div class="flex gap-3">
-      <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.book ?? 'Agendar ahora'}</a>
-      <a href={`${import.meta.env.BASE_URL}intake`} class="rounded-4xl bg-neuro-secondaryButton text-white px-6 py-3 hover:scale-105 transition-transform">{es.default?.cta?.intake ?? 'Completar intake'}</a>
-    </div>
-  </section>
+  <CallInvite />
 
   <script type="module">
     import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
     initLang();
-    const blocksEs = ['tp-hero-es','tp-faq-es','tp-cta-es'];
-    const blocksEn = ['tp-hero-en','tp-faq-en','tp-cta-en'];
+    const blocksEs = ['tp-hero-es','tp-help-es','tp-faq-es'];
+    const blocksEn = ['tp-hero-en','tp-help-en','tp-faq-en'];
     const setVisible = (ids, visible) => ids.forEach(id => {
       document.getElementById(id)?.classList.toggle('hidden', !visible);
     });

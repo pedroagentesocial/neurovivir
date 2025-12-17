@@ -1,9 +1,21 @@
 {
   "heroTitle": "Depression: clear, empathetic support",
   "heroSubtitle": "Understand depression and regain rhythm with sustainable steps.",
-  "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop",
+  "heroImage": "/images/depression.png",
   "cta": { "book": "Book now", "intake": "Complete intake" },
   "trustNote": "Care informed by evidence and culture, with concrete day-to-day strategies.",
+  "helpBullets": [
+    "Psychoeducation and stepwise behavioral activation",
+    "Sleep routines and habit regulation",
+    "Skills for negative self-talk and self-care",
+    "Sensitivity to migration-related processes"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based care",
+    "Cultural sensitivity and experience with Latino communities",
+    "Secure, flexible online format",
+    "Small measurable goals and follow-ups"
+  ],
   "faq": [
     { "question": "What signs are common?", "answer": "Persistent sadness, loss of interest, fatigue, changes in sleep and appetite, trouble concentrating and negative self-talk." },
     { "question": "What do we work on in sessions?", "answer": "Psychoeducation, stepwise behavioral activation, sleep routines, coping skills and small, achievable goals." },
@@ -11,4 +23,3 @@
   ],
   "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
 }
-

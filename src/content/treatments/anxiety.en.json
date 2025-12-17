@@ -1,9 +1,21 @@
 {
   "heroTitle": "Anxiety: practical, culturally sensitive care",
   "heroSubtitle": "Understand anxiety and regulate the alert system with sustainable habits.",
-  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop",
+  "heroImage": "/images/anxiety.png",
   "cta": { "book": "Book now", "intake": "Complete intake" },
   "trustNote": "Care informed by culture and evidence, with clear day-to-day strategies.",
+  "helpBullets": [
+    "Psychoeducation and brief alert-system regulation",
+    "Sustainable habits: sleep, routine, gradual exposure",
+    "Coping skills for anxiety spikes",
+    "Sensitivity to migration context"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals with evidence-based approach",
+    "Cultural sensitivity and experience with Latino communities",
+    "Secure, flexible online format",
+    "Stepwise plan and clear follow-ups"
+  ],
   "faq": [
     { "question": "How do I know I need help?", "answer": "If anxiety disrupts sleep, work or relationships for weeks, talking can offer clarity and tools." },
     { "question": "Is care online?", "answer": "We primarily work via secure, flexible video sessions." },

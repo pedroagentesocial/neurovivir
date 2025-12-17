@@ -8,6 +8,18 @@
     { "label": "Population", "value": "Latino adults" },
     { "label": "Modality", "value": "Online (video)" }
   ],
+  "helpBullets": [
+    "Psychoeducation on violence and its impact",
+    "Safety planning and support networks",
+    "Coping strategies and emotional regulation",
+    "Coordination with community and legal resources"
+  ],
+  "whyUsBullets": [
+    "Trauma-informed, sensitive care",
+    "Confidential, secure work",
+    "Connection to community services when appropriate",
+    "Support plan and follow-ups"
+  ],
   "whatIs": "Domestic violence involves patterns of control, aggression and harm impacting emotional and physical health.",
   "howItFeels": "It may feel like constant fear, isolation, guilt and confusion.",
   "howWeHelp": "We strengthen your support network, work on safety and rebuild self-esteem and life project.",

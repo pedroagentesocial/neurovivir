@@ -1,7 +1,19 @@
 {
   "heroTitle": "Post-crash support",
   "heroSubtitle": "Stress regulation and gradual return to routine after a car accident.",
-  "heroImage": "https://images.unsplash.com/photo-1518300672262-887fa88a05fc?q=80&w=1080&auto=format&fit=crop",
+  "heroImage": "/images/support.png",
+  "helpBullets": [
+    "Brief post-accident stress regulation",
+    "Safe gradual exposure to resume routes",
+    "Route planning and safety cues",
+    "Rest routines and emotional support"
+  ],
+  "whyUsBullets": [
+    "Trauma-informed care, sensitive to context",
+    "Clear, safe pacing based on your process",
+    "Online sessions and practical tools",
+    "Goal plan and gradual follow-ups"
+  ],
   "cta": { "book": "Book now" },
   "trustNote": "Trauma-informed care to regain calm and routine after a car crash.",
   "heroBullets": [

@@ -3,7 +3,19 @@
   "heroSubtitle": "Clear, ethical and culturally sensitive processes for clinical and wellbeing reports.",
   "trustNote": "We work with professional standards and transparent communication at each stage.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
-  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/evaluation.png",
+  "helpBullets": [
+    "Structured assessment of history and current functioning",
+    "Results integration and diagnostic clarity",
+    "Feedback with useful recommendations",
+    "Clinical report for care decisions"
+  ],
+  "whyUsBullets": [
+    "Ethical, clear, context-sensitive process",
+    "Clinical instruments and professional criteria",
+    "On-time delivery and transparent communication",
+    "Coordination with treatment as needed"
+  ],
   "heroBullets": [
     "Clear, ethical process",
     "Clinical instruments and criteria",

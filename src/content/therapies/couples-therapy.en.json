@@ -1,9 +1,21 @@
 {
-  "heroTitle": "Couples therapy for Latinos in the U.S.",
+  "heroTitle": "Couples therapy",
   "heroSubtitle": "A safe, respectful space to improve communication, bond and shared goals.",
   "trustNote": "We work with clinical ethics, professional care and cultural sensitivity.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
-  "heroImage": "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/couple.png",
+  "helpBullets": [
+    "Effective communication and conflict resolution",
+    "Trust repair and emotional reconnection",
+    "Coordination in parenting and finances",
+    "Support for migration and bicultural life as a couple"
+  ],
+  "whyUsBullets": [
+    "Licensed therapists with evidence-based practices",
+    "Cultural sensitivity and experience with Latino/migrant couples",
+    "Secure, flexible online format",
+    "Practical exercises and shared goal plan"
+  ],
   "heroBullets": [
     "Effective communication and negotiation",
     "Bond repair and reconnection",

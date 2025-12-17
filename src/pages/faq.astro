@@ -17,7 +17,7 @@ const posts = (await import("../content/blog/posts.json")).default.posts;
           <p class="text-white/90">Respuestas claras y prácticas sobre cómo trabajamos.</p>
         </div>
         <div class="flex justify-center">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop" alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
+          <img src={`${import.meta.env.BASE_URL}images/faq.png`} alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
         </div>
       </div>
       <div id="faq-hero-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
@@ -26,7 +26,7 @@ const posts = (await import("../content/blog/posts.json")).default.posts;
           <p class="text-white/90">Clear, practical answers about our care and process.</p>
         </div>
         <div class="flex justify-center">
-          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1080&auto=format&fit=crop" alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
+          <img src={`${import.meta.env.BASE_URL}images/faq.png`} alt="FAQ" class="rounded-4xl w-full max-w-md object-cover" />
         </div>
       </div>
     </div>

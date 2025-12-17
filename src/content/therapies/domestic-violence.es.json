@@ -3,7 +3,19 @@
   "heroSubtitle": "Atención sensible y segura para quienes han vivido maltrato en el hogar.",
   "trustNote": "Priorizamos tu seguridad emocional, trabajamos con ética y perspectiva cultural.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
-  "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/child.png",
+  "helpBullets": [
+    "Psicoeducación sobre maltrato y sus efectos",
+    "Plan de seguridad y redes de apoyo",
+    "Estrategias de afrontamiento y regulación emocional",
+    "Coordinación con recursos comunitarios y legales"
+  ],
+  "whyUsBullets": [
+    "Enfoque informado en trauma y cuidado sensible",
+    "Articulación con servicios comunitarios según necesidad",
+    "Atención online segura y confidencial",
+    "Plan de acompañamiento y seguimiento"
+  ],
   "heroBullets": [
     "Psicoeducación y estrategias de afrontamiento",
     "Plan de seguridad y redes de apoyo",

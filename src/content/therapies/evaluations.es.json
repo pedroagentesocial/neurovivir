@@ -3,7 +3,19 @@
   "heroSubtitle": "Procesos claros, éticos y culturalmente sensibles para informes clínicos y de bienestar.",
   "trustNote": "Trabajamos con estándares profesionales y comunicación transparente en cada etapa.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
-  "heroImage": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/evaluation.png",
+  "helpBullets": [
+    "Evaluación estructurada de historia y funcionamiento actual",
+    "Integración de resultados y claridad diagnóstica",
+    "Devolución con recomendaciones útiles",
+    "Informe clínico para decisiones de cuidado"
+  ],
+  "whyUsBullets": [
+    "Proceso ético, claro y sensible al contexto",
+    "Instrumentos clínicos y criterios profesionales",
+    "Entrega oportuna y comunicación transparente",
+    "Coordinación con tratamiento según necesidad"
+  ],
   "heroBullets": [
     "Proceso claro y ético",
     "Instrumentos y criterios clínicos",

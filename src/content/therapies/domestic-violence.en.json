@@ -3,7 +3,19 @@
   "heroSubtitle": "Sensitive, safe care for those who have experienced home abuse.",
   "trustNote": "We prioritize emotional safety, ethics and cultural perspective.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
-  "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/child.png",
+  "helpBullets": [
+    "Psychoeducation on abuse and its impact",
+    "Safety planning and support networks",
+    "Coping strategies and emotional regulation",
+    "Coordination with community and legal resources"
+  ],
+  "whyUsBullets": [
+    "Trauma-informed, sensitive care",
+    "Coordination with community services as needed",
+    "Secure and confidential online care",
+    "Follow-up and support plan"
+  ],
   "heroBullets": [
     "Psychoeducation and coping strategies",
     "Safety planning and support networks",

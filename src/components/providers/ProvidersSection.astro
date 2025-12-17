@@ -2,48 +2,89 @@
 import SectionWrapper from "../common/SectionWrapper.astro";
 import Card from "../common/Card.astro";
 import ButtonSecondary from "../common/ButtonSecondary.astro";
-interface Post { title: string; date: string; excerpt: string; slug: string }
+interface Post { title: string; date: string; excerpt: string; slug: string; lang?: string }
 const { posts = [] as Post[] } = Astro.props;
+const postsEs = posts.filter((p: Post) => (p.lang ?? 'es') === 'es').slice(0,3);
+const postsEn = posts.filter((p: Post) => (p.lang ?? 'en') === 'en').slice(0,3);
 ---
 <SectionWrapper>
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
     <div>
-      <h2 class="font-heading text-neuro-title text-3xl md:text-4xl">Meet the NeuroVivir licensed providers</h2>
-      <p class="text-neuro-paragraph mt-2">Our network of therapists and psychiatric providers have specialization in 150+ conditions, treatment approaches, and mental health needs.</p>
+      <div id="ps-title-es">
+        <h2 class="font-heading text-neuro-title text-4xl md:text-5xl">Conoce a los profesionales licenciados de <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span></h2>
+        <p class="text-neuro-paragraph mt-2">Nuestra red de terapeutas y profesionales psiquiátricos tiene especialización en 150+ condiciones, enfoques y necesidades de salud mental.</p>
+      </div>
+      <div id="ps-title-en" class="hidden">
+        <h2 class="font-heading text-neuro-title text-4xl md:text-5xl">Meet the <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span> licensed providers</h2>
+        <p class="text-neuro-paragraph mt-2">Our network of therapists and psychiatric providers have specialization in 150+ conditions, treatment approaches, and mental health needs.</p>
+      </div>
       <div class="mt-4 flex flex-wrap gap-2">
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">DEPRESSION</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">RELATIONSHIPS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ANXIETY & STRESS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">PARENTING</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">LGBTQIA+</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CHRONIC ILLNESS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">EATING DISORDERS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">OCD</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ANGER MANAGEMENT</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CHILDHOOD ABUSE</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">MOOD DISORDERS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TRAUMA & GRIEF</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">LONELINESS</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">FAMILY CONFLICT</span>
-        <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">AND MORE...</span>
+        <div id="ps-chips-es" class="contents">
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">DEPRESIÓN</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">RELACIONES</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ANSIEDAD Y ESTRÉS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CRIANZA</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">LGBTQIA+</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ENFERMEDAD CRÓNICA</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TRASTORNOS ALIMENTARIOS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TOC</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">MANEJO DE IRA</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ABUSO INFANTIL</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TRASTORNOS DEL ESTADO DE ÁNIMO</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TRAUMA Y DUELO</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">SOLEDAD</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CONFLICTO FAMILIAR</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">Y MÁS...</span>
+        </div>
+        <div id="ps-chips-en" class="contents hidden">
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">DEPRESSION</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">RELATIONSHIPS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ANXIETY & STRESS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">PARENTING</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">LGBTQIA+</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CHRONIC ILLNESS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">EATING DISORDERS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">OCD</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">ANGER MANAGEMENT</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">CHILDHOOD ABUSE</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">MOOD DISORDERS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">TRAUMA & GRIEF</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">LONELINESS</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">FAMILY CONFLICT</span>
+          <span class="px-3 py-1 rounded-full border border-neuro-detail bg-transparent text-neuro-title text-sm md:text-base transition-colors duration-200 hover:bg-neuro-detail hover:border-transparent">AND MORE...</span>
+        </div>
       </div>
       <div class="mt-6">
-        <ButtonSecondary href={`${import.meta.env.BASE_URL}book`} label="Get Started" />
+        <ButtonSecondary href={`${import.meta.env.BASE_URL}book`} label="">
+          <span id="ps-cta-es" class="hidden">Empezar</span>
+          <span id="ps-cta-en">Get Started</span>
+        </ButtonSecondary>
       </div>
     </div>
     {posts && posts.length > 0 ? (
     <div>
       <div class="flex items-end justify-between">
-        <h3 class="font-heading text-neuro-title text-2xl">Latest blog posts</h3>
-        <a href={`${import.meta.env.BASE_URL}blog`} class="text-neuro-title underline">View all</a>
+        <h3 id="ps-blog-title-es" class="hidden font-heading text-neuro-title text-2xl">Últimas entradas del blog</h3>
+        <h3 id="ps-blog-title-en" class="font-heading text-neuro-title text-2xl">Latest blog posts</h3>
+        <a href={`${import.meta.env.BASE_URL}blog`} class="text-neuro-title underline"><span id="ps-blog-view-es" class="hidden">Ver todas</span><span id="ps-blog-view-en">View all</span></a>
       </div>
-      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-        {posts.slice(0,3).map((p) => (
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4" id="ps-blog-grid-en">
+        {postsEn.map((p: Post) => (
           <Card class="transition duration-200 hover:bg-neuro-detail hover:border-transparent">
             <h4 class="font-heading text-neuro-title text-lg">{p.title}</h4>
             <p class="text-neuro-paragraph text-sm">{p.date}</p>
             <p class="text-neuro-paragraph mt-2">{p.excerpt}</p>
-            <a href={`/blog/${p.slug}`} class="text-neuro-title underline mt-3 inline-block">Read more</a>
+            <a href={`/blog/${p.slug}`} class="text-neuro-title underline mt-3 inline-block"><span class="ps-blog-read-es hidden">Leer más</span><span class="ps-blog-read-en">Read more</span></a>
+          </Card>
+        ))}
+      </div>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 hidden" id="ps-blog-grid-es">
+        {postsEs.map((p: Post) => (
+          <Card class="transition duration-200 hover:bg-neuro-detail hover:border-transparent">
+            <h4 class="font-heading text-neuro-title text-lg">{p.title}</h4>
+            <p class="text-neuro-paragraph text-sm">{p.date}</p>
+            <p class="text-neuro-paragraph mt-2">{p.excerpt}</p>
+            <a href={`/blog/${p.slug}`} class="text-neuro-title underline mt-3 inline-block"><span class="ps-blog-read-es">Leer más</span><span class="ps-blog-read-en hidden">Read more</span></a>
           </Card>
         ))}
       </div>
@@ -51,3 +92,28 @@ const { posts = [] as Post[] } = Astro.props;
     ) : null}
   </div>
 </SectionWrapper>
+<script type="module">
+  import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+  initLang();
+  const pairs = [
+    ['ps-title-es','ps-title-en'],
+    ['ps-chips-es','ps-chips-en'],
+    ['ps-blog-title-es','ps-blog-title-en'],
+    ['ps-blog-view-es','ps-blog-view-en'],
+    ['ps-cta-es','ps-cta-en'],
+    ['ps-blog-grid-es','ps-blog-grid-en'],
+  ];
+  const update = (lang) => {
+    const es = lang === 'es';
+    pairs.forEach(([esId,enId]) => {
+      const esEl = document.getElementById(esId);
+      const enEl = document.getElementById(enId);
+      esEl?.classList.toggle('hidden', !es);
+      enEl?.classList.toggle('hidden', es);
+    });
+    document.querySelectorAll('.ps-blog-read-es').forEach((el) => el.classList.toggle('hidden', !es));
+    document.querySelectorAll('.ps-blog-read-en').forEach((el) => el.classList.toggle('hidden', es));
+  };
+  update(getLang());
+  onLangChange(update);
+</script>

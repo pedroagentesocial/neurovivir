@@ -3,7 +3,19 @@
   "heroSubtitle": "Clinical, sensitive support for youth and their families.",
   "trustNote": "We work with professional ethics, evidence-based care and respect for the developmental stage.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
-  "heroImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/teen.png",
+  "helpBullets": [
+    "Anxiety regulation and tools for school and social media",
+    "Improved social skills and change management",
+    "Guidance on healthy habits and organization",
+    "Family coordination with clear agreements"
+  ],
+  "whyUsBullets": [
+    "Clinical approach sensitive to adolescent development",
+    "Confidentiality and family agreements when appropriate",
+    "Secure, flexible online care",
+    "Goal plan and useful follow-ups for progress"
+  ],
   "heroBullets": [
     "Confidentiality with clear family agreements",
     "Anxiety regulation and social skills",

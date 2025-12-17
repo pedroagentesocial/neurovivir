@@ -1,5 +1,5 @@
 {
-  "heroTitle": "Individual therapy for Latinos in the U.S.",
+  "heroTitle": "Individual therapy",
   "heroSubtitle": "A safe, confidential and culturally sensitive space for your personal process.",
   "trustNote": "We work with clinical ethics and respect for your story and context.",
   "cta": { "book": "Book now", "intake": "Complete intake" },
@@ -8,9 +8,22 @@
     "Personalized goal plan",
     "Stress regulation and practical tools"
   ],
+  "heroImage": "/images/individual.png",
+  "helpBullets": [
+    "Anxiety and stress regulation with practical exercises",
+    "Strengthening self-esteem and personal goals",
+    "Improving relationships and healthy boundaries",
+    "Support for migration adaptation and bicultural life"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Cultural sensitivity and experience with Latino and migrant communities",
+    "Secure and flexible online care",
+    "Goal plan and clear follow-ups"
+  ],
   "summary": [
     { "label": "Modality", "value": "Online (video)" },
-    { "label": "Population", "value": "Latino adults" },
+    { "label": "Population", "value": "Adults" },
     { "label": "Duration", "value": "50 minutes" },
     { "label": "Frequency", "value": "Weekly / Adjustable" }
   ],

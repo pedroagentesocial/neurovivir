@@ -3,15 +3,24 @@ import SectionWrapper from "../common/SectionWrapper.astro";
 import Card from "../common/Card.astro";
 interface Testimonial { name: string; location: string; avatar: string; quote: string }
 const { items = [] as Testimonial[] } = Astro.props;
-const defaults: Testimonial[] = [
-  { name: "María G.", location: "Mexico City", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Encontré apoyo profesional y humano. La atención fue culturalmente sensible y efectiva." },
-  { name: "Carlos R.", location: "San Antonio, TX", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "Mi terapeuta me dio herramientas prácticas para manejar ansiedad y estrés del trabajo." },
-  { name: "Lucía P.", location: "Los Angeles, CA", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "La plataforma es fácil y rápida. Sentí progreso desde las primeras sesiones." },
-  { name: "Andrés T.", location: "Chicago, IL", avatar: "https://randomuser.me/api/portraits/men/32.jpg", quote: "La flexibilidad de horarios y el enfoque cultural hicieron la diferencia." },
-  { name: "Sofía L.", location: "Miami, FL", avatar: "https://randomuser.me/api/portraits/women/41.jpg", quote: "Me sentí escuchada y acompañada. Recomiendo NeuroVivir sin dudas." },
-  { name: "Javier M.", location: "Austin, TX", avatar: "https://randomuser.me/api/portraits/men/52.jpg", quote: "El proceso fue claro y efectivo. Noté cambios en pocas semanas." },
+const defaultsEs: Testimonial[] = [
+  { name: "María G.", location: "Salt Lake City, UT", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Encontré apoyo profesional y humano. La atención fue culturalmente sensible y efectiva." },
+  { name: "Carlos R.", location: "Provo, UT", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "Mi terapeuta me dio herramientas prácticas para manejar ansiedad y estrés del trabajo." },
+  { name: "Lucía P.", location: "Ogden, UT", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "La plataforma es fácil y rápida. Sentí progreso desde las primeras sesiones." },
+  { name: "Andrés T.", location: "St. George, UT", avatar: "https://randomuser.me/api/portraits/men/32.jpg", quote: "La flexibilidad de horarios y el enfoque cultural hicieron la diferencia." },
+  { name: "Sofía L.", location: "Sandy, UT", avatar: "https://randomuser.me/api/portraits/women/41.jpg", quote: "Me sentí escuchada y acompañada. Recomiendo NeuroVivir sin dudas." },
+  { name: "Javier M.", location: "Orem, UT", avatar: "https://randomuser.me/api/portraits/men/52.jpg", quote: "El proceso fue claro y efectivo. Noté cambios en pocas semanas." },
 ];
-const list = (items && items.length > 0) ? items : defaults;
+const defaultsEn: Testimonial[] = [
+  { name: "Mary G.", location: "Salt Lake City, UT", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "I found professional, human support. Care was culturally sensitive and effective." },
+  { name: "Charles R.", location: "Provo, UT", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "My therapist gave me practical tools to manage anxiety and work stress." },
+  { name: "Lucy P.", location: "Ogden, UT", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "The platform is easy and fast. I felt progress from the first sessions." },
+  { name: "Andrew T.", location: "St. George, UT", avatar: "https://randomuser.me/api/portraits/men/32.jpg", quote: "Flexible schedules and cultural approach made the difference." },
+  { name: "Sophie L.", location: "Sandy, UT", avatar: "https://randomuser.me/api/portraits/women/41.jpg", quote: "I felt heard and supported. I recommend NeuroVivir without doubt." },
+  { name: "Javier M.", location: "Orem, UT", avatar: "https://randomuser.me/api/portraits/men/52.jpg", quote: "The process was clear and effective. I noticed changes in a few weeks." },
+];
+const listEs = defaultsEs;
+const listEn = defaultsEn;
 ---
 <SectionWrapper>
   <div class="max-w-6xl mx-auto">
@@ -27,8 +36,22 @@ const list = (items && items.length > 0) ? items : defaults;
         </h2>
       </div>
     </div>
-    <div id="testimonials-track" class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
-      {list.map((t: Testimonial) => (
+    <div id="testimonials-track-es" class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
+      {listEs.map((t: Testimonial) => (
+        <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
+          <div class="flex items-center gap-4">
+            <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />
+            <div>
+              <h4 class="font-heading text-neuro-title text-2xl md:text-3xl">{t.name}</h4>
+              <p class="text-neuro-paragraph text-base md:text-lg">{t.location}</p>
+            </div>
+          </div>
+          <p class="text-neuro-paragraph mt-4 text-lg md:text-xl">{t.quote}</p>
+        </Card>
+      ))}
+    </div>
+    <div id="testimonials-track-en" class="hidden flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
+      {listEn.map((t: Testimonial) => (
         <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
           <div class="flex items-center gap-4">
             <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />
@@ -48,27 +71,38 @@ const list = (items && items.length > 0) ? items : defaults;
   initLang();
   const esEl = document.getElementById('tc-title-es');
   const enEl = document.getElementById('tc-title-en');
+  const esTrack = document.getElementById('testimonials-track-es');
+  const enTrack = document.getElementById('testimonials-track-en');
   const updateTitle = (lang) => {
     esEl?.classList.toggle('hidden', lang !== 'es');
     enEl?.classList.toggle('hidden', lang !== 'en');
+    esTrack?.classList.toggle('hidden', lang !== 'es');
+    enTrack?.classList.toggle('hidden', lang !== 'en');
   };
   updateTitle(getLang());
   onLangChange(updateTitle);
-  const track = document.getElementById('testimonials-track');
+  const getTrack = () => {
+    const lang = getLang();
+    return document.getElementById(lang === 'es' ? 'testimonials-track-es' : 'testimonials-track-en');
+  };
   let timer;
   const start = () => {
     stop();
     timer = setInterval(() => {
-      if (!track) return;
-      const items = Array.from(track.children);
+      const trackEl = getTrack();
+      if (!trackEl) return;
+      const items = Array.from(trackEl.children);
       if (items.length === 0) return;
       const next = items[Math.floor(Math.random() * items.length)];
       const left = next?.offsetLeft || 0;
-      track.scrollTo({ left, behavior: 'smooth' });
+      trackEl.scrollTo({ left, behavior: 'smooth' });
     }, 4000);
   };
   const stop = () => { if (timer) clearInterval(timer); };
   start();
-  track?.addEventListener('mouseenter', stop);
-  track?.addEventListener('mouseleave', start);
+  esTrack?.addEventListener('mouseenter', stop);
+  esTrack?.addEventListener('mouseleave', start);
+  enTrack?.addEventListener('mouseenter', stop);
+  enTrack?.addEventListener('mouseleave', start);
+  onLangChange(() => { start(); });
 </script>

@@ -1,9 +1,21 @@
 {
   "heroTitle": "Depresión: apoyo claro y empático",
   "heroSubtitle": "Entender la depresión y recuperar ritmo con pasos sostenibles.",
-  "heroImage": "https://images.unsplash.com/photo-1520975922284-5cb3f6b38d67?q=80&w=1080&auto=format&fit=crop",
+  "heroImage": "/images/depression.png",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
   "trustNote": "Atención informada en evidencia y cultura, con estrategias concretas para el día a día.",
+  "helpBullets": [
+    "Psicoeducación y activación conductual paso a paso",
+    "Rutinas de descanso y regulación de hábitos",
+    "Habilidades para pensamientos negativos y auto-cuidado",
+    "Acompañamiento sensible a procesos migratorios"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Sensibilidad cultural y experiencia con población latina",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento"
+  ],
   "faq": [
     { "question": "¿Qué señales suelen aparecer?", "answer": "Tristeza persistente, pérdida de interés, fatiga, cambios en sueño y apetito, dificultad para concentrarte y pensamientos negativos sobre ti." },
     { "question": "¿Qué trabajamos en sesión?", "answer": "Psicoeducación, activación conductual paso a paso, rutinas de descanso, habilidades de afrontamiento y planificación de metas pequeñas." },
@@ -11,4 +23,3 @@
   ],
   "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa los recursos locales de tu país o ciudad."
 }
-

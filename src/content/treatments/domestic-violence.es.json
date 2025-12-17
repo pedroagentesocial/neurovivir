@@ -8,6 +8,18 @@
     { "label": "Población", "value": "Adultos latinoamericanos" },
     { "label": "Modalidad", "value": "Online (video)" }
   ],
+  "helpBullets": [
+    "Psicoeducación sobre violencia y sus efectos",
+    "Plan de seguridad y redes de apoyo",
+    "Estrategias de afrontamiento y regulación emocional",
+    "Coordinación con recursos comunitarios y legales"
+  ],
+  "whyUsBullets": [
+    "Enfoque informado en trauma y cuidado sensible",
+    "Trabajo confidencial y seguro",
+    "Articulación con servicios comunitarios cuando corresponde",
+    "Plan de acompañamiento y seguimiento"
+  ],
   "whatIs": "La violencia doméstica implica patrones de control, agresión y daño que afectan la salud emocional y física.",
   "howItFeels": "Puede sentirse como miedo constante, aislamiento, culpa y confusión.",
   "howWeHelp": "Fortalecemos tu red de apoyo, trabajamos en seguridad y en reconstruir tu autoestima y proyecto de vida.",

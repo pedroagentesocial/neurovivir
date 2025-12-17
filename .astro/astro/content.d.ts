@@ -253,75 +253,80 @@ declare module 'astro:content' {
   data: any
 };
 };
-"services": {
-"accidente-post-choque.en": {
-	id: "accidente-post-choque.en";
+"services": Record<string, {
+  id: string;
   collection: "services";
-  data: any
-};
-"accidente-post-choque.es": {
-	id: "accidente-post-choque.es";
-  collection: "services";
-  data: any
-};
+  data: any;
+}>;
+"therapies": {
 "couples-therapy.en": {
 	id: "couples-therapy.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "couples-therapy.es": {
 	id: "couples-therapy.es";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "domestic-violence.en": {
 	id: "domestic-violence.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "domestic-violence.es": {
 	id: "domestic-violence.es";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "evaluations.en": {
 	id: "evaluations.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "evaluations.es": {
 	id: "evaluations.es";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "index.en": {
 	id: "index.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "index.es": {
 	id: "index.es";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "individual-therapy.en": {
 	id: "individual-therapy.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "individual-therapy.es": {
 	id: "individual-therapy.es";
-  collection: "services";
+  collection: "therapies";
+  data: any
+};
+"post-crash-support.en": {
+	id: "post-crash-support.en";
+  collection: "therapies";
+  data: any
+};
+"post-crash-support.es": {
+	id: "post-crash-support.es";
+  collection: "therapies";
   data: any
 };
 "teen-therapy.en": {
 	id: "teen-therapy.en";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 "teen-therapy.es": {
 	id: "teen-therapy.es";
-  collection: "services";
+  collection: "therapies";
   data: any
 };
 };

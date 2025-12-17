@@ -3,7 +3,19 @@
   "heroSubtitle": "Acompañamiento clínico y sensible para jóvenes y sus familias.",
   "trustNote": "Trabajamos con ética profesional, enfoque basado en evidencia y respeto por la etapa evolutiva.",
   "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
-  "heroImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/images/teen.png",
+  "helpBullets": [
+    "Regulación de ansiedad y herramientas para escuela y redes",
+    "Mejora de habilidades sociales y manejo de cambios",
+    "Orientación para hábitos saludables y organización",
+    "Coordinación familiar con acuerdos claros"
+  ],
+  "whyUsBullets": [
+    "Enfoque clínico sensible al desarrollo adolescente",
+    "Confidencialidad y acuerdos con familia cuando corresponde",
+    "Atención online segura y flexible",
+    "Plan de objetivos y seguimiento útil para el progreso"
+  ],
   "heroBullets": [
     "Confidencialidad y acuerdos familiares claros",
     "Regulación de ansiedad y habilidades sociales",
