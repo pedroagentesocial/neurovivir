@@ -1,7 +1,7 @@
 ---
 const base = import.meta.env.BASE_URL || '/';
 ---
-<header id="site-header" class="w-full bg-neuro-background fixed top-0 z-50 transition-colors">
+<header id="site-header" class="w-full fixed top-0 z-50 transition-colors">
   <div class="w-full px-4 py-4 flex items-center justify-between">
     <!-- Izquierda: Logo -->
     <a href={base} class="inline-flex items-center hover:scale-105 transition-transform">
@@ -364,8 +364,8 @@ const base = import.meta.env.BASE_URL || '/';
   openDesktop?.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
   openMobile?.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
   document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const link = target.closest('a[href="#book"]') as HTMLAnchorElement | null;
+    const target = e.target;
+    const link = target && typeof (target.closest) === 'function' ? target.closest('a[href="#book"]') : null;
     if (link) { e.preventDefault(); openModal(); }
   }, { capture: true });
   closeBtn?.addEventListener('click', closeModal);
