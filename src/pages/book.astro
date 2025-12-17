@@ -2,57 +2,17 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 ---
 <BaseLayout title="Book - NeuroVivir">
-  <section class="mx-auto max-w-6xl px-4 py-10" data-animate="fade-up">
-    <div id="book-es" class="space-y-4 opacity-0 translate-y-4">
-      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">Agendar sesión</h1>
-      <p class="text-neuro-paragraph">Completa el formulario para coordinar tu primera sesión.</p>
-      <form id="book-form-es" class="space-y-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Nombre" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" type="email" placeholder="Email" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Teléfono" />
-          <select class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3">
-            <option>Individual</option>
-            <option>Couples</option>
-            <option>Teens</option>
-            <option>Evaluation</option>
-          </select>
-          <select class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3">
-            <option>Online</option>
-            <option>Presencial</option>
-          </select>
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Horario preferido" />
-        </div>
-        <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Mensaje adicional"></textarea>
-        <button type="button" id="book-submit-es" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base transition duration-200 hover:opacity-90 hover:scale-105">Enviar solicitud</button>
-        <!-- Aquí se podría realizar un fetch a la API externa con los datos del formulario -->
-      </form>
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <div id="book-es" class="space-y-4">
+      <h1 class="font-heading text-neuro-title text-4xl md:text-5xl">Agenda ahora</h1>
+      <p class="text-neuro-paragraph">Reserva tu cita directamente desde nuestro calendario.</p>
     </div>
-
-    <div id="book-en" class="space-y-4 hidden opacity-0 translate-y-4">
-      <h1 class="font-heading text-neuro-title text-3xl md:text-4xl">Book a session</h1>
-      <p class="text-neuro-paragraph">Fill out the form to schedule your first session.</p>
-      <form id="book-form-en" class="space-y-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Name" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" type="email" placeholder="Email" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Phone" />
-          <select class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3">
-            <option>Individual</option>
-            <option>Couples</option>
-            <option>Teens</option>
-            <option>Evaluation</option>
-          </select>
-          <select class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3">
-            <option>Online</option>
-            <option>In-person</option>
-          </select>
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3" placeholder="Preferred time" />
-        </div>
-        <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Additional message"></textarea>
-        <button type="button" id="book-submit-en" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base transition duration-200 hover:opacity-90 hover:scale-105">Send request</button>
-        <!-- Here you could perform a fetch to an external API with the form data -->
-      </form>
+    <div id="book-en" class="space-y-4 hidden">
+      <h1 class="font-heading text-neuro-title text-4xl md:text-5xl">Book now</h1>
+      <p class="text-neuro-paragraph">Schedule your appointment directly from our calendar.</p>
+    </div>
+    <div class="mt-6 rounded-4xl overflow-hidden ring-1 ring-neuro-detail">
+      <iframe src="https://app.gohighlevel.com/v2/preview/geT0LqyQmsFgoEGri1xP?notrack=true" title="Booking" class="w-full h-[70vh] md:h-[80vh]" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -61,12 +21,12 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
     initLang();
     const esEl = document.getElementById('book-es');
     const enEl = document.getElementById('book-en');
-    const update = (lang) => {
+    const apply = (lang) => {
       esEl?.classList.toggle('hidden', lang !== 'es');
       enEl?.classList.toggle('hidden', lang !== 'en');
     };
-    update(getLang());
-    onLangChange(update);
+    apply(getLang());
+    onLangChange(apply);
 
     // Preparación para animaciones de scroll: IntersectionObserver podría activarlas aquí
   </script>
