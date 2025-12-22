@@ -37,7 +37,7 @@ const en = await import("../../content/therapies/index.en.json");
   </SectionWrapper>
 
   <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    import { initLang, getLang, onLangChange } from "../../lib/i18n/languageStore.ts";
     initLang();
     const esEl = document.getElementById('services-es');
     const enEl = document.getElementById('services-en');

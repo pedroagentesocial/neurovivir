@@ -76,7 +76,7 @@ import CallInvite from "../components/sections/CallInvite.astro";
     <CallInvite />
 
     <script type="module">
-      import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    import { initLang, getLang, onLangChange } from "../lib/i18n/languageStore.ts";
       initLang();
       const esBlocks = ['ct-hero-es','ct-form-es','ct-info-es'];
       const enBlocks = ['ct-hero-en','ct-form-en','ct-info-en'];

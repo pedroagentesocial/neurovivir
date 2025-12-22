@@ -160,7 +160,7 @@ const base = import.meta.env.BASE_URL || '/';
 </style>
 
 <script type="module">
-  import { initLang, getLang, setLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+  import { initLang, getLang, setLang, onLangChange } from "../../lib/i18n/languageStore.ts";
   initLang();
   const updateLangUI = (lang) => {
     const esBtn = document.getElementById('lang-es');
