@@ -5,6 +5,11 @@ import FAQSection from "../components/sections/FAQSection.astro";
 import CallInvite from "../components/sections/CallInvite.astro";
 import TestimonialsCarousel from "../components/sections/TestimonialsCarousel.astro";
 const posts = (await import("../content/blog/posts.json")).default.posts;
+const sortedPosts = [...posts].sort((a, b) => {
+  const da = new Date(a.date).getTime();
+  const db = new Date(b.date).getTime();
+  return db - da;
+});
 const initialVisible = 3;
 ---
 <BaseLayout title="Blog - NeuroVivir">
@@ -34,12 +39,12 @@ const initialVisible = 3;
   <div class="mx-auto max-w-6xl px-4 mt-3">
     <nav class="text-sm">
       <div id="blog-bc-es" class="flex items-center gap-2">
-        <a href="/" class="text-neuro-paragraph hover:underline">Inicio</a>
+        <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Inicio</a>
         <span class="text-neuro-paragraph">/</span>
         <span class="text-neuro-title">Blog</span>
       </div>
       <div id="blog-bc-en" class="hidden flex items-center gap-2">
-        <a href="/" class="text-neuro-paragraph hover:underline">Home</a>
+        <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Home</a>
         <span class="text-neuro-paragraph">/</span>
         <span class="text-neuro-title">Blog</span>
       </div>
@@ -55,9 +60,9 @@ const initialVisible = 3;
         </div>
       </div>
       <div id="blog-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
-        {posts.map((post, idx) => (
-          <Card class={`bg-neuro-detail hover:translate-y-0 ${idx >= initialVisible ? 'extra-post hidden' : ''}`} id={`post-${post.slug}`} data-lang={post.lang} data-idx={idx}>
-            <a href={`/blog/${post.slug}`} class="block">
+        {sortedPosts.map((post, idx) => (
+          <Card class={`bg-neuro-detail hover:translate-y-0`} id={`post-${post.slug}`} data-lang={post.lang} data-idx={idx}>
+            <a href={`${import.meta.env.BASE_URL}blog/${post.slug}`} class="block">
               <div class="space-y-4 leading-[1.5]">
                 <div class="text-neuro-paragraph text-sm">{new Date(post.date).toLocaleDateString()}</div>
                 <h3 class="font-heading text-neuro-title text-xl">{post.title}</h3>
@@ -93,32 +98,35 @@ const initialVisible = 3;
       const bcEn = document.getElementById('blog-bc-en');
       const cards = () => Array.from(document.querySelectorAll('#blog-list [id^="post-"]'));
       let loadedAll = false;
+      const currentLang = () => getLang();
+      const visibleCards = () => cards().filter(el => {
+        const plang = el.getAttribute('data-lang') || 'es';
+        const notHiddenBySearch = !el.classList.contains('search-hidden');
+        return plang === currentLang() && notHiddenBySearch;
+      });
       const applyLang = (lang) => {
         heroEs?.classList.toggle('hidden', lang !== 'es');
         heroEn?.classList.toggle('hidden', lang !== 'en');
         bcEs?.classList.toggle('hidden', lang !== 'es');
         bcEn?.classList.toggle('hidden', lang !== 'en');
         const all = cards();
-        const matching = all.filter((el) => {
+        const visible = visibleCards();
+        all.forEach((el) => {
           const plang = el.getAttribute('data-lang') || 'es';
-          return plang === lang && !el.classList.contains('search-hidden');
+          const matchesLang = plang === lang;
+          const notHiddenBySearch = !el.classList.contains('search-hidden');
+          el.classList.toggle('hidden', !(matchesLang && notHiddenBySearch));
         });
-        const nonMatching = all.filter(el => !matching.includes(el));
-        matching.forEach((el, i) => {
-          const hide = !loadedAll && i >= 3;
+        visible.forEach((el, idx) => {
+          const hide = !loadedAll && idx >= 3;
           el.classList.toggle('hidden', hide);
         });
-        nonMatching.forEach(el => el.classList.add('hidden'));
         updateLoadMoreVisibility();
       };
       const updateLoadMoreVisibility = () => {
         const btn = document.getElementById('blog-load-more');
-        const lang = getLang();
-        const visibleSet = cards().filter(el => {
-          const plang = el.getAttribute('data-lang') || 'es';
-          return plang === lang && !el.classList.contains('search-hidden');
-        });
-        const hasExtras = visibleSet.length > 3;
+        const vis = visibleCards();
+        const hasExtras = vis.length > 3;
         if (btn) {
           btn.classList.toggle('hidden', !hasExtras);
           btn.textContent = loadedAll ? 'Ver menos' : 'Ver más';
@@ -132,8 +140,7 @@ const initialVisible = 3;
         });
         applyLang(getLang());
       };
-      const currentLang = getLang();
-      applyLang(currentLang);
+      applyLang(getLang());
       onLangChange(applyLang);
       const search = document.getElementById('blog-search');
       search?.addEventListener('input', (e) => {
