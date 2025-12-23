@@ -160,8 +160,29 @@ const base = import.meta.env.BASE_URL || '/';
 </style>
 
 <script type="module">
-  import { initLang, getLang, setLang, onLangChange } from "../../lib/i18n/languageStore.ts";
-  initLang();
+  // lightweight language store for navbar
+  const LANG_KEY = 'neurovivir:lang';
+  const LANG_EVT = 'neurovivir:lang';
+  let currentLang = 'es';
+  try {
+    const saved = window.localStorage.getItem(LANG_KEY);
+    if (saved === 'en' || saved === 'es') currentLang = saved;
+  } catch {}
+  const getLang = () => currentLang;
+  const setLang = (next) => {
+    if (next !== 'es' && next !== 'en') return;
+    if (next === currentLang) return;
+    currentLang = next;
+    try {
+      window.localStorage.setItem(LANG_KEY, currentLang);
+      window.dispatchEvent(new CustomEvent(LANG_EVT, { detail: currentLang }));
+    } catch {}
+  };
+  const onLangChange = (fn) => {
+    const handler = (e) => { if (e && e.detail) fn(e.detail); };
+    window.addEventListener(LANG_EVT, handler);
+    return () => window.removeEventListener(LANG_EVT, handler);
+  };
   const updateLangUI = (lang) => {
     const esBtn = document.getElementById('lang-es');
     const enBtn = document.getElementById('lang-en');
