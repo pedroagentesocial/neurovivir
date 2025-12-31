@@ -52,7 +52,7 @@ const base = import.meta.env.BASE_URL || "/";
               </div>
             </Card>
             <Card id="card-es-4" noHover={true} aria-label="Psiquiatría/medicación" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
-              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/psiquiatria.png')`}></div>
+              <div class="card-face-img zoomed absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/psiquiatria.png')`}></div>
               <div class="card-face-text absolute inset-0 rounded-full bg-hero-4 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
                 <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
                   <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight truncate whitespace-nowrap">Psiquiatría/medicación</h3>
@@ -61,7 +61,7 @@ const base = import.meta.env.BASE_URL || "/";
               </div>
             </Card>
             <Card id="card-es-5" noHover={true} aria-label="Terapia online" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
-              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/terapia online.png')`}></div>
+              <div class="card-face-img zoomed absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/terapia online.png')`}></div>
               <div class="card-face-text absolute inset-0 rounded-full bg-hero-5 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
                 <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
                   <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Terapia online</h3>
@@ -99,7 +99,7 @@ const base = import.meta.env.BASE_URL || "/";
               </div>
             </Card>
             <Card id="card-en-4" noHover={true} aria-label="Psychiatry/medication" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
-              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/psiquiatria.png')`}></div>
+              <div class="card-face-img zoomed absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/psiquiatria.png')`}></div>
               <div class="card-face-text absolute inset-0 rounded-full bg-hero-4 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
                 <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
                   <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight truncate whitespace-nowrap">Psychiatry/medication</h3>
@@ -108,7 +108,7 @@ const base = import.meta.env.BASE_URL || "/";
               </div>
             </Card>
             <Card id="card-en-5" noHover={true} aria-label="Online therapy" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
-              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/terapia online.png')`}></div>
+              <div class="card-face-img zoomed absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/terapia online.png')`}></div>
               <div class="card-face-text absolute inset-0 rounded-full bg-hero-5 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
                 <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
                   <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Online therapy</h3>
@@ -649,4 +649,5 @@ const base = import.meta.env.BASE_URL || "/";
     .card-flip:hover .card-face-text { opacity: 1 }
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden }
     .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+    .card-face-img.zoomed { background-size: 160% }
   </style>
