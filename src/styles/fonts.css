@@ -10,6 +10,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Joyride", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif";
+  }
+}
+
 /* Fuentes: Joyride para headings, Avenir para cuerpo */
 /* Si las fuentes no están disponibles localmente, se usan fallbacks del sistema */
 
