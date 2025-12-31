@@ -55,7 +55,7 @@ const postsEn = posts.filter((p: Post) => (p.lang ?? 'en') === 'en').slice(0,3);
         </div>
       </div>
       <div class="mt-6">
-        <ButtonSecondary href={`${import.meta.env.BASE_URL}book`} label="">
+        <ButtonSecondary href={`${import.meta.env.BASE_URL}book/`} label="">
           <span id="ps-cta-es" class="hidden">Empezar</span>
           <span id="ps-cta-en">Get Started</span>
         </ButtonSecondary>
@@ -66,7 +66,7 @@ const postsEn = posts.filter((p: Post) => (p.lang ?? 'en') === 'en').slice(0,3);
       <div class="flex items-end justify-between">
         <h3 id="ps-blog-title-es" class="hidden font-heading text-neuro-title text-2xl">Últimas entradas del blog</h3>
         <h3 id="ps-blog-title-en" class="font-heading text-neuro-title text-2xl">Latest blog posts</h3>
-        <a href={`${import.meta.env.BASE_URL}blog`} class="text-neuro-title underline"><span id="ps-blog-view-es" class="hidden">Ver todas</span><span id="ps-blog-view-en">View all</span></a>
+        <a href={`${import.meta.env.BASE_URL}blog/`} class="text-neuro-title underline"><span id="ps-blog-view-es" class="hidden">Ver todas</span><span id="ps-blog-view-en">View all</span></a>
       </div>
       <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4" id="ps-blog-grid-en">
         {postsEn.map((p: Post) => (

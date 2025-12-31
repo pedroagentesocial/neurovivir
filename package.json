@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy:ftp": "node scripts/deploy-ftp.mjs"
+    "deploy:ftp": "node scripts/deploy-ftp.mjs",
+    "watch:deploy": "node scripts/watch-deploy.mjs"
   },
   "devDependencies": {
     "astro": "^4.0.0",
@@ -19,6 +20,7 @@
     "@types/node": "^20.0.0"
   },
   "dependencies": {
-    "basic-ftp": "^5.0.5"
+    "basic-ftp": "^5.0.5",
+    "chokidar": "^3.6.0"
   }
 }
