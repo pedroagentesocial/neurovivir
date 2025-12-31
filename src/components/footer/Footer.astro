@@ -6,11 +6,14 @@
         <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="NeuroVivir" class="footer-logo h-10 md:h-12 object-contain" fetchpriority="high" />
       </a>
       <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2 rounded-4xl border-2 border-white hover:scale-105 transition-transform">
+        <a href="https://www.instagram.com/neuro_vivir1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="group p-2 rounded-4xl border-2 border-white text-white hover:scale-105 transition-transform hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
         </a>
-        <a href="#" aria-label="Facebook" class="p-2 rounded-4xl border-2 border-white hover:scale-105 transition-transform">
+        <a href="https://www.facebook.com/profile.php?id=61580905267573" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="group p-2 rounded-4xl border-2 border-white text-white hover:scale-105 transition-transform hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2.21 0-4 1.79-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.55.45-1 1-1z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@neuro_vivir" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="group p-2 rounded-4xl border-2 border-white text-white hover:scale-105 transition-transform hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6c1.3 1.5 3.2 2.5 5 2.6v3c-2.1-.1-4.1-1-5-2.2v5.9c0 3.4-2.8 6.2-6.2 6.2S3.6 18.7 3.6 15.3c0-3.4 2.8-6.2 6.2-6.2.6 0 1.2.1 1.8.3v3c-.5-.2-1.1-.3-1.8-.3-1.8 0-3.2 1.5-3.2 3.2s1.5 3.2 3.2 3.2 3.2-1.5 3.2-3.2V3h3v3z"/></svg>
         </a>
       </div>
     </div>
@@ -51,8 +54,8 @@
       <h3 class="font-heading text-white mb-3"><span id="ft-contact2-es" class="hidden">Contacto</span><span id="ft-contact2-en">Contact</span></h3>
       <ul class="space-y-2 text-sm">
         <li><span id="ft-email-es" class="hidden">Email</span><span id="ft-email-en">Email</span>: info@neurovivir.com</li>
-        <li><span id="ft-phone-es" class="hidden">Teléfono</span><span id="ft-phone-en">Phone</span>: (555) 123-4567</li>
-        <li><span id="ft-city-es" class="hidden">Ciudad</span><span id="ft-city-en">City</span>: Miami, FL</li>
+        <li><span id="ft-phone-es" class="hidden">Teléfono</span><span id="ft-phone-en">Phone</span>: <a href="tel:+18019967427" class="underline">(801) 996-7427</a></li>
+        <li><span id="ft-city-es" class="hidden">Ubicación</span><span id="ft-city-en">Location</span>: 6770 S 900 E, Midvale, UT 84047</li>
       </ul>
     </div>
   </div>
@@ -66,8 +69,9 @@
   .footer-logo { filter: brightness(0) invert(1) }
 </style>
 <script type="module">
-  import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-  initLang();
+  const NV = window.NV_LANG || {};
+  const getLang = NV.get || (() => 'es');
+  const onLangChange = NV.onChange || (() => {});
   const pairs = [
     ['ft-sitemap-es','ft-sitemap-en'],
     ['ft-home-es','ft-home-en'],

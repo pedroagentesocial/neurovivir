@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Entrevista motivacional: cambio colaborativo",
+  "heroSubtitle": "Aclara objetivos y fortalece motivación con conversaciones respetuosas y estructuradas.",
+  "heroImage": "/images/Entrevista motivacional.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Enfoque informado en evidencia, centrado en la autonomía, valores y pasos realistas.",
+  "helpBullets": [
+    "Explorar ambivalencia y aclarar valores",
+    "Definir metas pequeñas alcanzables",
+    "Planificar barreras y disparadores",
+    "Coordinar apoyo y seguimiento"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados con formación en MI",
+    "Cuidado respetuoso y sensible a la cultura",
+    "Formato online seguro y flexible",
+    "Seguimiento claro de avances y ajustes"
+  ],
+  "faq": [
+    { "question": "¿Es un modelo de terapia?", "answer": "Es un enfoque conversacional usado en terapias para fortalecer motivación y planificar cambios." },
+    { "question": "¿Qué haremos?", "answer": "Aclarar objetivos, explorar ambivalencia, definir pasos pequeños y coordinar apoyo." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura con horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

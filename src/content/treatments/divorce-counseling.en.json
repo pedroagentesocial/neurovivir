@@ -1,0 +1,24 @@
+{
+  "heroTitle": "Divorce counseling: respectful, practical support",
+  "heroSubtitle": "Navigate change with clear steps, emotion regulation and healthy boundaries.",
+  "heroImage": "/images/Consejería de divorcio.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-informed, culturally sensitive care focused on day-to-day strategies.",
+  "helpBullets": [
+    "Emotion regulation and decision support",
+    "Co-parenting and communication tools",
+    "Boundaries and support networks",
+    "Routine rebuilding and self-care"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Respectful, culturally sensitive care",
+    "Secure, flexible online format",
+    "Small measurable goals and follow-ups"
+  ],
+  "faq": [
+    { "question": "Do you offer legal advice?", "answer": "No, we focus on emotional care and coordination of resources when helpful." },
+    { "question": "What happens in sessions?", "answer": "We work on emotion regulation, communication, boundaries and a realistic plan." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

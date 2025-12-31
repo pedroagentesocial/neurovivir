@@ -1,0 +1,13 @@
+{
+  "heroTitle": "Cognitive behavioral therapy (CBT)",
+  "heroSubtitle": "Practical work on thoughts, emotions and behaviors.",
+  "cta": { "book": "Book now" },
+  "trustNote": "Structured, evidence-based intervention.",
+  "heroImage": "/images/Cognitive behavioral therapy (CBT).png",
+  "heroBullets": [
+    "Cognitive restructuring",
+    "Exposure and behavioral activation",
+    "Homework"
+  ]
+}
+

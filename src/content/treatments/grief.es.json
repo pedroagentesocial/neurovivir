@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Duelo: apoyo respetuoso y humano",
+  "heroSubtitle": "Procesa la pérdida con pasos claros, rituales y acompañamiento compasivo.",
+  "heroImage": "/images/Duelo.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención informada en evidencia y cultura, respetando tu ritmo y vínculos.",
+  "helpBullets": [
+    "Comprensión del duelo y reacciones comunes",
+    "Rituales y prácticas de memoria con sentido personal",
+    "Rutinas graduales, descanso y autocuidado",
+    "Recursos y redes de apoyo"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Sensibilidad cultural y trato respetuoso",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento claro"
+  ],
+  "faq": [
+    { "question": "¿Cuánto dura el proceso de duelo?", "answer": "Varía según cada persona; trabajamos a tu ritmo con rituales y apoyo para evitar aislamiento y agotamiento." },
+    { "question": "¿Qué trabajamos en sesión?", "answer": "Psicoeducación, regulación emocional, rituales de memoria, rutinas y un plan cuidadoso." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura con horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

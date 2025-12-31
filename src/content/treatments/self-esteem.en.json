@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Self-esteem: confidence and compassionate growth",
+  "heroSubtitle": "Strengthen self-worth with practical skills and a healthier inner dialogue.",
+  "heroImage": "/images/Autoestima.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-based, culturally sensitive care focused on realistic habits and self-compassion.",
+  "helpBullets": [
+    "Identify strengths and values",
+    "Skills for negative self-talk and self-criticism",
+    "Boundary setting and assertive communication",
+    "Realistic habits and small goals to build momentum"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based care",
+    "Cultural sensitivity and respectful approach",
+    "Secure, flexible online format",
+    "Small measurable goals and clear follow-ups"
+  ],
+  "faq": [
+    { "question": "What is self-esteem work?", "answer": "We explore your strengths, beliefs and habits, and practice tools for kinder self-dialogue and firm boundaries." },
+    { "question": "What happens in sessions?", "answer": "Clear exercises, skills practice and a stepwise plan tailored to your goals." },
+    { "question": "Is care online?", "answer": "We offer secure, flexible video sessions." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

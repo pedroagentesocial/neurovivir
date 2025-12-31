@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Addictions: compassionate, practical support",
+  "heroSubtitle": "Understand habits and cravings, and build a realistic plan for change.",
+  "heroImage": "/images/Adicciones.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-informed, culturally sensitive care with clear day-to-day strategies.",
+  "helpBullets": [
+    "Psychoeducation on habit loops and triggers",
+    "Craving regulation and short, repeatable routines",
+    "Boundaries and support network planning",
+    "Stepwise plan based on your context"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based care",
+    "Cultural sensitivity and respectful approach",
+    "Secure, flexible online format",
+    "Small measurable goals and clear follow-ups"
+  ],
+  "faq": [
+    { "question": "What will we work on?", "answer": "Understanding habit loops, triggers, craving regulation tools, boundaries and a realistic change plan." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." },
+    { "question": "Do you coordinate other services?", "answer": "Yes, when helpful we connect to community resources and medical care." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

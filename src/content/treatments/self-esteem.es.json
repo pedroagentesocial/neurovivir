@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Autoestima: confianza y crecimiento compasivo",
+  "heroSubtitle": "Fortalece tu valor personal con habilidades prácticas y un diálogo interno más saludable.",
+  "heroImage": "/images/Autoestima.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención basada en evidencia y sensible a la cultura, enfocada en hábitos realistas y autocompasión.",
+  "helpBullets": [
+    "Identificación de fortalezas y valores",
+    "Habilidades para pensamientos negativos y autocrítica",
+    "Límites y comunicación asertiva",
+    "Hábitos realistas y metas pequeñas para crear impulso"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y cuidado basado en evidencia",
+    "Sensibilidad cultural y trato respetuoso",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento claro"
+  ],
+  "faq": [
+    { "question": "¿Qué es el trabajo en autoestima?", "answer": "Exploramos tus fortalezas, creencias y hábitos, y practicamos herramientas para un diálogo interno más amable y límites firmes." },
+    { "question": "¿Qué ocurre en sesión?", "answer": "Ejercicios claros, práctica de habilidades y un plan paso a paso según tus objetivos." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura y flexible." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

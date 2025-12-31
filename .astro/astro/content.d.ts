@@ -259,6 +259,66 @@ declare module 'astro:content' {
   data: any;
 }>;
 "therapies": {
+"adhd-therapy.en": {
+	id: "adhd-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"adhd-therapy.es": {
+	id: "adhd-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"anger-management-therapy.en": {
+	id: "anger-management-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"anger-management-therapy.es": {
+	id: "anger-management-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"anxiety-therapy.en": {
+	id: "anxiety-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"anxiety-therapy.es": {
+	id: "anxiety-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"autism-therapy.en": {
+	id: "autism-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"autism-therapy.es": {
+	id: "autism-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"bipolar-disorder-therapy.en": {
+	id: "bipolar-disorder-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"bipolar-disorder-therapy.es": {
+	id: "bipolar-disorder-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"cognitive-behavioral-therapy-cbt.en": {
+	id: "cognitive-behavioral-therapy-cbt.en";
+  collection: "therapies";
+  data: any
+};
+"cognitive-behavioral-therapy-cbt.es": {
+	id: "cognitive-behavioral-therapy-cbt.es";
+  collection: "therapies";
+  data: any
+};
 "couples-therapy.en": {
 	id: "couples-therapy.en";
   collection: "therapies";
@@ -269,6 +329,26 @@ declare module 'astro:content' {
   collection: "therapies";
   data: any
 };
+"dialectical-behavior-therapy-dbt.en": {
+	id: "dialectical-behavior-therapy-dbt.en";
+  collection: "therapies";
+  data: any
+};
+"dialectical-behavior-therapy-dbt.es": {
+	id: "dialectical-behavior-therapy-dbt.es";
+  collection: "therapies";
+  data: any
+};
+"domestic-abuse-therapy.en": {
+	id: "domestic-abuse-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"domestic-abuse-therapy.es": {
+	id: "domestic-abuse-therapy.es";
+  collection: "therapies";
+  data: any
+};
 "domestic-violence.en": {
 	id: "domestic-violence.en";
   collection: "therapies";
@@ -276,6 +356,26 @@ declare module 'astro:content' {
 };
 "domestic-violence.es": {
 	id: "domestic-violence.es";
+  collection: "therapies";
+  data: any
+};
+"emdr-therapy.en": {
+	id: "emdr-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"emdr-therapy.es": {
+	id: "emdr-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"emotionally-focused-therapy-eft.en": {
+	id: "emotionally-focused-therapy-eft.en";
+  collection: "therapies";
+  data: any
+};
+"emotionally-focused-therapy-eft.es": {
+	id: "emotionally-focused-therapy-eft.es";
   collection: "therapies";
   data: any
 };
@@ -309,6 +409,46 @@ declare module 'astro:content' {
   collection: "therapies";
   data: any
 };
+"mindfulness-based-cognitive-therapy-mbct.en": {
+	id: "mindfulness-based-cognitive-therapy-mbct.en";
+  collection: "therapies";
+  data: any
+};
+"mindfulness-based-cognitive-therapy-mbct.es": {
+	id: "mindfulness-based-cognitive-therapy-mbct.es";
+  collection: "therapies";
+  data: any
+};
+"narrative-therapy.en": {
+	id: "narrative-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"narrative-therapy.es": {
+	id: "narrative-therapy.es";
+  collection: "therapies";
+  data: any
+};
+"obsessive-compulsive-disorder-therapy-ocdt.en": {
+	id: "obsessive-compulsive-disorder-therapy-ocdt.en";
+  collection: "therapies";
+  data: any
+};
+"obsessive-compulsive-disorder-therapy-ocdt.es": {
+	id: "obsessive-compulsive-disorder-therapy-ocdt.es";
+  collection: "therapies";
+  data: any
+};
+"person-centered-therapy-pct.en": {
+	id: "person-centered-therapy-pct.en";
+  collection: "therapies";
+  data: any
+};
+"person-centered-therapy-pct.es": {
+	id: "person-centered-therapy-pct.es";
+  collection: "therapies";
+  data: any
+};
 "post-crash-support.en": {
 	id: "post-crash-support.en";
   collection: "therapies";
@@ -316,6 +456,16 @@ declare module 'astro:content' {
 };
 "post-crash-support.es": {
 	id: "post-crash-support.es";
+  collection: "therapies";
+  data: any
+};
+"psychodynamic-therapy.en": {
+	id: "psychodynamic-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"psychodynamic-therapy.es": {
+	id: "psychodynamic-therapy.es";
   collection: "therapies";
   data: any
 };
@@ -329,8 +479,28 @@ declare module 'astro:content' {
   collection: "therapies";
   data: any
 };
+"trauma-ptsd-therapy.en": {
+	id: "trauma-ptsd-therapy.en";
+  collection: "therapies";
+  data: any
+};
+"trauma-ptsd-therapy.es": {
+	id: "trauma-ptsd-therapy.es";
+  collection: "therapies";
+  data: any
+};
 };
 "treatments": {
+"addictions.en": {
+	id: "addictions.en";
+  collection: "treatments";
+  data: any
+};
+"addictions.es": {
+	id: "addictions.es";
+  collection: "treatments";
+  data: any
+};
 "anxiety.en": {
 	id: "anxiety.en";
   collection: "treatments";
@@ -338,6 +508,26 @@ declare module 'astro:content' {
 };
 "anxiety.es": {
 	id: "anxiety.es";
+  collection: "treatments";
+  data: any
+};
+"christian-counseling.en": {
+	id: "christian-counseling.en";
+  collection: "treatments";
+  data: any
+};
+"christian-counseling.es": {
+	id: "christian-counseling.es";
+  collection: "treatments";
+  data: any
+};
+"depression-counseling.en": {
+	id: "depression-counseling.en";
+  collection: "treatments";
+  data: any
+};
+"depression-counseling.es": {
+	id: "depression-counseling.es";
   collection: "treatments";
   data: any
 };
@@ -351,6 +541,16 @@ declare module 'astro:content' {
   collection: "treatments";
   data: any
 };
+"divorce-counseling.en": {
+	id: "divorce-counseling.en";
+  collection: "treatments";
+  data: any
+};
+"divorce-counseling.es": {
+	id: "divorce-counseling.es";
+  collection: "treatments";
+  data: any
+};
 "domestic-violence.en": {
 	id: "domestic-violence.en";
   collection: "treatments";
@@ -358,6 +558,26 @@ declare module 'astro:content' {
 };
 "domestic-violence.es": {
 	id: "domestic-violence.es";
+  collection: "treatments";
+  data: any
+};
+"eating-disorders.en": {
+	id: "eating-disorders.en";
+  collection: "treatments";
+  data: any
+};
+"eating-disorders.es": {
+	id: "eating-disorders.es";
+  collection: "treatments";
+  data: any
+};
+"grief.en": {
+	id: "grief.en";
+  collection: "treatments";
+  data: any
+};
+"grief.es": {
+	id: "grief.es";
   collection: "treatments";
   data: any
 };
@@ -371,6 +591,16 @@ declare module 'astro:content' {
   collection: "treatments";
   data: any
 };
+"lgbtqia-counseling.en": {
+	id: "lgbtqia-counseling.en";
+  collection: "treatments";
+  data: any
+};
+"lgbtqia-counseling.es": {
+	id: "lgbtqia-counseling.es";
+  collection: "treatments";
+  data: any
+};
 "migration-stress.en": {
 	id: "migration-stress.en";
   collection: "treatments";
@@ -378,6 +608,26 @@ declare module 'astro:content' {
 };
 "migration-stress.es": {
 	id: "migration-stress.es";
+  collection: "treatments";
+  data: any
+};
+"motivational-interviewing.en": {
+	id: "motivational-interviewing.en";
+  collection: "treatments";
+  data: any
+};
+"motivational-interviewing.es": {
+	id: "motivational-interviewing.es";
+  collection: "treatments";
+  data: any
+};
+"self-esteem.en": {
+	id: "self-esteem.en";
+  collection: "treatments";
+  data: any
+};
+"self-esteem.es": {
+	id: "self-esteem.es";
   collection: "treatments";
   data: any
 };

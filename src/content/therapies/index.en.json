@@ -2,10 +2,11 @@
   "title": "Services",
   "subtitle": "Online psychological care formats",
   "items": [
-    { "name": "Individual therapy", "description": "Personal and safe work.", "href": "/services/individual-therapy" },
-    { "name": "Couples therapy", "description": "Strengthen your bond.", "href": "/services/couples-therapy" },
-    { "name": "Teen therapy", "description": "Support for youth.", "href": "/services/teen-therapy" },
-    { "name": "Psychological evaluation", "description": "Clear and professional processes.", "href": "/services/evaluations" },
-    { "name": "Post-crash support", "description": "Care after car crash: regulation and return to routine.", "href": "/services/post-crash-support" }
+    { "name": "Individual therapy", "description": "Personal and safe work.", "href": "/therapies/individual-therapy" },
+    { "name": "Couples therapy", "description": "Strengthen your bond.", "href": "/therapies/couples-therapy" },
+    { "name": "Teen therapy", "description": "Support for youth.", "href": "/therapies/teen-therapy" },
+    { "name": "Psychological evaluation", "description": "Clear and professional processes.", "href": "/therapies/evaluations" },
+    { "name": "Post-crash support", "description": "Care after car crash: regulation and return to routine.", "href": "/therapies/post-crash-support" },
+    { "name": "Domestic violence", "description": "Safe support for domestic violence cases.", "href": "/therapies/domestic-violence" }
   ]
 }

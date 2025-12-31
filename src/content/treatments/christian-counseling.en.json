@@ -1,0 +1,26 @@
+{
+  "heroTitle": "Christian counseling: values-based, practical support",
+  "heroSubtitle": "Understand your beliefs and build a change plan aligned with them.",
+  "heroImage": "/images/Consejería cristiana.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Respectful, evidence-informed care with cultural sensitivity and practical strategies.",
+  "helpBullets": [
+    "Work on identity, relationships and habits from a Christian perspective",
+    "Emotion regulation and skills for healthy self-talk",
+    "Healthy boundaries and stronger support networks",
+    "Stepwise plan with small, sustainable goals"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Culturally sensitive care aligned with personal values",
+    "Secure, flexible online format",
+    "Small measurable goals and clear follow-ups"
+  ],
+  "faq": [
+    { "question": "Is care confessional?", "answer": "We respect your faith and values. We work from your goals without imposing beliefs." },
+    { "question": "What will we work on?", "answer": "Emotion regulation, habits, boundaries, relationships and a realistic change plan aligned with your values." },
+    { "question": "Is care online?", "answer": "Yes, we offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}
+

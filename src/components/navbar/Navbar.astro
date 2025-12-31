@@ -16,9 +16,9 @@ const base = import.meta.env.BASE_URL || '/';
           <span id="svc-label-en">Services</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div id="svc-menu" class="absolute left-0 top-full mt-2 hidden">
-          <div class="rounded-4xl shadow-lg border border-neuro-detail bg-white text-neuro-title p-2 md:p-4 flex min-w-[640px]">
-            <div class="w-52 pr-3 md:pr-4 space-y-2">
+        <div id="svc-menu" data-base={base} class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-full mt-2 hidden">
+          <div class="rounded-4xl shadow-lg border border-neuro-detail bg-white text-neuro-title p-3 md:p-5 flex flex-col md:flex-row w-[95vw] md:w-auto min-w-0 md:min-w-0 xl:min-w-[1200px] max-w-[95vw] overflow-x-hidden">
+            <div class="w-full md:w-52 pr-3 md:pr-4 space-y-2">
               <button id="svc-tab-therapies" class="w-full inline-flex items-center justify-between rounded-4xl px-3 py-2 bg-white text-neuro-title opacity-80 hover:bg-neuro-detail/10 hover:opacity-100">
                 <span id="tab-therapies-es" class="hidden">Terapias</span>
                 <span id="tab-therapies-en">Therapies</span>
@@ -30,23 +30,62 @@ const base = import.meta.env.BASE_URL || '/';
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
             </div>
-            <div class="w-px bg-neuro-detail/40 mx-2 md:mx-3"></div>
+            <div class="hidden md:block w-px bg-neuro-detail/40 mx-2 md:mx-3"></div>
             <div class="flex-1 pl-2 md:pl-3">
-              <ul id="svc-list-therapies" class="grid grid-cols-1 gap-2">
-                <li><a href={`${base}therapies/individual-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-individual-es" class="hidden">Terapia individual</span><span id="th-individual-en">Individual therapy</span></a></li>
-                <li><a href={`${base}therapies/couples-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-couples-es" class="hidden">Terapia de pareja</span><span id="th-couples-en">Couples therapy</span></a></li>
-                <li><a href={`${base}therapies/teen-therapy`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-teen-es" class="hidden">Terapia para adolescentes</span><span id="th-teen-en">Teen therapy</span></a></li>
-                <li><a href={`${base}therapies/domestic-violence`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-domestic-es" class="hidden">Violencia doméstica</span><span id="th-domestic-en">Domestic violence</span></a></li>
-                <li><a href={`${base}therapies/evaluations`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-evaluations-es" class="hidden">Evaluación psicológica</span><span id="th-evaluations-en">Psychological evaluation</span></a></li>
-                <li><a href={`${base}therapies/post-crash-support`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="th-postcrash-es" class="hidden">Apoyo post choque</span><span id="th-postcrash-en">Post-crash support</span></a></li>
-              </ul>
-              <ul id="svc-list-treatments" class="grid grid-cols-1 gap-2 hidden">
-                <li><a href={`${base}treatments/migration-stress`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-migration-es" class="hidden">Estrés por migración</span><span id="tr-migration-en">Migration stress</span></a></li>
-                <li><a href={`${base}treatments/anxiety`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-anxiety-es" class="hidden">Ansiedad</span><span id="tr-anxiety-en">Anxiety</span></a></li>
-                <li><a href={`${base}treatments/depression`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-depression-es" class="hidden">Depresión</span><span id="tr-depression-en">Depression</span></a></li>
-                <li><a href={`${base}treatments/grief`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-grief-es" class="hidden">Duelo</span><span id="tr-grief-en">Grief</span></a></li>
-                <li><a href={`${base}treatments/self-esteem`} class="text-neuro-title rounded-4xl px-3 py-2 hover:underline"><span id="tr-selfesteem-es" class="hidden">Autoestima</span><span id="tr-selfesteem-en">Self-esteem</span></a></li>
-              </ul>
+              <div id="svc-list-therapies" class="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-5 max-h-[60vh] overflow-y-auto md:max-h-[60vh] md:overflow-y-auto pr-3">
+                <ul class="space-y-2 text-center">
+                  <li><a href={`${base}therapies/individual-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-individual-es" class="hidden">Terapia individual</span><span id="th-individual-en">Individual therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/couples-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-couples-es" class="hidden">Terapia de pareja</span><span id="th-couples-en">Couples therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/teen-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-teen-es" class="hidden">Terapia para adolescentes</span><span id="th-teen-en">Teen therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/domestic-violence`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-domestic-es" class="hidden">Violencia doméstica</span><span id="th-domestic-en">Domestic violence</span></span></a></li>
+                  <li><a href={`${base}therapies/evaluations`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-evaluations-es" class="hidden">Evaluación psicológica</span><span id="th-evaluations-en">Psychological evaluation</span></span></a></li>
+                  <li><a href={`${base}therapies/post-crash-support`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-postcrash-es" class="hidden">Apoyo post choque</span><span id="th-postcrash-en">Post-crash support</span></span></a></li>
+                  <li><a href={`${base}therapies/adhd-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-adhd-es" class="hidden">Terapia para TDAH</span><span id="th-adhd-en">ADHD therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/anger-management-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-anger-es" class="hidden">Terapia para manejo de ira</span><span id="th-anger-en">Anger management therapy</span></span></a></li>
+                </ul>
+                <ul class="space-y-2 md:border-l md:border-neuro-detail md:pl-3 text-center">
+                  <li><a href={`${base}therapies/anxiety-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-anxiety-es" class="hidden">Terapia para ansiedad</span><span id="th-anxiety-en">Anxiety therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/autism-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-autism-es" class="hidden">Terapia para autismo</span><span id="th-autism-en">Autism therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/bipolar-disorder-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-bipolar-es" class="hidden">Terapia para trastorno bipolar</span><span id="th-bipolar-en">Bipolar disorder therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/cognitive-behavioral-therapy-cbt`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-cbt-es" class="hidden">Terapia cognitivo-conductual (TCC)</span><span id="th-cbt-en">Cognitive behavioral therapy (CBT)</span></span></a></li>
+                  <li><a href={`${base}therapies/dialectical-behavior-therapy-dbt`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-dbt-es" class="hidden">Terapia dialéctica conductual (TDC)</span><span id="th-dbt-en">Dialectical behavior therapy (DBT)</span></span></a></li>
+                  <li><a href={`${base}therapies/domestic-abuse-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-domesticabuse-es" class="hidden">Terapia por abuso doméstico</span><span id="th-domesticabuse-en">Domestic abuse therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/emdr-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-emdr-es" class="hidden">Terapia EMDR</span><span id="th-emdr-en">EMDR therapy</span></span></a></li>
+                </ul>
+                <ul class="space-y-2 md:border-l md:border-neuro-detail md:pl-3 text-center">
+                  <li><a href={`${base}therapies/emotionally-focused-therapy-eft`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-eft-es" class="hidden">Terapia focalizada en emociones (EFT)</span><span id="th-eft-en">Emotionally focused therapy (EFT)</span></span></a></li>
+                  <li><a href={`${base}therapies/mindfulness-based-cognitive-therapy-mbct`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-mbct-es" class="hidden">Terapia cognitiva basada en mindfulness (MBCT)</span><span id="th-mbct-en">Mindfulness-based cognitive therapy (MBCT)</span></span></a></li>
+                  <li><a href={`${base}therapies/narrative-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-narrative-es" class="hidden">Terapia narrativa</span><span id="th-narrative-en">Narrative therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/obsessive-compulsive-disorder-therapy-ocdt`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-ocd-es" class="hidden">Terapia para TOC</span><span id="th-ocd-en">Obsessive-compulsive disorder therapy (OCDT)</span></span></a></li>
+                  <li><a href={`${base}therapies/person-centered-therapy-pct`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-pct-es" class="hidden">Terapia centrada en la persona (TCP)</span><span id="th-pct-en">Person-centered therapy (PCT)</span></span></a></li>
+                  <li><a href={`${base}therapies/psychodynamic-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-psychodynamic-es" class="hidden">Terapia psicodinámica</span><span id="th-psychodynamic-en">Psychodynamic therapy</span></span></a></li>
+                  <li><a href={`${base}therapies/trauma-ptsd-therapy`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="th-trauma-es" class="hidden">Terapia para trauma/TEPT</span><span id="th-trauma-en">Trauma/PTSD therapy</span></span></a></li>
+                </ul>
+                <ul class="space-y-2 md:border-l md:border-neuro-detail md:pl-3 text-center"></ul>
+                <ul class="space-y-2 md:border-l md:border-neuro-detail md:pl-3 text-center"></ul>
+              </div>
+              <div id="svc-list-treatments" class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-5 hidden max-h-[60vh] overflow-y-auto md:max-h-[60vh] md:overflow-y-auto pr-3">
+                <ul class="space-y-2 text-center">
+                  <li><a href={`${base}treatments/migration-stress`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-migration-es" class="hidden">Estrés por migración</span><span id="tr-migration-en">Migration stress</span></span></a></li>
+                  <li><a href={`${base}treatments/anxiety`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-anxiety-es" class="hidden">Ansiedad</span><span id="tr-anxiety-en">Anxiety</span></span></a></li>
+                  <li><a href={`${base}treatments/depression`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-depression-es" class="hidden">Depresión</span><span id="tr-depression-en">Depression</span></span></a></li>
+                </ul>
+                <ul class="space-y-2 md:border-l md:border-neuro-detail md:pl-3 text-center">
+                  <li><a href={`${base}treatments/grief`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714.01 630.38" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M209.37,119.32c27.32,3.64,50.79,14.86,62.44,41.02,4.85,10.9,15.07,43.11-7.28,39.87-11.22-1.63-9.83-19.98-13.79-29.34-12.05-28.51-48.55-31.82-75.11-24.94-32.23,8.36-55.61,40.63-53.44,73.96,.47,7.24,4.56,16.6,2.43,23.54-1.16,3.8-12.16,9.73-15.87,12.87-37.19,31.54-38.8,89.21-1.92,121.7,27.1,23.88,55.58,35.21,89.41,15.61,7.44-4.31,11.99-11.79,21.49-8.66,6.96,2.3,9.02,10.74,5.88,16.86-2,3.92-13.24,10.92-17.44,13.22-26.89,14.77-56.28,16.49-83.99,2.71,.89,32.81,24.8,62.45,57.3,68.68,8.82,1.69,19.19-.62,23.87,8.71,5.57,11.1,5.56,18.47,14.66,29.41,42.48,51.09,124.85,21.38,127.44-44l-.05-331.53c-5.29-74.55-101.45-94.58-136.03-29.7Zm-31.18,215.12c-10.21-.81-20.18-7.69-13.71-18.57,5.1-8.58,13.2-4.36,20.41-4.42,30.4-.27,50.82-30.91,41.99-59.22-2.16-6.94-6.92-10.05-4.62-18.46,2.12-7.72,13.66-9.98,19.36-4.43,2.34,2.28,6.33,11.63,7.47,15.05,6.02,18.03,4.25,37.87-4.79,54.5l.26,1.68c6.68,12.22,20.22,21.95,34.27,23.29,8.34,.8,23.62-4.66,26.11,7.41,1.69,8.18-1.8,13.89-9.92,15.51-25.03,5-51.93-8.01-67.12-27.63-14.32,11-31.52,16.74-49.72,15.29Zm138.4,91.38c-2.23,17.94-26.66,38.93-43.24,43.95-11.71,3.55-46.29,8.86-42.69-12.01,2.2-12.77,15.73-7.89,24.25-8.34,11.89-.63,24.2-7.07,31.59-16.31,5.02-6.28,7.77-19.3,15.54-20.88,8.59-1.74,15.62,4.95,14.55,13.59Z"/><path fill="currentColor" d="M604.56,255.87c-4.52-3.8-12.91-7.45-15.2-12.59-2.78-6.24,1.81-16.21,2.28-23.38,2.25-34.57-23.21-68.33-57.28-74.91-26.75-5.17-60.77-1.68-71.82,27.25-4.26,11.16-1.36,30.03-17.86,27.95-14.44-1.82-8.64-22.9-5.63-32.29,9.52-29.72,35.16-45.58,65.42-48.12-30.57-61.75-122.88-47.73-134.83,19.92-2.14,116.54-1.84,233.71-.15,350.28,13.31,70.86,107.59,83.25,137.35,15.91,3.81-8.62,2.02-16.13,13.68-17.94,7.92-1.23,14.07-.95,22.23-3.64,28.02-9.25,48.27-37.08,48.9-66.54-24.06,11.71-48.96,12.53-73.75,2.37-6.43-2.63-25.27-12.92-28.02-18.92-4.38-9.55,3.39-19.08,13.71-16.58,4.37,1.06,15.82,10.4,22.28,13.16,31.54,13.51,56.59,1.46,80.62-19.36,37.71-32.68,35.88-90.77-1.92-122.58Zm-134.66,168.99c-.55,4.37-5.08,12.54-7.56,16.4-14.29,22.24-41.28,33.64-67.49,30.07-10.55-1.44-15.62-14.15-6.79-20.99,6.66-5.16,12.39-1.42,20.15-1.89,12.19-.74,25.07-7.76,32.46-17.36,4.73-6.14,7.04-18.26,14.67-19.82,8.68-1.78,15.65,4.87,14.55,13.58Zm65.74-90.42c-18.32,1.46-35.26-4.49-49.86-15.13-10.06,12.37-23.77,22.6-39.56,26.31-12.38,2.91-42.71,6.05-37.1-15.07,2.92-11.02,16.96-6.03,24.92-6.7,10.8-.91,23.43-7.35,30.17-15.81,8.57-10.75,2.56-12.12-.45-23.46-4.19-15.77-3.13-38.21,6.38-52.05,4.44-6.46,12.49-9.09,18.68-3.19,7.88,7.52,.4,15.63-1.86,22.88-8.78,28.17,11.19,58.44,41.14,59.12,7.41,.17,15.46-4.24,20.88,3.95,7.2,10.87-2.7,18.3-13.33,19.15Z"/><path fill="currentColor" d="M708.62,276.33c-6.55-24.62-19.31-47.58-36.88-66.83-1.41-30.65-11.97-60.6-30.63-85.47-18.14-24.17-43.06-42.25-71.08-52.13C545.44,31.34,502.97,4.91,453.06,.73c-35.35-2.96-68.78,5.77-96.24,23.91C322.45,2.11,280.12-5.56,238.69,4.08c-40.26,9.38-73.93,33.84-94.71,67.7-28,9.81-52.95,27.88-71.15,52.09-18.7,24.87-29.3,54.77-30.76,85.36C15.5,238.36,.19,276.91,0,317.38c-.19,40.99,15.2,80.16,42.18,109.6,4.9,61.63,44.97,113.56,102.57,133.21,25.18,39.91,67.64,65.8,116.79,69.69,4.21,.34,8.4,.5,12.55,.5,30.19,0,58.74-8.69,82.8-24.55,27,17.84,59.8,26.61,94.3,24.09,49.79-3.63,92.72-29.63,118.03-69.95,48.06-16.97,86.49-57.9,98.36-107.84,2.16-9.08,3.03-17.35,3.42-24.72,36.98-39.61,52-97.01,37.61-151.08Zm-93.51,125.14c-.92,12.97,.37,24.75-2.67,37.57-9.1,38.33-43.13,67.68-82.13,72.13-27.44,75.78-134.13,85.27-172.46,13.91l-1.97,.59c-39.27,70.75-144.9,61.12-172.38-14.5-54.07-6.45-90.49-55.2-84.48-109.05-56.97-41.33-56.3-128.19,1-168.95-9.6-54.18,28.47-106.72,83.31-112.56,22.29-66.27,108.5-85.66,157.91-35.92,5.53,5.56,11.14,13.11,14.64,20.15l1.97,.59c38.23-71.68,146.85-61.88,172.64,15.18,54.93,6.05,92.84,58.19,83.31,112.56,19.07,14.18,33.89,34.56,40.05,57.73,10.97,41.24-4.13,85.68-38.74,110.58Z"/></svg><span id="tr-grief-es" class="hidden">Duelo</span><span id="tr-grief-en">Grief</span></span></a></li>
+                  <li><a href={`${base}treatments/self-esteem`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714.01 630.38" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M209.37,119.32c27.32,3.64,50.79,14.86,62.44,41.02,4.85,10.9,15.07,43.11-7.28,39.87-11.22-1.63-9.83-19.98-13.79-29.34-12.05-28.51-48.55-31.82-75.11-24.94-32.23,8.36-55.61,40.63-53.44,73.96,.47,7.24,4.56,16.6,2.43,23.54-1.16,3.8-12.16,9.73-15.87,12.87-37.19,31.54-38.8,89.21-1.92,121.7,27.1,23.88,55.58,35.21,89.41,15.61,7.44-4.31,11.99-11.79,21.49-8.66,6.96,2.3,9.02,10.74,5.88,16.86-2,3.92-13.24,10.92-17.44,13.22-26.89,14.77-56.28,16.49-83.99,2.71,.89,32.81,24.8,62.45,57.3,68.68,8.82,1.69,19.19-.62,23.87,8.71,5.57,11.1,5.56,18.47,14.66,29.41,42.48,51.09,124.85,21.38,127.44-44l-.05-331.53c-5.29-74.55-101.45-94.58-136.03-29.7Zm-31.18,215.12c-10.21-.81-20.18-7.69-13.71-18.57,5.1-8.58,13.2-4.36,20.41-4.42,30.4-.27,50.82-30.91,41.99-59.22-2.16-6.94-6.92-10.05-4.62-18.46,2.12-7.72,13.66-9.98,19.36-4.43,2.34,2.28,6.33,11.63,7.47,15.05,6.02,18.03,4.25,37.87-4.79,54.5l.26,1.68c6.68,12.22,20.22,21.95,34.27,23.29,8.34,.8,23.62-4.66,26.11,7.41,1.69,8.18-1.8,13.89-9.92,15.51-25.03,5-51.93-8.01-67.12-27.63-14.32,11-31.52,16.74-49.72,15.29Zm138.4,91.38c-2.23,17.94-26.66,38.93-43.24,43.95-11.71,3.55-46.29,8.86-42.69-12.01,2.2-12.77,15.73-7.89,24.25-8.34,11.89-.63,24.2-7.07,31.59-16.31,5.02-6.28,7.77-19.3,15.54-20.88,8.59-1.74,15.62,4.95,14.55,13.59Z"/><path fill="currentColor" d="M604.56,255.87c-4.52-3.8-12.91-7.45-15.2-12.59-2.78-6.24,1.81-16.21,2.28-23.38,2.25-34.57-23.21-68.33-57.28-74.91-26.75-5.17-60.77-1.68-71.82,27.25-4.26,11.16-1.36,30.03-17.86,27.95-14.44-1.82-8.64-22.9-5.63-32.29,9.52-29.72,35.16-45.58,65.42-48.12-30.57-61.75-122.88-47.73-134.83,19.92-2.14,116.54-1.84,233.71-.15,350.28,13.31,70.86,107.59,83.25,137.35,15.91,3.81-8.62,2.02-16.13,13.68-17.94,7.92-1.23,14.07-.95,22.23-3.64,28.02-9.25,48.27-37.08,48.9-66.54-24.06,11.71-48.96,12.53-73.75,2.37-6.43-2.63-25.27-12.92-28.02-18.92-4.38-9.55,3.39-19.08,13.71-16.58,4.37,1.06,15.82,10.4,22.28,13.16,31.54,13.51,56.59,1.46,80.62-19.36,37.71-32.68,35.88-90.77-1.92-122.58Zm-134.66,168.99c-.55,4.37-5.08,12.54-7.56,16.4-14.29,22.24-41.28,33.64-67.49,30.07-10.55-1.44-15.62-14.15-6.79-20.99,6.66-5.16,12.39-1.42,20.15-1.89,12.19-.74,25.07-7.76,32.46-17.36,4.73-6.14,7.04-18.26,14.67-19.82,8.68-1.78,15.65,4.87,14.55,13.58Zm65.74-90.42c-18.32,1.46-35.26-4.49-49.86-15.13-10.06,12.37-23.77,22.6-39.56,26.31-12.38,2.91-42.71,6.05-37.1-15.07,2.92-11.02,16.96-6.03,24.92-6.7,10.8-.91,23.43-7.35,30.17-15.81,8.57-10.75,2.56-12.12-.45-23.46-4.19-15.77-3.13-38.21,6.38-52.05,4.44-6.46,12.49-9.09,18.68-3.19,7.88,7.52,.4,15.63-1.86,22.88-8.78,28.17,11.19,58.44,41.14,59.12,7.41,.17,15.46-4.24,20.88,3.95,7.2,10.87-2.7,18.3-13.33,19.15Z"/><path fill="currentColor" d="M708.62,276.33c-6.55-24.62-19.31-47.58-36.88-66.83-1.41-30.65-11.97-60.6-30.63-85.47-18.14-24.17-43.06-42.25-71.08-52.13C545.44,31.34,502.97,4.91,453.06,.73c-35.35-2.96-68.78,5.77-96.24,23.91C322.45,2.11,280.12-5.56,238.69,4.08c-40.26,9.38-73.93,33.84-94.71,67.7-28,9.81-52.95,27.88-71.15,52.09-18.7,24.87-29.3,54.77-30.76,85.36C15.5,238.36,.19,276.91,0,317.38c-.19,40.99,15.2,80.16,42.18,109.6,4.9,61.63,44.97,113.56,102.57,133.21,25.18,39.91,67.64,65.8,116.79,69.69,4.21,.34,8.4,.5,12.55,.5,30.19,0,58.74-8.69,82.8-24.55,27,17.84,59.8,26.61,94.3,24.09,49.79-3.63,92.72-29.63,118.03-69.95,48.06-16.97,86.49-57.9,98.36-107.84,2.16-9.08,3.03-17.35,3.42-24.72,36.98-39.61,52-97.01,37.61-151.08Z"/></svg><span id="tr-selfesteem-es" class="hidden">Autoestima</span><span id="tr-selfesteem-en">Self-esteem</span></span></a></li>
+                  
+                  <li><a href={`${base}treatments/christian-counseling`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714.01 630.38" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M209.37,119.32c27.32,3.64,50.79,14.86,62.44,41.02,4.85,10.9,15.07,43.11-7.28,39.87-11.22-1.63-9.83-19.98-13.79-29.34-12.05-28.51-48.55-31.82-75.11-24.94-32.23,8.36-55.61,40.63-53.44,73.96,.47,7.24,4.56,16.6,2.43,23.54-1.16,3.8-12.16,9.73-15.87,12.87-37.19,31.54-38.8,89.21-1.92,121.7,27.1,23.88,55.58,35.21,89.41,15.61,7.44-4.31,11.99-11.79,21.49-8.66,6.96,2.3,9.02,10.74,5.88,16.86-2,3.92-13.24,10.92-17.44,13.22-26.89,14.77-56.28,16.49-83.99,2.71,.89,32.81,24.8,62.45,57.3,68.68,8.82,1.69,19.19-.62,23.87,8.71,5.57,11.1,5.56,18.47,14.66,29.41,42.48,51.09,124.85,21.38,127.44-44l-.05-331.53c-5.29-74.55-101.45-94.58-136.03-29.7Zm-31.18,215.12c-10.21-.81-20.18-7.69-13.71-18.57,5.1-8.58,13.2-4.36,20.41-4.42,30.4-.27,50.82-30.91,41.99-59.22-2.16-6.94-6.92-10.05-4.62-18.46,2.12-7.72,13.66-9.98,19.36-4.43,2.34,2.28,6.33,11.63,7.47,15.05,6.02,18.03,4.25,37.87-4.79,54.5l.26,1.68c6.68,12.22,20.22,21.95,34.27,23.29,8.34,.8,23.62-4.66,26.11,7.41,1.69,8.18-1.8,13.89-9.92,15.51-25.03,5-51.93-8.01-67.12-27.63-14.32,11-31.52,16.74-49.72,15.29Zm138.4,91.38c-2.23,17.94-26.66,38.93-43.24,43.95-11.71,3.55-46.29,8.86-42.69-12.01,2.2-12.77,15.73-7.89,24.25-8.34,11.89-.63,24.2-7.07,31.59-16.31,5.02-6.28,7.77-19.3,15.54-20.88,8.59-1.74,15.62,4.95,14.55,13.59Z"/><path fill="currentColor" d="M604.56,255.87c-4.52-3.8-12.91-7.45-15.2-12.59-2.78-6.24,1.81-16.21,2.28-23.38,2.25-34.57-23.21-68.33-57.28-74.91-26.75-5.17-60.77-1.68-71.82,27.25-4.26,11.16-1.36,30.03-17.86,27.95-14.44-1.82-8.64-22.9-5.63-32.29,9.52-29.72,35.16-45.58,65.42-48.12-30.57-61.75-122.88-47.73-134.83,19.92-2.14,116.54-1.84,233.71-.15,350.28,13.31,70.86,107.59,83.25,137.35,15.91,3.81-8.62,2.02-16.13,13.68-17.94,7.92-1.23,14.07-.95,22.23-3.64,28.02-9.25,48.27-37.08,48.9-66.54-24.06,11.71-48.96,12.53-73.75,2.37-6.43-2.63-25.27-12.92-28.02-18.92-4.38-9.55,3.39-19.08,13.71-16.58,4.37,1.06,15.82,10.4,22.28,13.16,31.54,13.51,56.59,1.46,80.62-19.36,37.71-32.68,35.88-90.77-1.92-122.58Zm-134.66,168.99c-.55,4.37-5.08,12.54-7.56,16.4-14.29,22.24-41.28,33.64-67.49,30.07-10.55-1.44-15.62-14.15-6.79-20.99,6.66-5.16,12.39-1.42,20.15-1.89,12.19-.74,25.07-7.76,32.46-17.36,4.73-6.14,7.04-18.26,14.67-19.82,8.68-1.78,15.65,4.87,14.55,13.58Zm65.74-90.42c-18.32,1.46-35.26-4.49-49.86-15.13-10.06,12.37-23.77,22.6-39.56,26.31-12.38,2.91-42.71,6.05-37.1-15.07,2.92-11.02,16.96-6.03,24.92-6.7,10.8-.91,23.43-7.35,30.17-15.81,8.57-10.75,2.56-12.12-.45-23.46-4.19-15.77-3.13-38.21,6.38-52.05,4.44-6.46,12.49-9.09,18.68-3.19,7.88,7.52,.4,15.63-1.86,22.88-8.78,28.17,11.19,58.44,41.14,59.12,7.41,.17,15.46-4.24,20.88,3.95,7.2,10.87-2.7,18.3-13.33,19.15Z"/><path fill="currentColor" d="M708.62,276.33c-6.55-24.62-19.31-47.58-36.88-66.83-1.41-30.65-11.97-60.6-30.63-85.47-18.14-24.17-43.06-42.25-71.08-52.13C545.44,31.34,502.97,4.91,453.06,.73c-35.35-2.96-68.78,5.77-96.24,23.91C322.45,2.11,280.12-5.56,238.69,4.08c-40.26,9.38-73.93,33.84-94.71,67.7-28,9.81-52.95,27.88-71.15,52.09-18.7,24.87-29.3,54.77-30.76,85.36C15.5,238.36,.19,276.91,0,317.38c-.19,40.99,15.2,80.16,42.18,109.6,4.9,61.63,44.97,113.56,102.57,133.21,25.18,39.91,67.64,65.8,116.79,69.69,4.21,.34,8.4,.5,12.55,.5,30.19,0,58.74-8.69,82.8-24.55,27,17.84,59.8,26.61,94.3,24.09,49.79-3.63,92.72-29.63,118.03-69.95,48.06-16.97,86.49-57.9,98.36-107.84,2.16-9.08,3.03-17.35,3.42-24.72,36.98-39.61,52-97.01,37.61-151.08Z"/></svg><span id="tr-christian-es" class="hidden">Consejería cristiana</span><span id="tr-christian-en">Christian counseling</span></span></a></li>
+                </ul>
+                <ul class="space-y-1 md:border-l md:border-neuro-detail md:pl-3 text-center">
+                  <li><a href={`${base}treatments/addictions`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-addiction-es" class="hidden">Adicciones</span><span id="tr-addiction-en">Addictions</span></span></a></li>
+                  <li><a href={`${base}treatments/depression-counseling`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-depressionc-es" class="hidden">Consejería para depresión</span><span id="tr-depressionc-en">Depression counseling</span></span></a></li>
+                  <li><a href={`${base}treatments/divorce-counseling`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-divorce-es" class="hidden">Consejería de divorcio</span><span id="tr-divorce-en">Divorce counseling</span></span></a></li>
+                  <li><a href={`${base}treatments/eating-disorders`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-eating-es" class="hidden">Trastornos alimentarios</span><span id="tr-eating-en">Eating disorders</span></span></a></li>
+                  <li><a href={`${base}treatments/lgbtqia-counseling`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-lgbtq-es" class="hidden">Consejería LGBTQIA+</span><span id="tr-lgbtq-en">LGBTQIA+ counseling</span></span></a></li>
+                  <li><a href={`${base}treatments/motivational-interviewing`} class="group text-neuro-title text-sm md:text-base rounded-4xl px-2 py-1 hover:underline hover:bg-neuro-detail/20 hover:text-neuro-primaryButton transition-colors leading-tight break-words whitespace-normal mx-auto"><span class="inline-flex items-center justify-center gap-2"><img src={`${base}icons/cerebro-neurovivir.svg`} alt="" class="bullet-img w-4 h-4"/><span id="tr-mi-es" class="hidden">Entrevista motivacional</span><span id="tr-mi-en">Motivational interviewing</span></span></a></li>
+                </ul>
+                <ul class="space-y-1 md:border-l md:border-neuro-detail md:pl-3 text-center"></ul>
+              </div>
             </div>
           </div>
         </div>
@@ -59,11 +98,14 @@ const base = import.meta.env.BASE_URL || '/';
     <!-- Derecha: Teléfono + CTA + Redes + Idioma (desktop) -->
     <div class="hidden md:flex items-center gap-4">
       <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+        <a href="https://www.instagram.com/neuro_vivir1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social group p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform text-white hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor"/><circle cx="12" cy="12" r="4" stroke="currentColor"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
         </a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform">
+        <a href="https://www.facebook.com/profile.php?id=61580905267573" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social group p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform text-white hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-2.21 0-4 1.79-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.55.45-1 1-1z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@neuro_vivir" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social group p-2 rounded-4xl border-2 border-neuro-detail hover:scale-105 transition-transform text-white hover:text-neuro-primaryButton hover:border-neuro-primaryButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6c1.3 1.5 3.2 2.5 5 2.6v3c-2.1-.1-4.1-1-5-2.2v5.9c0 3.4-2.8 6.2-6.2 6.2S3.6 18.7 3.6 15.3c0-3.4 2.8-6.2 6.2-6.2.6 0 1.2.1 1.8.3v3c-.5-.2-1.1-.3-1.8-.3-1.8 0-3.2 1.5-3.2 3.2s1.5 3.2 3.2 3.2 3.2-1.5 3.2-3.2V3h3v3z"/></svg>
         </a>
       </div>
       <div class="flex items-center gap-2" id="lang-toggle-desktop">
@@ -71,11 +113,11 @@ const base = import.meta.env.BASE_URL || '/';
         <span class="text-neuro-paragraph">|</span>
         <button id="lang-en" class="text-neuro-paragraph opacity-60">EN</button>
       </div>
-      <a href="tel:+15551234567" class="phone inline-flex items-center gap-2 text-lg md:text-xl ml-auto hover:underline" aria-label="Call (555) 123-4567">
+      <a href="tel:+18019967427" class="phone inline-flex items-center gap-2 text-lg md:text-xl ml-auto hover:underline" aria-label="Call (801) 996-7427">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path d="M22 16.92v2a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.11 3.2 2 2 0 014.11 1h2a2 2 0 012 1.72 12.66 12.66 0 00.65 2.73 2 2 0 01-.45 2.11L7.11 8.89a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45 12.66 12.66 0 002.73.65A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span>(555) 123-4567</span>
+        <span>(801) 996-7427</span>
       </a>
       <a href="#book" id="open-booking-desktop" class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 text-base md:text-lg hover:scale-105 transition-transform">
         <span id="cta-es">Agendar ahora</span>
@@ -105,11 +147,11 @@ const base = import.meta.env.BASE_URL || '/';
         <a href={`${base}faq`} class="hover:text-neuro-title transition-colors"><span id="m-nav-faq-es" class="hidden">FAQ</span><span id="m-nav-faq-en">FAQ</span></a>
         <a href={`${base}contact`} class="hover:text-neuro-title transition-colors"><span id="m-nav-contact-es" class="hidden">Contacto</span><span id="m-nav-contact-en">Contact</span></a>
         <div class="flex items-center justify-between pt-2">
-          <a href="tel:+15551234567" class="phone inline-flex items-center gap-2 hover:underline" aria-label="Call (555) 123-4567">
+          <a href="tel:+18019967427" class="phone inline-flex items-center gap-2 hover:underline" aria-label="Call (801) 996-7427">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M22 16.92v2a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.11 3.2 2 2 0 014.11 1h2a2 2 0 012 1.72 12.66 12.66 0 00.65 2.73 2 2 0 01-.45 2.11L7.11 8.89a16 16 0 006 6l1.33-1.33a2 2 0 012.11-.45 12.66 12.66 0 002.73.65A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span>(555) 123-4567</span>
+            <span>(801) 996-7427</span>
           </a>
           <a href="#book" id="open-booking-mobile" class="rounded-4xl bg-neuro-primaryButton text-white px-5 py-2 text-sm hover:scale-105 transition-transform">
             <span id="m-cta-es">Agendar ahora</span>
@@ -157,11 +199,38 @@ const base = import.meta.env.BASE_URL || '/';
   #site-header.nav-top #lang-toggle-desktop button, #site-header.nav-top #lang-toggle-desktop span, #site-header.nav-top #lang-toggle-mobile button, #site-header.nav-top #lang-toggle-mobile span { color: #fff !important }
   #site-header.nav-top .social svg { color: #fff }
   #site-header.nav-top .logo-img { filter: brightness(0) invert(1) }
+  #site-header.nav-top .social:hover svg { color: var(--neuro-primaryButton) }
+  #site-header.nav-solid .social svg { color: var(--neuro-title) }
+  #site-header.nav-solid .social { border-color: var(--neuro-title) }
+  #svc-list-therapies a,
+  #svc-list-treatments a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+  }
+  #svc-list-therapies a .bullet-img,
+  #svc-list-treatments a .bullet-img {
+    transition: filter .2s ease;
+  }
+  #svc-list-therapies a:hover,
+  #svc-list-treatments a:hover {
+    background-color: rgba(227, 227, 227, 0.2);
+    color: var(--neuro-primaryButton);
+    text-decoration: none;
+  }
+  #svc-list-therapies a:hover .bullet-img,
+  #svc-list-treatments a:hover .bullet-img {
+    filter: saturate(0) brightness(0) invert(52%) sepia(89%) saturate(900%) hue-rotate(345deg) brightness(100%) contrast(100%);
+  }
 </style>
 
 <script type="module">
-  import { initLang, getLang, setLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-  initLang();
+  const NV = window.NV_LANG || {};
+  const getLang = NV.get || (() => 'es');
+  const setLang = NV.set || (() => {});
+  const onLangChange = NV.onChange || (() => {});
   const updateLangUI = (lang) => {
     const esBtn = document.getElementById('lang-es');
     const enBtn = document.getElementById('lang-en');
@@ -171,26 +240,49 @@ const base = import.meta.env.BASE_URL || '/';
     const ctaEn = document.getElementById('cta-en');
     const mCtaEs = document.getElementById('m-cta-es');
     const mCtaEn = document.getElementById('m-cta-en');
-    const pairs = [
-      ['svc-label-es','svc-label-en'],
-      ['tab-therapies-es','tab-therapies-en'],
-      ['tab-treatments-es','tab-treatments-en'],
-      ['th-individual-es','th-individual-en'],
-      ['th-couples-es','th-couples-en'],
-      ['th-teen-es','th-teen-en'],
-      ['th-domestic-es','th-domestic-en'],
-      ['th-evaluations-es','th-evaluations-en'],
-      ['th-postcrash-es','th-postcrash-en'],
-      ['tr-migration-es','tr-migration-en'],
-      ['tr-anxiety-es','tr-anxiety-en'],
-      ['tr-depression-es','tr-depression-en'],
-      ['tr-grief-es','tr-grief-en'],
-      ['tr-selfesteem-es','tr-selfesteem-en'],
-      ['nav-blog-es','nav-blog-en'],
-      ['nav-faq-es','nav-faq-en'],
-      ['nav-contact-es','nav-contact-en'],
-      ['m-nav-services-es','m-nav-services-en'],
-      ['m-nav-treatments-es','m-nav-treatments-en'],
+      const pairs = [
+        ['svc-label-es','svc-label-en'],
+        ['tab-therapies-es','tab-therapies-en'],
+        ['tab-treatments-es','tab-treatments-en'],
+        ['th-individual-es','th-individual-en'],
+        ['th-couples-es','th-couples-en'],
+        ['th-teen-es','th-teen-en'],
+        ['th-domestic-es','th-domestic-en'],
+        ['th-evaluations-es','th-evaluations-en'],
+        ['th-postcrash-es','th-postcrash-en'],
+        ['th-adhd-es','th-adhd-en'],
+        ['th-anger-es','th-anger-en'],
+        ['th-anxiety-es','th-anxiety-en'],
+        ['th-autism-es','th-autism-en'],
+        ['th-bipolar-es','th-bipolar-en'],
+        ['th-cbt-es','th-cbt-en'],
+        ['th-dbt-es','th-dbt-en'],
+        ['th-domesticabuse-es','th-domesticabuse-en'],
+        ['th-emdr-es','th-emdr-en'],
+        ['th-eft-es','th-eft-en'],
+        ['th-mbct-es','th-mbct-en'],
+        ['th-narrative-es','th-narrative-en'],
+        ['th-ocd-es','th-ocd-en'],
+        ['th-pct-es','th-pct-en'],
+        ['th-psychodynamic-es','th-psychodynamic-en'],
+        ['th-trauma-es','th-trauma-en'],
+        ['tr-migration-es','tr-migration-en'],
+        ['tr-anxiety-es','tr-anxiety-en'],
+        ['tr-depression-es','tr-depression-en'],
+        ['tr-grief-es','tr-grief-en'],
+        ['tr-selfesteem-es','tr-selfesteem-en'],
+        ['tr-addiction-es','tr-addiction-en'],
+        ['tr-christian-es','tr-christian-en'],
+        ['tr-depressionc-es','tr-depressionc-en'],
+        ['tr-divorce-es','tr-divorce-en'],
+        ['tr-eating-es','tr-eating-en'],
+        ['tr-lgbtq-es','tr-lgbtq-en'],
+        ['tr-mi-es','tr-mi-en'],
+        ['nav-blog-es','nav-blog-en'],
+        ['nav-faq-es','nav-faq-en'],
+        ['nav-contact-es','nav-contact-en'],
+        ['m-nav-services-es','m-nav-services-en'],
+        ['m-nav-treatments-es','m-nav-treatments-en'],
       ['m-nav-blog-es','m-nav-blog-en'],
       ['m-nav-faq-es','m-nav-faq-en'],
       ['m-nav-contact-es','m-nav-contact-en'],
@@ -290,11 +382,64 @@ const base = import.meta.env.BASE_URL || '/';
   const listTherapies = document.getElementById('svc-list-therapies');
   const listTreatments = document.getElementById('svc-list-treatments');
   let svcHideTimer;
+  const rebalanceTreatmentColumns = () => {
+    try {
+      const cols = listTreatments?.querySelectorAll('ul');
+      if (!cols || cols.length < 3) return;
+      const items = [];
+      cols.forEach((ul) => ul.querySelectorAll('li').forEach((li) => items.push(li)));
+      cols.forEach((ul) => { while (ul.firstChild) ul.removeChild(ul.firstChild); });
+      let i = 0;
+      const n = cols.length;
+      for (let c = 0; c < n; c++) {
+        for (let j = 0; j < 3 && i < items.length; j++) {
+          cols[c].appendChild(items[i++]);
+        }
+      }
+      while (i < items.length) {
+        cols[n - 1].appendChild(items[i++]);
+      }
+    } catch {}
+  };
+  const rebalanceTherapyColumns = () => {
+    try {
+      const cols = listTherapies?.querySelectorAll('ul');
+      if (!cols || cols.length < 3) return;
+      const items = [];
+      cols.forEach((ul) => ul.querySelectorAll('li').forEach((li) => items.push(li)));
+      cols.forEach((ul) => { while (ul.firstChild) ul.removeChild(ul.firstChild); });
+      let i = 0;
+      const n = cols.length;
+      for (let c = 0; c < n; c++) {
+        for (let j = 0; j < 5 && i < items.length; j++) {
+          cols[c].appendChild(items[i++]);
+        }
+      }
+      while (i < items.length) {
+        cols[n - 1].appendChild(items[i++]);
+      }
+    } catch {}
+  };
   const openSvc = () => {
     if (!svcMenu) return;
     clearTimeout(svcHideTimer);
     svcMenu.classList.remove('hidden');
     svcTrigger?.classList.add('text-neuro-title','is-open');
+    // Ensure treatment bullets use IMG so hover tint works
+    try {
+      const basePath = svcMenu?.getAttribute('data-base') || '/';
+      const brainSrc = basePath + 'icons/cerebro-neurovivir.svg';
+      const svgs = listTreatments?.querySelectorAll('svg');
+      svgs?.forEach((svg) => {
+        const img = document.createElement('img');
+        img.src = brainSrc;
+        img.alt = '';
+        img.className = 'bullet-img w-4 h-4';
+        svg.replaceWith(img);
+      });
+    } catch {}
+    rebalanceTreatmentColumns();
+    rebalanceTherapyColumns();
   };
   const closeSvc = () => {
     if (!svcMenu) return;
@@ -308,6 +453,7 @@ const base = import.meta.env.BASE_URL || '/';
     tabTreatments?.classList.remove('bg-neuro-detail/10','border','border-neuro-detail','border-transparent');
     listTherapies?.classList.remove('hidden');
     listTreatments?.classList.add('hidden');
+    rebalanceTherapyColumns();
   };
   const showTreatments = () => {
     tabTreatments?.classList.add('bg-neuro-detail/10');
@@ -316,13 +462,24 @@ const base = import.meta.env.BASE_URL || '/';
     tabTherapies?.classList.remove('bg-neuro-detail/10','border','border-neuro-detail','border-transparent');
     listTreatments?.classList.remove('hidden');
     listTherapies?.classList.add('hidden');
+    const basePath = svcMenu?.getAttribute('data-base') || '/';
+    const brainSrc = basePath + 'icons/cerebro-neurovivir.svg';
+    const svgs = listTreatments?.querySelectorAll('svg');
+    svgs?.forEach((svg) => {
+      const img = document.createElement('img');
+      img.src = brainSrc;
+      img.alt = '';
+      img.className = 'bullet-img w-4 h-4';
+      svg.replaceWith(img);
+    });
+    rebalanceTreatmentColumns();
   };
   showTherapies();
   if (svcDd && svcMenu) {
     svcDd.addEventListener('pointerenter', openSvc);
     svcDd.addEventListener('pointerleave', () => {
       clearTimeout(svcHideTimer);
-      svcHideTimer = setTimeout(closeSvc, 160);
+      svcHideTimer = setTimeout(closeSvc, 300);
     });
     svcTrigger?.addEventListener('click', () => {
       if (!svcMenu) return;
@@ -331,10 +488,15 @@ const base = import.meta.env.BASE_URL || '/';
       else { closeSvc(); }
     });
   }
+  svcMenu?.addEventListener('pointerdown', () => {
+    clearTimeout(svcHideTimer);
+  });
   tabTherapies?.addEventListener('click', showTherapies);
   tabTreatments?.addEventListener('click', showTreatments);
   tabTherapies?.addEventListener('pointerenter', showTherapies);
   tabTreatments?.addEventListener('pointerenter', showTreatments);
+
+  
 
   // Booking modal
   const modal = document.getElementById('booking-modal');

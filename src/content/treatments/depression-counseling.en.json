@@ -1,0 +1,24 @@
+{
+  "heroTitle": "Depression counseling: clear, empathic support",
+  "heroSubtitle": "Understand signs and build routines and skills with small, steady steps.",
+  "heroImage": "/images/depresion.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-informed care with cultural sensitivity and practical day-to-day strategies.",
+  "helpBullets": [
+    "Psychoeducation and activation plan",
+    "Sleep routines and habit regulation",
+    "Skills for negative self-talk",
+    "Support network coordination"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Culturally sensitive, respectful care",
+    "Secure, flexible online format",
+    "Small measurable goals and follow-ups"
+  ],
+  "faq": [
+    { "question": "What will we work on?", "answer": "Understanding depression, building routines, practicing coping skills and setting achievable goals." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

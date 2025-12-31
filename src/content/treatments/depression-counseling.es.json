@@ -1,0 +1,24 @@
+{
+  "heroTitle": "Consejería para depresión: apoyo claro y empático",
+  "heroSubtitle": "Comprende señales y construye rutinas y habilidades con pasos pequeños y constantes.",
+  "heroImage": "/images/depresion.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención basada en evidencia y sensible a la cultura, con estrategias prácticas para el día a día.",
+  "helpBullets": [
+    "Psicoeducación y plan de activación",
+    "Rutinas de descanso y regulación de hábitos",
+    "Habilidades para pensamientos negativos",
+    "Coordinación de red de apoyo"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Cuidado respetuoso y sensible a la cultura",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento"
+  ],
+  "faq": [
+    { "question": "¿Qué trabajaremos?", "answer": "Comprender la depresión, construir rutinas, practicar habilidades de afrontamiento y definir metas alcanzables." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura con horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

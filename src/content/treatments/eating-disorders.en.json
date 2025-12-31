@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Eating disorders: sensitive, structured care",
+  "heroSubtitle": "Understand patterns and rebuild routines with compassionate, practical steps.",
+  "heroImage": "/images/Trastornos alimentarios.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-informed care with cultural sensitivity and clear day-to-day strategies.",
+  "helpBullets": [
+    "Psychoeducation on patterns and triggers",
+    "Meal and sleep routines with small adjustments",
+    "Body image and self-talk skills",
+    "Support network and realistic goals"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Respectful, culturally sensitive care",
+    "Secure, flexible online format",
+    "Small measurable goals and follow-ups"
+  ],
+  "faq": [
+    { "question": "Do you coordinate medical care?", "answer": "Yes, when helpful we work alongside pediatrics/primary care and nutrition." },
+    { "question": "What do sessions include?", "answer": "Psychoeducation, routine building, skills practice and a stepwise plan tailored to your context." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

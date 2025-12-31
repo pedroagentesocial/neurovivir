@@ -1,0 +1,26 @@
+{
+  "heroTitle": "Consejería cristiana: apoyo basado en valores",
+  "heroSubtitle": "Comprende tus creencias y construye un plan de cambio alineado con ellas.",
+  "heroImage": "/images/Consejería cristiana.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención respetuosa e informada en evidencia, con sensibilidad cultural y enfoque práctico.",
+  "helpBullets": [
+    "Trabajo en identidad, relaciones y hábitos desde una perspectiva cristiana",
+    "Regulación emocional y habilidades para el diálogo interno",
+    "Límites saludables y fortalecimiento de redes de apoyo",
+    "Plan paso a paso con metas pequeñas y sostenibles"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Cuidado sensible a la cultura y valores personales",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento claro"
+  ],
+  "faq": [
+    { "question": "¿La atención es confesional?", "answer": "Respetamos tu fe y valores. Trabajamos con base en tus metas, sin imponer creencias." },
+    { "question": "¿Qué trabajaremos?", "answer": "Regulación emocional, hábitos, límites, relaciones y plan realista de cambio, alineado a tus valores." },
+    { "question": "¿La atención es online?", "answer": "Sí, ofrecemos sesiones por videollamada segura y horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}
+

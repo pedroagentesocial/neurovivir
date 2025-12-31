@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Consejería LGBTQIA+: apoyo afirmativo y práctico",
+  "heroSubtitle": "Trabajo sobre identidad, relaciones y bienestar con cuidado respetuoso y sensible.",
+  "heroImage": "/images/lgbta+.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención afirmativa e informada en evidencia y cultura, enfocada en estrategias para el día a día.",
+  "helpBullets": [
+    "Acompañamiento en identidad y procesos de salida del clóset",
+    "Recursos para familia, relaciones y comunidad",
+    "Afrontamiento del estrés de minorías y seguridad",
+    "Hábitos y autocuidado para bienestar sostenible"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Cuidado afirmativo y sensible a la cultura",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento claro"
+  ],
+  "faq": [
+    { "question": "¿La atención es afirmativa?", "answer": "Sí, trabajamos con respeto por tu identidad y contexto, enfocándonos en tus objetivos." },
+    { "question": "¿Qué trabajaremos?", "answer": "Identidad, relaciones, habilidades de afrontamiento y recursos, con un plan realista." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura con horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

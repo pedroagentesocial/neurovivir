@@ -12,7 +12,7 @@ import CallInvite from "../components/sections/CallInvite.astro";
           <p class="text-white/90">Escríbenos y te respondemos pronto.</p>
           <div class="flex gap-3 pt-2 justify-center">
             <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">Agendar ahora</a>
-            <a href="tel:+15551234567" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(555) 123-4567</a>
+            <a href="tel:+18019967427" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(801) 996-7427</a>
           </div>
         </div>
       </div>
@@ -22,7 +22,7 @@ import CallInvite from "../components/sections/CallInvite.astro";
           <p class="text-white/90">Send us a message and we will reply soon.</p>
           <div class="flex gap-3 pt-2 justify-center">
             <a href={`${import.meta.env.BASE_URL}book`} class="rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 hover:scale-105 transition-transform">Book now</a>
-            <a href="tel:+15551234567" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(555) 123-4567</a>
+            <a href="tel:+18019967427" class="rounded-4xl bg-white/20 text-white px-6 py-3 hover:bg-white/30 transition-transform">(801) 996-7427</a>
           </div>
         </div>
       </div>
@@ -45,8 +45,8 @@ import CallInvite from "../components/sections/CallInvite.astro";
         <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
           <h3 class="font-heading text-neuro-title">Datos de contacto</h3>
           <p class="text-neuro-paragraph">Email: info@neurovivir.com</p>
-          <p class="text-neuro-paragraph">Teléfono: (555) 123-4567</p>
-          <p class="text-neuro-paragraph">Ciudad: Miami, FL</p>
+          <p class="text-neuro-paragraph">Teléfono: (801) 996-7427</p>
+          <p class="text-neuro-paragraph">Ubicación: 6770 S 900 E, Midvale, UT 84047</p>
         </div>
         <div class="rounded-4xl border border-neuro-detail bg-white p-6 text-neuro-paragraph">Mapa próximamente</div>
       </div>
@@ -65,8 +65,8 @@ import CallInvite from "../components/sections/CallInvite.astro";
         <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
           <h3 class="font-heading text-neuro-title">Contact info</h3>
           <p class="text-neuro-paragraph">Email: info@neurovivir.com</p>
-          <p class="text-neuro-paragraph">Phone: (555) 123-4567</p>
-          <p class="text-neuro-paragraph">City: Miami, FL</p>
+          <p class="text-neuro-paragraph">Phone: (801) 996-7427</p>
+          <p class="text-neuro-paragraph">Location: 6770 S 900 E, Midvale, UT 84047</p>
         </div>
         <div class="rounded-4xl border border-neuro-detail bg-white p-6 text-neuro-paragraph">Map coming soon</div>
       </div>
@@ -76,7 +76,7 @@ import CallInvite from "../components/sections/CallInvite.astro";
     <CallInvite />
 
     <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    import { initLang, getLang, onLangChange } from "../lib/i18n/languageStore.ts";
       initLang();
       const esBlocks = ['ct-hero-es','ct-form-es','ct-info-es'];
       const enBlocks = ['ct-hero-en','ct-form-en','ct-info-en'];

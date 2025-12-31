@@ -1,0 +1,24 @@
+{
+  "heroTitle": "Consejería de divorcio: apoyo respetuoso y práctico",
+  "heroSubtitle": "Transita el cambio con pasos claros, regulación emocional y límites saludables.",
+  "heroImage": "/images/Consejería de divorcio.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Cuidado informado en evidencia y sensible a la cultura, enfocado en estrategias para el día a día.",
+  "helpBullets": [
+    "Regulación emocional y soporte en decisiones",
+    "Herramientas de coparentalidad y comunicación",
+    "Límites y redes de apoyo",
+    "Reconstrucción de rutina y autocuidado"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Cuidado respetuoso y sensible a la cultura",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento"
+  ],
+  "faq": [
+    { "question": "¿Ofrecen asesoría legal?", "answer": "No, trabajamos el cuidado emocional y articulamos recursos cuando es útil." },
+    { "question": "¿Qué trabajamos en sesión?", "answer": "Regulación emocional, comunicación, límites y un plan realista." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

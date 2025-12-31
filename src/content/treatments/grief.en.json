@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Grief: respectful, human support",
+  "heroSubtitle": "Process loss with clear steps, rituals and compassionate support.",
+  "heroImage": "/images/Duelo.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Care informed by evidence and culture, honoring your pace and bonds.",
+  "helpBullets": [
+    "Understand grief and common reactions",
+    "Rituals and memory practices that feel personally meaningful",
+    "Gradual routines, sleep and self-care",
+    "Resources and support networks"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based care",
+    "Cultural sensitivity and respectful approach",
+    "Secure, flexible online format",
+    "Small measurable goals and clear follow-ups"
+  ],
+  "faq": [
+    { "question": "How long does grief take?", "answer": "It varies; we focus on your pace, rituals and support to prevent isolation and exhaustion." },
+    { "question": "What will we work on?", "answer": "Psychoeducation, emotion regulation, memory rituals, routines and a gentle plan." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

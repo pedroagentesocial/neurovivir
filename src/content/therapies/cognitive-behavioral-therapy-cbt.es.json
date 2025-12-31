@@ -1,0 +1,13 @@
+{
+  "heroTitle": "Terapia cognitivo-conductual (TCC)",
+  "heroSubtitle": "Trabajo práctico con pensamientos, emociones y conductas.",
+  "cta": { "book": "Agendar ahora" },
+  "trustNote": "Intervención estructurada y basada en evidencia.",
+  "heroImage": "/images/Cognitive behavioral therapy (CBT).png",
+  "heroBullets": [
+    "Reestructuración cognitiva",
+    "Exposición y activación conductual",
+    "Tareas para casa"
+  ]
+}
+

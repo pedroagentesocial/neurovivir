@@ -13,97 +13,130 @@ const base = import.meta.env.BASE_URL || "/";
 <BaseLayout title="NeuroVivir">
   <section class="w-full bg-neuro-secondaryButton min-h-[64vh] md:min-h-[70vh] relative overflow-visible">
     <div class="w-full px-4 py-10 md:py-16 pb-24 md:pb-32 flex flex-col items-center justify-center gap-0 translate-y-[10vh] md:translate-y-[12vh] relative z-10">
-      <div id="hero-slides" class="relative max-w-5xl w-full text-center min-h-[64vh] md:min-h-[70vh] overflow-hidden">
-        <div id="hero-slide-1" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-100 translate-y-0 scale-100">
-          <div id="hero-es" class="space-y-7">
+      <div id="hero-slides" class="relative max-w-screen-2xl w-full text-center min-h-[64vh] md:min-h-[70vh] overflow-hidden">
+        <div id="hero-slide-1" data-slide class="absolute inset-0 opacity-100">
+          <div id="hero-es" class="mt-10 md:mt-14 space-y-7">
             <h1 class="font-heading text-white text-5xl md:text-6xl">Mereces sentirte bien</h1>
             <p class="text-white/90 text-lg md:text-xl">¿Qué tipo de terapia buscas?</p>
           </div>
-          <div id="hero-en" class="space-y-7 hidden">
+          <div id="hero-en" class="mt-10 md:mt-14 space-y-7 hidden">
             <h1 class="font-heading text-white text-5xl md:text-6xl">You deserve to feel well</h1>
             <p class="text-white/90 text-lg md:text-xl">What kind of therapy are you seeking?</p>
           </div>
-          <div id="hero-cards-es" class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
-            <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/individual.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia individual</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Proceso personal y seguro.</p>
-                <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+          <div id="hero-cards-es" class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 justify-items-center mx-auto w-full max-w-none px-8 md:px-10 mt-12 md:mt-20">
+            <Card id="card-es-1" noHover={true} aria-label="Terapia individual" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/Individual therapy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-1 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Terapia individual</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">Un espacio seguro para el crecimiento personal y la sanación, adaptado a tus necesidades únicas, incluyendo estrés, ansiedad, transiciones de vida y más.</p>
+                </div>
               </div>
             </Card>
-            <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/couple.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia de pareja</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Mejoren su comunicación y vínculo.</p>
-                <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+            <Card id="card-es-2" noHover={true} aria-label="Pareja/matrimonio" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/Couples teraphy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-2 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                  <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Terapia de pareja/matrimonio</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[9px] md:text-[10px] lg:text-[11px] xl:text-[12px] leading-tight tracking-tight break-words whitespace-normal">Apoyo para fortalecer la relación, mejorar la comunicación, resolver conflictos y reconstruir la confianza.</p>
+                </div>
               </div>
             </Card>
-            <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/teen.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Terapia para niños</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Acompañamiento sensible y adecuado.</p>
-                <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">Ver más
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+            <Card id="card-es-3" noHover={true} aria-label="Terapia niño/adolescente" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/teen therapy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-3 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Terapia niño/adolescente</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[9px] md:text-[10px] lg:text-[11px] xl:text-[12px] leading-tight tracking-tight break-words whitespace-normal">Acompañamiento seguro para niños y adolescentes: regulación emocional, manejo de ansiedad, habilidades sociales y apoyo a familias.</p>
+                </div>
+              </div>
+            </Card>
+            <Card id="card-es-4" noHover={true} aria-label="Psiquiatría/medicación" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url(${base}images/support.png)`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-4 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight truncate whitespace-nowrap">Psiquiatría/medicación</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[9px] md:text-[10px] lg:text-[11px] xl:text-[12px] leading-tight tracking-tight break-words whitespace-normal">Evaluación integral y manejo de medicación con enfoque humano, coordinación con psicoterapia y seguimiento claro y seguro.</p>
+                </div>
+              </div>
+            </Card>
+            <Card id="card-es-5" noHover={true} aria-label="Terapia online" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url(${base}images/therapist.png)`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-5 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[80%] max-h-[75%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-xs md:text-sm lg:text-base xl:text-lg leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Terapia online</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[9px] md:text-[10px] lg:text-[11px] xl:text-[12px] leading-tight tracking-tight break-words whitespace-normal">Atención flexible y segura desde donde estés: video, voz y chat; horarios cómodos y continuidad del cuidado.</p>
+                </div>
               </div>
             </Card>
           </div>
-          <div id="hero-cards-en" class="hidden grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl mt-6 md:mt-10">
-            <Card class="relative bg-cover bg-center text-white card-bg-1 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/individual.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Individual therapy</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Personal and safe process.</p>
-                <a href={`${base}therapies/individual-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+          <div id="hero-cards-en" class="hidden grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-10 justify-items-center mx-auto w-full max-w-none px-8 md:px-10 mt-12 md:mt-20">
+            <Card id="card-en-1" noHover={true} aria-label="Individual therapy" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/Individual therapy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-1 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Individual therapy</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">A safe space for personal growth & healing, tailored to address your unique needs, including stress, anxiety, life transitions, & more.</p>
+                </div>
               </div>
             </Card>
-            <Card class="relative bg-cover bg-center text-white card-bg-2 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/couple.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Couples therapy</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Improve communication and bond.</p>
-                <a href={`${base}therapies/couples-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+            <Card id="card-en-2" noHover={true} aria-label="Couples/marriage" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/Couples teraphy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-2 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Couples/marriage</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">Support to strengthen your relationship, improve communication, resolve conflicts, and rebuild trust.</p>
+                </div>
               </div>
             </Card>
-            <Card class="relative bg-cover bg-center text-white card-bg-3 rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-36 sm:w-40 md:w-48 lg:w-56 xl:w-72 mx-auto" style={`background-image: url(${base}images/teen.png)`}>
-              <div class="absolute inset-0 bg-black/30"></div>
-              <div class="relative z-10 h-full grid place-items-center text-center drop-shadow-md p-0 gap-1 max-w-[88%] mx-auto">
-                <h3 class="font-heading text-white font-extrabold text-lg md:text-xl lg:text-2xl xl:text-2xl leading-none tracking-tight break-words">Teen therapy</h3>
-                <p class="text-white font-bold text-sm md:text-base xl:text-base leading-none tracking-tight break-words">Sensitive and appropriate support.</p>
-                <a href={`${base}therapies/teen-therapy`} class="text-white no-underline hover:underline underline-offset-2 font-bold text-sm md:text-base xl:text-base mt-0 inline-flex items-center gap-1 group">See more
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+            <Card id="card-en-3" noHover={true} aria-label="Child/teen therapy" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url('${base}images/teen therapy.png')`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-3 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Child/teen therapy</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">Safe care for children and teens—emotional regulation, anxiety management, social skills, and family support.</p>
+                </div>
+              </div>
+            </Card>
+            <Card id="card-en-4" noHover={true} aria-label="Psychiatry/medication" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url(${base}images/support.png)`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-4 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight truncate whitespace-nowrap">Psychiatry/medication</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">Comprehensive evaluation and medication management with a human approach, coordinated with therapy and clear, safe follow-ups.</p>
+                </div>
+              </div>
+            </Card>
+            <Card id="card-en-5" noHover={true} aria-label="Online therapy" role="link" class="relative text-white rounded-full aspect-square overflow-hidden bg-transparent border-transparent w-full cursor-pointer card-flip">
+              <div class="card-face-img absolute inset-0 rounded-full bg-center bg-cover transition-opacity duration-200" style={`background-image: url(${base}images/therapist.png)`}></div>
+              <div class="card-face-text absolute inset-0 rounded-full bg-hero-5 grid place-items-center text-center p-4 opacity-0 transition-opacity duration-150">
+                <div class="card-text-wrap max-w-[85%] max-h-[80%] overflow-y-auto mx-auto">
+                  <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-snug tracking-tight break-words whitespace-normal line-clamp-2">Online therapy</h3>
+                  <p class="text-neuro-paragraph mt-1 text-[10px] md:text-xs lg:text-sm xl:text-base leading-tight tracking-tight break-words whitespace-normal">Flexible, secure care wherever you are—video, voice, and chat; convenient scheduling and continuity of care.</p>
+                </div>
+              </div>
+            </Card>
+                <div class="flip-face flip-back absolute inset-0 bg-hero-5 grid place-items-center text-center p-3 rounded-full">
+                  <div class="relative z-10 w-[75%] h-[75%] mx-auto rounded-3xl bg-white/90 px-4 py-3 shadow-lg" style="transform: rotate(-3deg)">
+                    <div class="grid place-items-center text-center gap-1 h-full">
+                    <h3 class="font-heading text-neuro-title font-extrabold text-sm md:text-base lg:text-lg xl:text-xl leading-none tracking-tight break-words">Online therapy</h3>
+                    <p class="text-neuro-paragraph font-bold text-xs md:text-sm xl:text-sm leading-none tracking-tight break-words">Care wherever you are.</p>
+                    <a href={`${base}therapies`} class="text-neuro-title no-underline hover:underline underline-offset-2 font-bold text-xs md:text-sm xl:text-sm mt-0 inline-flex items-center gap-1 group">See more
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5">
+                        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
           
           
         </div>
-        <div id="hero-slide-2" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden">
-          <div class="mx-auto max-w-6xl px-4 py-3 md:py-4 -mt-32 md:-mt-40 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div id="hero-slide-2" data-slide class="absolute inset-0 opacity-0 transition-all duration-500 hidden">
+          <div class="mx-auto max-w-6xl px-4 py-3 md:py-4 mt-10 md:mt-16 lg:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="relative z-10">
               <div id="hero2-es" class="text-center md:text-left flex flex-col items-center md:items-start space-y-7">
                 <h1 class="font-heading text-white text-5xl md:text-6xl">Apoyo en casos de maltrato infantil</h1>
@@ -120,11 +153,14 @@ const base = import.meta.env.BASE_URL || "/";
                 </div>
               </div>
             </div>
-            <div class="rounded-[48px] overflow-hidden w-full min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] bg-contain bg-center bg-no-repeat" style={`background-image: url(${base}images/child.png)`}></div>
+            <div class="rounded-[48px] overflow-hidden w-full min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh]" style="border-radius: 48px">
+              <img src={`${base}images/Domestic violence.png`} alt="Hero image" class="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
-        <div id="hero-slide-3" data-slide class="absolute inset-0 transition-opacity transition-transform duration-500 opacity-0 translate-y-2 scale-95 hidden flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160" class="absolute -right-6 md:-right-12 lg:-right-16 bottom-0 w-36 md:w-56 lg:w-72 opacity-85 pointer-events-none select-none z-0">
+        <div id="hero-slide-3" data-slide class="absolute inset-0 opacity-0 transition-all duration-500 hidden flex items-center justify-center">
+          <video src={`${base}videos/Untitled%20design.mp4`} autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"></video>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160" class="hidden absolute -right-6 md:-right-12 lg:-right-16 bottom-0 w-36 md:w-56 lg:w-72 opacity-85 pointer-events-none select-none z-0">
             <circle cx="70" cy="36" r="18" fill="#D3EBF5"/>
             <path d="M56 38 q14 -10 28 0" stroke="#2C6268" stroke-width="2" fill="none"/>
             <rect x="50" y="54" width="40" height="42" rx="10" fill="#82C4CE"/>
@@ -183,7 +219,7 @@ const base = import.meta.env.BASE_URL || "/";
     <div class="max-w-6xl mx-auto text-center">
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
         <div class="flex justify-center">
-          <img src={`${base}images/included.png`} alt="Therapy illustration" class="rounded-4xl w-full max-w-lg object-contain" />
+          <img src={`${base}images/Psychological evaluation.png`} alt="Therapy illustration" class="rounded-[48px] w-full max-w-lg object-cover" style="border-radius: 48px" />
         </div>
         <div class="text-left mx-auto max-w-lg">
           <div id="included-en">
@@ -307,7 +343,7 @@ const base = import.meta.env.BASE_URL || "/";
                 <h3 class="font-heading text-neuro-title">Start therapy</h3>
                 <p class="text-neuro-paragraph">Consistent communication helps progress toward your goals.</p>
               </Card>
-              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/therapist.png`} data-bgclass="bg-green-100">
+              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/support.png`} data-bgclass="bg-green-100">
                 <h3 class="font-heading text-neuro-title">Switch providers any time</h3>
                 <p class="text-neuro-paragraph">Maintain ongoing, professional contact with the right therapist.</p>
               </Card>
@@ -331,7 +367,7 @@ const base = import.meta.env.BASE_URL || "/";
                 <h3 class="font-heading text-neuro-title">Comienza terapia</h3>
                 <p class="text-neuro-paragraph">Una comunicación constante sostiene tu avance hacia tus metas.</p>
               </Card>
-              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/therapist.png`} data-bgclass="bg-green-100">
+              <Card class="cursor-pointer hover:!bg-green-100 hover:border-transparent" data-img={`${base}images/support.png`} data-bgclass="bg-green-100">
                 <h3 class="font-heading text-neuro-title">Cambia profesionales cuando necesites</h3>
                 <p class="text-neuro-paragraph">Contacto profesional continuo con el terapeuta adecuado.</p>
               </Card>
@@ -339,7 +375,7 @@ const base = import.meta.env.BASE_URL || "/";
           </div>
         </div>
         <div id="howto-image-wrap" class="flex justify-center rounded-4xl self-start mt-20 md:mt-28">
-          <img id="howto-image" src={`${base}icons/cerebro-neurovivir.svg`} alt="NeuroVivir" class="rounded-4xl w-full max-w-lg md:max-w-xl object-contain transition-all duration-200" />
+          <img id="howto-image" src={`${base}icons/cerebro-neurovivir.svg`} alt="NeuroVivir" class="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl h-auto object-contain transition-all duration-200 rounded-[48px]" />
         </div>
       </div>
     </div>
@@ -369,8 +405,9 @@ const base = import.meta.env.BASE_URL || "/";
   <TestimonialsCarousel />
 
   <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-    initLang();
+    const NV = window.NV_LANG || {};
+    const getLang = NV.get || (() => 'es');
+    const onLangChange = NV.onChange || (() => {});
     const esBlocks = ['hero-es','hero2-es','hero3-es','hero-cards-es','included-es','impact-es','howto-es','faq-es'];
     const enBlocks = ['hero-en','hero2-en','hero3-en','hero-cards-en','included-en','impact-en','howto-en','faq-en'];
     const setVisible = (ids, visible) => ids.forEach(id => {
@@ -385,56 +422,83 @@ const base = import.meta.env.BASE_URL || "/";
     update(getLang());
     onLangChange(update);
 
-    const slides = Array.from(document.querySelectorAll('#hero-slides [data-slide]'));
-    let hi = 0;
-    let hTimer;
-    const showSlide = (i) => {
-      const DUR = 500;
-      hi = (i + slides.length) % slides.length;
-      slides.forEach((el, idx) => {
-        if (idx === hi) {
-          el.classList.remove('hidden','opacity-0','translate-y-2','scale-95');
-          void el.offsetWidth;
-          el.classList.add('opacity-100','translate-y-0','scale-100');
+    (function(){
+      const getSlides = () => ['hero-slide-1','hero-slide-2','hero-slide-3'].map(id => document.getElementById(id)).filter(Boolean);
+      let slides = getSlides();
+      let hi = 0;
+      let hTimer;
+      const updateDots = () => {
+        const dots = Array.from(document.querySelectorAll('#hero-dots [data-index]'));
+        dots.forEach((d, idx) => {
+          const active = idx === hi;
+          d.classList.toggle('bg-white', active);
+          d.classList.toggle('bg-white/40', !active);
+          d.classList.toggle('drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]', active);
+          d.classList.toggle('ring-2', active);
+          d.classList.toggle('ring-white', active);
+        });
+      };
+      const setActive = (idx) => {
+        hi = (idx + slides.length) % slides.length;
+        slides.forEach((el, i) => {
+          const active = i === hi;
+          if (active) {
+            el.classList.remove('hidden','opacity-0','z-0');
+            el.classList.add('opacity-100','z-10');
+            el.style.display = '';
+            el.setAttribute('aria-hidden','false');
+            const v = el.querySelector('video');
+            if (v && typeof v.play === 'function') { try { v.play(); } catch {} }
+          } else {
+            el.classList.add('hidden','opacity-0','z-0');
+            el.classList.remove('opacity-100','z-10');
+            el.style.display = 'none';
+            el.setAttribute('aria-hidden','true');
+            const v = el.querySelector('video');
+            if (v && typeof v.pause === 'function') { try { v.pause(); } catch {} }
+          }
+        });
+        updateDots();
+      };
+      const startHero = () => {
+        stopHero();
+        hTimer = setInterval(() => setActive(hi + 1), 6000);
+      };
+      const stopHero = () => { if (hTimer) clearInterval(hTimer); };
+      const initHero = () => {
+        slides = getSlides();
+        if (slides.length) {
+          setActive(0);
+          startHero();
+        }
+      };
+      if (document.readyState !== 'loading') { initHero(); }
+      else { window.addEventListener('DOMContentLoaded', initHero); }
+      onLangChange(() => { stopHero(); initHero(); });
+      document.querySelectorAll('#hero-dots [data-index]')?.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = Number(btn.getAttribute('data-index') || '0');
+          stopHero();
+          setActive(idx);
+          startHero();
+        });
+      });
+      const toggleBtn = document.getElementById('hero-toggle');
+      let paused = false;
+      toggleBtn?.addEventListener('click', () => {
+        paused = !paused;
+        toggleBtn.textContent = paused ? 'Play' : 'Pause';
+        if (paused) {
+          stopHero();
+          toggleBtn.classList.add('animate-pulse','ring-2','ring-white');
         } else {
-          el.classList.remove('opacity-100','translate-y-0','scale-100');
-          el.classList.add('opacity-0','translate-y-2','scale-95');
-          setTimeout(() => el.classList.add('hidden'), DUR);
+          startHero();
+          toggleBtn.classList.remove('animate-pulse','ring-2','ring-white');
         }
       });
-      const dots = Array.from(document.querySelectorAll('#hero-dots [data-index]'));
-      dots.forEach((d, idx) => {
-        const active = idx === hi;
-        d.classList.toggle('bg-white', active);
-        d.classList.toggle('bg-white/40', !active);
-        d.classList.toggle('drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]', active);
-        d.classList.toggle('ring-2', active);
-        d.classList.toggle('ring-white', active);
-      });
-    };
-    const startHero = () => { stopHero(); hTimer = setInterval(() => showSlide(hi + 1), 30000); };
-    const stopHero = () => { if (hTimer) clearInterval(hTimer); };
-    showSlide(0);
-    startHero();
-    document.querySelectorAll('#hero-dots [data-index]')?.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const idx = Number(btn.getAttribute('data-index') || '0');
-        showSlide(idx);
-      });
-    });
-    const toggleBtn = document.getElementById('hero-toggle');
-    let paused = false;
-    toggleBtn?.addEventListener('click', () => {
-      paused = !paused;
-      toggleBtn.textContent = paused ? 'Play' : 'Pause';
-      if (paused) {
-        stopHero();
-        toggleBtn.classList.add('animate-pulse','ring-2','ring-white');
-      } else {
-        startHero();
-        toggleBtn.classList.remove('animate-pulse','ring-2','ring-white');
-      }
-    });
+    })();
+
+    
 
     const howtoImg = document.getElementById('howto-image');
     const howtoWrap = document.getElementById('howto-image-wrap');
@@ -443,14 +507,11 @@ const base = import.meta.env.BASE_URL || "/";
 
     const fitImageHeight = () => {
       const visibleBlock = document.querySelector('#howto-steps > div:not(.hidden)');
-      if (howtoImg && visibleBlock) {
-      let h = 0;
-      if (visibleBlock) {
-        const r = visibleBlock.getBoundingClientRect();
-        h = r && r.height ? r.height : 0;
-      }
-      if (howtoImg) howtoImg.style.height = `${h}px`;
-      }
+      if (!howtoImg || !visibleBlock) return;
+      const r = visibleBlock.getBoundingClientRect();
+      const h = r && r.height ? r.height : 0;
+      const minH = 420;
+      howtoImg.style.height = `${Math.max(h, minH)}px`;
     };
     window.addEventListener('load', fitImageHeight);
     window.addEventListener('resize', fitImageHeight);
@@ -522,6 +583,46 @@ const base = import.meta.env.BASE_URL || "/";
     };
     const stop = () => { if (timer) clearInterval(timer); };
     start();
+    document.querySelectorAll('.flip').forEach((el) => {
+      el.addEventListener('click', () => {
+        el.classList.toggle('flipped');
+      });
+      el.setAttribute('tabindex', '0');
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.classList.toggle('flipped');
+        }
+      });
+    });
+    const es1 = document.getElementById('card-es-1');
+    if (es1) {
+      es1.setAttribute('tabindex', '0');
+    }
+    const en1 = document.getElementById('card-en-1');
+    if (en1) {
+      en1.setAttribute('tabindex', '0');
+    }
+    const basePath = "${base}";
+    const navTo = (id, href) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const go = () => { window.location.href = basePath + href.replace(/^\//,''); };
+      el.addEventListener('click', go);
+      el.setAttribute('role', 'link');
+      el.setAttribute('tabindex', '0');
+      el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    };
+    navTo('card-es-1','/therapies/individual-therapy');
+    navTo('card-es-2','/therapies/couples-therapy');
+    navTo('card-es-3','/therapies/teen-therapy');
+    navTo('card-es-4','/therapies');
+    navTo('card-es-5','/therapies');
+    navTo('card-en-1','/therapies/individual-therapy');
+    navTo('card-en-2','/therapies/couples-therapy');
+    navTo('card-en-3','/therapies/teen-therapy');
+    navTo('card-en-4','/therapies');
+    navTo('card-en-5','/therapies');
     track?.addEventListener('mouseenter', stop);
     track?.addEventListener('mouseleave', start);
   </script>
@@ -532,4 +633,20 @@ const base = import.meta.env.BASE_URL || "/";
     .card-bg-3 { background-image: url('https://cdn-icons-png.flaticon.com/512/4140/4140040.png') }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none }
     .no-scrollbar::-webkit-scrollbar { display: none }
+    .flip { perspective: 1000px; border-radius: 9999px; overflow: hidden }
+    .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .6s; border-radius: inherit; overflow: hidden }
+    /* flip only on .flipped, not on hover/focus */
+    .flip.flipped .flip-inner { transform: rotateY(180deg) }
+    .flip.flipped .flip-front { opacity: 0; transition: opacity .2s ease }
+    .flip-face { backface-visibility: hidden; border-radius: inherit; overflow: hidden }
+    .flip-back { transform: rotateY(180deg) }
+    .bg-hero-1 { background-color: #FEF9C3 }
+    .bg-hero-2 { background-color: #FEE2E2 }
+    .bg-hero-3 { background-color: #FFEDD5 }
+    .bg-hero-4 { background-color: #E9D5FF }
+    .bg-hero-5 { background-color: #D1FAE5 }
+    .card-flip:hover .card-face-img { opacity: 0 }
+    .card-flip:hover .card-face-text { opacity: 1 }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
   </style>

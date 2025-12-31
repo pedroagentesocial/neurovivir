@@ -14,6 +14,8 @@
 .bg-neuro-primaryButton { background-color: var(--neuro-primaryButton); }
 .bg-neuro-secondaryButton { background-color: var(--neuro-secondaryButton); }
 .border-neuro-detail { border-color: var(--neuro-detail); }
+.text-neuro-primaryButton { color: var(--neuro-primaryButton); }
+.border-neuro-primaryButton { border-color: var(--neuro-primaryButton); }
 
 body { line-height: 1.5; }
 p, li { line-height: 1.5; }

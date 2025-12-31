@@ -7,6 +7,13 @@
     { "name": "Ansiedad", "description": "Regulación y manejo del estrés.", "href": "/treatments/anxiety" },
     { "name": "Depresión", "description": "Acompañamiento integral.", "href": "/treatments/depression" },
     { "name": "Duelo", "description": "Procesos respetuosos.", "href": "/treatments/grief" },
-    { "name": "Autoestima", "description": "Construcción de autoconfianza.", "href": "/treatments/self-esteem" }
+    { "name": "Autoestima", "description": "Construcción de autoconfianza.", "href": "/treatments/self-esteem" },
+    { "name": "Adicciones", "description": "Apoyo sensible para cambio de hábitos.", "href": "/treatments/addictions" },
+    { "name": "Trastornos alimentarios", "description": "Cuidado sensible y estructurado.", "href": "/treatments/eating-disorders" },
+    { "name": "Consejería LGBTQIA+", "description": "Apoyo afirmativo y práctico.", "href": "/treatments/lgbtqia-counseling" },
+    { "name": "Consejería cristiana", "description": "Apoyo basado en valores cristianos.", "href": "/treatments/christian-counseling" },
+    { "name": "Entrevista motivacional", "description": "Cambio colaborativo con pasos claros.", "href": "/treatments/motivational-interviewing" },
+    { "name": "Consejería de divorcio", "description": "Apoyo respetuoso y práctico.", "href": "/treatments/divorce-counseling" },
+    { "name": "Consejería para depresión", "description": "Apoyo claro y empático.", "href": "/treatments/depression-counseling" }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Motivational interviewing: collaborative change",
+  "heroSubtitle": "Clarify goals and build motivation with respectful, structured conversations.",
+  "heroImage": "/images/Entrevista motivacional.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Evidence-informed approach focused on autonomy, values and realistic next steps.",
+  "helpBullets": [
+    "Explore ambivalence and clarify values",
+    "Set small, achievable goals",
+    "Plan for barriers and triggers",
+    "Coordinate support and follow-ups"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals trained in MI",
+    "Respectful, culturally sensitive care",
+    "Secure, flexible online format",
+    "Clear progress tracking and adjustments"
+  ],
+  "faq": [
+    { "question": "Is this a therapy model?", "answer": "It is a conversational approach used across therapies to strengthen motivation and plan change." },
+    { "question": "What will we do?", "answer": "Clarify goals, explore ambivalence, set small steps and coordinate support." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

@@ -93,8 +93,9 @@ const postsEn = posts.filter((p: Post) => (p.lang ?? 'en') === 'en').slice(0,3);
   </div>
 </SectionWrapper>
 <script type="module">
-  import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-  initLang();
+  const NV = window.NV_LANG || {};
+  const getLang = NV.get || (() => 'es');
+  const onLangChange = NV.onChange || (() => {});
   const pairs = [
     ['ps-title-es','ps-title-en'],
     ['ps-chips-es','ps-chips-en'],

@@ -1,0 +1,25 @@
+{
+  "heroTitle": "LGBTQIA+ counseling: affirming, practical support",
+  "heroSubtitle": "Work on identity, relationships and wellbeing with respectful, sensitive care.",
+  "heroImage": "/images/lgbta+.png",
+  "cta": { "book": "Book now", "intake": "Complete intake" },
+  "trustNote": "Affirming care informed by evidence and culture, focused on day-to-day strategies.",
+  "helpBullets": [
+    "Identity and coming-out process support",
+    "Family, relationship and community resources",
+    "Coping with minority stress and safety planning",
+    "Habits and self-care for sustainable wellbeing"
+  ],
+  "whyUsBullets": [
+    "Licensed professionals and evidence-based approach",
+    "Affirming, culturally sensitive care",
+    "Secure, flexible online format",
+    "Small measurable goals and clear follow-ups"
+  ],
+  "faq": [
+    { "question": "Is care affirming?", "answer": "Yes, we work with respect for identity and context, focusing on your goals." },
+    { "question": "What will we work on?", "answer": "Identity, relationships, coping skills and resources, with a realistic plan." },
+    { "question": "Is care online?", "answer": "We offer secure video sessions with flexible scheduling." }
+  ],
+  "emergencyNote": "This service is not for emergencies. If there is immediate risk, use local resources in your country or city."
+}

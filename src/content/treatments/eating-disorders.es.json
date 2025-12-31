@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Trastornos alimentarios: cuidado sensible y estructurado",
+  "heroSubtitle": "Comprende patrones y reconstruye rutinas con pasos compasivos y prácticos.",
+  "heroImage": "/images/Trastornos alimentarios.png",
+  "cta": { "book": "Agendar ahora", "intake": "Completar intake" },
+  "trustNote": "Atención informada en evidencia y sensible a la cultura, con estrategias claras para el día a día.",
+  "helpBullets": [
+    "Psicoeducación sobre patrones y disparadores",
+    "Rutinas de alimentación y descanso con ajustes pequeños",
+    "Imagen corporal y habilidades de diálogo interno",
+    "Red de apoyo y metas realistas"
+  ],
+  "whyUsBullets": [
+    "Profesionales licenciados y enfoque basado en evidencia",
+    "Cuidado respetuoso y sensible a la cultura",
+    "Formato online seguro y flexible",
+    "Metas pequeñas medibles y seguimiento"
+  ],
+  "faq": [
+    { "question": "¿Coordinan atención médica?", "answer": "Sí, cuando es útil trabajamos junto a pediatría/medicina general y nutrición." },
+    { "question": "¿Qué incluye la sesión?", "answer": "Psicoeducación, construcción de rutinas, práctica de habilidades y un plan paso a paso según tu contexto." },
+    { "question": "¿La atención es online?", "answer": "Ofrecemos sesiones por videollamada segura con horarios flexibles." }
+  ],
+  "emergencyNote": "Este servicio no es de emergencia. Si hay riesgo inmediato, usa recursos locales de tu país o ciudad."
+}

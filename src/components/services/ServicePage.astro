@@ -107,17 +107,17 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
     <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Your path to care, simplified</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="bg-yellow-100 p-4">
-        <img src="https://picsum.photos/seed/step1/480/320" alt="Step 1" class="w-full h-40 object-cover" />
+        <img src={`${import.meta.env.BASE_URL}images/check.png`} alt="Step 1" class="w-full h-40 object-cover" />
         <h3 class="mt-3 font-heading text-neuro-title text-lg">Check eligibility</h3>
         <p class="text-neuro-paragraph">Confirm coverage and share a bit about your needs.</p>
       </div>
       <div class="bg-orange-100 p-4">
-        <img src="https://picsum.photos/seed/step2/480/320" alt="Step 2" class="w-full h-40 object-cover" />
+        <img src={`${import.meta.env.BASE_URL}images/match.png`} alt="Step 2" class="w-full h-40 object-cover" />
         <h3 class="mt-3 font-heading text-neuro-title text-lg">Get matched</h3>
         <p class="text-neuro-paragraph">We pair you with a licensed therapist suited to your goals.</p>
       </div>
       <div class="bg-green-100 p-4">
-        <img src="https://picsum.photos/seed/step3/480/320" alt="Step 3" class="w-full h-40 object-cover" />
+        <img src={`${import.meta.env.BASE_URL}images/start.png`} alt="Step 3" class="w-full h-40 object-cover" />
         <h3 class="mt-3 font-heading text-neuro-title text-lg">Start sessions</h3>
         <p class="text-neuro-paragraph">Begin therapy over video, voice or chat—on your schedule.</p>
       </div>

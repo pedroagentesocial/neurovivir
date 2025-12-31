@@ -110,8 +110,9 @@ const {
     </article>
 
   <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-    initLang();
+    const NV = window.NV_LANG || {};
+    const getLang = NV.get || (() => 'es');
+    const onLangChange = NV.onChange || (() => {});
       const pageId = "${id}";
       const titleEsVal = "${titleEs}";
       const titleEnVal = "${titleEn}";
@@ -134,10 +135,7 @@ const {
         linksEn?.classList.toggle('hidden', lang !== 'en');
         document.title = (lang === 'es' ? `${titleEsVal} - NeuroVivir` : `${titleEnVal} - NeuroVivir`);
       };
-      const initialLang = (() => {
-        try { return getLang() || localStorage.getItem('lang') || 'es'; } catch { return 'es'; }
-      })();
-      update(initialLang);
+      update(getLang());
       onLangChange(update);
     </script>
   </div>

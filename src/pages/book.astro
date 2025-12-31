@@ -17,7 +17,7 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
   </section>
 
   <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
+    import { initLang, getLang, onLangChange } from "../lib/i18n/languageStore.ts";
     initLang();
     const esEl = document.getElementById('book-es');
     const enEl = document.getElementById('book-en');

@@ -1,0 +1,13 @@
+{
+  "heroTitle": "EMDR therapy",
+  "heroSubtitle": "Adaptive memory processing using clinical protocol.",
+  "cta": { "book": "Book now" },
+  "trustNote": "Trauma-informed, evidence-based work.",
+  "heroImage": "/images/EMDR therapy.png",
+  "heroBullets": [
+    "EMDR clinical protocols",
+    "Activation reduction",
+    "Adaptive integration"
+  ]
+}
+

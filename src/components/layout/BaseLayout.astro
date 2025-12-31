@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar.astro";
 import Footer from "../footer/Footer.astro";
 import "../../styles/fonts.css";
 import "../../styles/theme.css";
+import langUrl from "../../scripts/lang.js?url";
 const { title = "NeuroVivir" } = Astro.props;
 ---
 <html lang="es">
@@ -16,6 +17,7 @@ const { title = "NeuroVivir" } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}images/logo.png`} />
     <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}images/logo.png`} />
     <link rel="mask-icon" href={`${import.meta.env.BASE_URL}icons/cerebro-neurovivir.svg`} color="#42A8AF" />
+    <script type="module" src={langUrl}></script>
   </head>
   <body class="font-body bg-neuro-background text-neuro-paragraph">
     <Navbar />

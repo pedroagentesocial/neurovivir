@@ -7,6 +7,13 @@
     { "name": "Anxiety", "description": "Stress regulation and coping.", "href": "/treatments/anxiety" },
     { "name": "Depression", "description": "Comprehensive support.", "href": "/treatments/depression" },
     { "name": "Grief", "description": "Respectful processes.", "href": "/treatments/grief" },
-    { "name": "Self-esteem", "description": "Confidence building.", "href": "/treatments/self-esteem" }
+    { "name": "Self-esteem", "description": "Confidence building.", "href": "/treatments/self-esteem" },
+    { "name": "Addictions", "description": "Sensitive support for habit change.", "href": "/treatments/addictions" },
+    { "name": "Eating disorders", "description": "Sensitive and structured care.", "href": "/treatments/eating-disorders" },
+    { "name": "LGBTQIA+ counseling", "description": "Affirming and practical support.", "href": "/treatments/lgbtqia-counseling" },
+    { "name": "Christian counseling", "description": "Values-based, practical support.", "href": "/treatments/christian-counseling" },
+    { "name": "Motivational interviewing", "description": "Collaborative change with clear steps.", "href": "/treatments/motivational-interviewing" },
+    { "name": "Divorce counseling", "description": "Respectful, practical support.", "href": "/treatments/divorce-counseling" },
+    { "name": "Depression counseling", "description": "Clear, empathic support.", "href": "/treatments/depression-counseling" }
   ]
 }

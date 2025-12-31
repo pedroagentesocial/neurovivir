@@ -1,6 +1,8 @@
 ---
-const { class: className = "", ...rest } = Astro.props;
+const { class: className = "", noHover = false, ...rest } = Astro.props;
+const base = "rounded-4xl border border-neuro-detail bg-neuro-background p-6 transition-colors duration-200 hover:bg-neuro-detail";
+const hoverMove = noHover ? "" : " transition-transform hover:-translate-y-0.5";
 ---
-<div {...rest} class={`rounded-4xl border border-neuro-detail bg-neuro-background p-6 transition-colors transition-transform duration-200 hover:bg-neuro-detail hover:-translate-y-0.5 ${className}`}>
+<div {...rest} class={`${base}${hoverMove} ${className}`}>
   <slot />
   </div>
