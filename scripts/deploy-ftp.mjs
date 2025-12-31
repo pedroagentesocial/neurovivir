@@ -12,6 +12,7 @@ const user = process.env.FTP_USER || "";
 const password = process.env.FTP_PASS || "";
 const port = Number(process.env.FTP_PORT || "21");
 const serverDir = process.env.FTP_DIR || "public_html";
+const htaccessPath = path.resolve(__dirname, "..", "public", ".htaccess");
 
 async function main() {
   if (!fs.existsSync(localDir)) {
@@ -32,6 +33,9 @@ async function main() {
     });
     await client.ensureDir(serverDir);
     await client.uploadFromDir(localDir);
+    if (fs.existsSync(htaccessPath)) {
+      await client.uploadFrom(htaccessPath, ".htaccess");
+    }
   } finally {
     client.close();
   }

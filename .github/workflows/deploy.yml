@@ -31,6 +31,9 @@ jobs:
           SITE_URL="${SITE_URL:-https://neurovivir.com}"
           BASE_PATH="${BASE_PATH:-/}"
           SITE_URL="$SITE_URL" BASE_PATH="$BASE_PATH" npm run build
+      - name: Copy .htaccess into dist
+        run: |
+          if [ -f public/.htaccess ]; then cp public/.htaccess dist/.htaccess; fi
 
       - name: Deploy via FTP
         if: ${{ secrets.FTP_HOST != '' && secrets.FTP_USER != '' && secrets.FTP_PASS != '' }}
