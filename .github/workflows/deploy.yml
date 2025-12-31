@@ -2,7 +2,12 @@ name: Deploy to Hostinger via FTP
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
+      - "**"
+  pull_request:
+    branches:
+      - "main"
   workflow_dispatch:
 
 jobs:
@@ -41,7 +46,7 @@ jobs:
           if [ -f public/.htaccess ]; then cp public/.htaccess dist/.htaccess; fi
 
       - name: Deploy via FTP
-        if: ${{ env.FTP_HOST != '' && env.FTP_USER != '' && env.FTP_PASS != '' }}
+        if: ${{ env.FTP_HOST != '' && env.FTP_USER != '' && env.FTP_PASS != '' && github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: ${{ env.FTP_HOST }}
