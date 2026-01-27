@@ -76,8 +76,14 @@ import CallInvite from "../components/sections/CallInvite.astro";
     <CallInvite />
 
     <script type="module">
-    import { initLang, getLang, onLangChange } from "../lib/i18n/languageStore.ts";
-      initLang();
+      const EVENT = 'neurovivir:lang';
+      const getLang = () => {
+        try {
+          if (window.NV_LANG?.get) return window.NV_LANG.get();
+          const v = window.localStorage.getItem('neurovivir:lang');
+          return (v === 'en' || v === 'es') ? v : 'es';
+        } catch { return 'es' }
+      };
       const esBlocks = ['ct-hero-es','ct-form-es','ct-info-es'];
       const enBlocks = ['ct-hero-en','ct-form-en','ct-info-en'];
       const setVisible = (ids, visible) => ids.forEach(id => {
@@ -87,8 +93,10 @@ import CallInvite from "../components/sections/CallInvite.astro";
         setVisible(esBlocks, lang === 'es');
         setVisible(enBlocks, lang === 'en');
       };
-      update(getLang());
-      onLangChange(update);
+      const boot = () => update(getLang());
+      if (document.readyState !== 'loading') boot();
+      else window.addEventListener('DOMContentLoaded', boot);
+      window.addEventListener(EVENT, () => update(getLang()));
     </script>
   </div>
 </BaseLayout>

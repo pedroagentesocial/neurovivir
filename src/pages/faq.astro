@@ -67,8 +67,14 @@ const posts = (await import("../content/blog/posts.json")).default.posts;
     <CallInvite />
 
     <script type="module">
-      import { initLang, getLang, onLangChange } from "../lib/i18n/languageStore.ts";
-      initLang();
+      const EVENT = 'neurovivir:lang';
+      const getLang = () => {
+        try {
+          if (window.NV_LANG?.get) return window.NV_LANG.get();
+          const v = window.localStorage.getItem('neurovivir:lang');
+          return (v === 'en' || v === 'es') ? v : 'es';
+        } catch { return 'es' }
+      };
       const heroEs = document.getElementById('faq-hero-es');
       const heroEn = document.getElementById('faq-hero-en');
       const cards = () => Array.from(document.querySelectorAll('#faq-list [data-lang]'));
@@ -81,10 +87,10 @@ const posts = (await import("../content/blog/posts.json")).default.posts;
           el.classList.toggle('hidden', !match || el.classList.contains('search-hidden'));
         });
       };
-      
-      applyLang(getLang());
-      onLangChange(applyLang);
-      
+      const boot = () => applyLang(getLang());
+      if (document.readyState !== 'loading') boot();
+      else window.addEventListener('DOMContentLoaded', boot);
+      window.addEventListener(EVENT, () => applyLang(getLang()));
     </script>
   </div>
 </BaseLayout>

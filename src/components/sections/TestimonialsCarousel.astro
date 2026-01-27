@@ -1,9 +1,8 @@
 ---
 import SectionWrapper from "../common/SectionWrapper.astro";
 import Card from "../common/Card.astro";
-interface Testimonial { name: string; location: string; avatar: string; quote: string }
-const { items = [] as Testimonial[] } = Astro.props;
-const defaultsEs: Testimonial[] = [
+const { items = [] } = Astro.props;
+const defaultsEs = [
   { name: "María G.", location: "Salt Lake City, UT", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Encontré apoyo profesional y humano. La atención fue culturalmente sensible y efectiva." },
   { name: "Carlos R.", location: "Provo, UT", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "Mi terapeuta me dio herramientas prácticas para manejar ansiedad y estrés del trabajo." },
   { name: "Lucía P.", location: "Ogden, UT", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "La plataforma es fácil y rápida. Sentí progreso desde las primeras sesiones." },
@@ -11,7 +10,7 @@ const defaultsEs: Testimonial[] = [
   { name: "Sofía L.", location: "Sandy, UT", avatar: "https://randomuser.me/api/portraits/women/41.jpg", quote: "Me sentí escuchada y acompañada. Recomiendo NeuroVivir sin dudas." },
   { name: "Javier M.", location: "Orem, UT", avatar: "https://randomuser.me/api/portraits/men/52.jpg", quote: "El proceso fue claro y efectivo. Noté cambios en pocas semanas." },
 ];
-const defaultsEn: Testimonial[] = [
+const defaultsEn = [
   { name: "Mary G.", location: "Salt Lake City, UT", avatar: "https://randomuser.me/api/portraits/women/5.jpg", quote: "I found professional, human support. Care was culturally sensitive and effective." },
   { name: "Charles R.", location: "Provo, UT", avatar: "https://randomuser.me/api/portraits/men/11.jpg", quote: "My therapist gave me practical tools to manage anxiety and work stress." },
   { name: "Lucy P.", location: "Ogden, UT", avatar: "https://randomuser.me/api/portraits/women/20.jpg", quote: "The platform is easy and fast. I felt progress from the first sessions." },
@@ -37,7 +36,7 @@ const listEn = defaultsEn;
       </div>
     </div>
     <div id="testimonials-track-es" class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
-      {listEs.map((t: Testimonial) => (
+      {listEs.map((t) => (
         <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
           <div class="flex items-center gap-4">
             <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />
@@ -51,7 +50,7 @@ const listEn = defaultsEn;
       ))}
     </div>
     <div id="testimonials-track-en" class="hidden flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 mt-4 md:mt-6">
-      {listEn.map((t: Testimonial) => (
+      {listEn.map((t) => (
         <Card class="min-w-[85%] md:min-w-[48%] lg:min-w-[32%] bg-transparent hover:bg-transparent hover:border-transparent snap-start">
           <div class="flex items-center gap-4">
             <img src={t.avatar} alt="Client" class="w-24 h-24 rounded-full ring-2 ring-white" />

@@ -14,7 +14,7 @@ const {
 <BaseLayout title={(titleEs || titleEn) + " - NeuroVivir"}>
   <section class="w-full bg-neuro-title py-12 md:py-16">
     <div class="mx-auto max-w-6xl px-4">
-      <div id={`${id}-hero-es`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
+      <div id={`${id}-hero-es`} data-lang="es" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12">
         <div class="space-y-6 text-center md:text-left">
           <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEs}</h1>
           {introEs.map((p: string) => (<p class="text-white/90">{p}</p>))}
@@ -29,7 +29,7 @@ const {
           </div>
         </div>
       </div>
-      <div id={`${id}-hero-en`} class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
+      <div id={`${id}-hero-en`} data-lang="en" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-8 md:mt-12 hidden">
         <div class="space-y-6 text-center md:text-left">
           <h1 class="font-heading text-white text-3xl md:text-5xl">{titleEn}</h1>
           {introEn.map((p: string) => (<p class="text-white/90">{p}</p>))}
@@ -49,14 +49,14 @@ const {
 
   <div class="mx-auto max-w-6xl px-4 mt-3">
     <nav class="text-sm">
-      <div id={`${id}-bc-es`} class="flex items-center gap-2">
+      <div id={`${id}-bc-es`} data-lang="es" class="flex items-center gap-2">
         <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Inicio</a>
         <span class="text-neuro-paragraph">/</span>
         <a href={`${import.meta.env.BASE_URL}legal/terms`} class="text-neuro-paragraph hover:underline">Legal</a>
         <span class="text-neuro-paragraph">/</span>
         <span class="text-neuro-title">{titleEs}</span>
       </div>
-      <div id={`${id}-bc-en`} class="hidden flex items-center gap-2">
+      <div id={`${id}-bc-en`} data-lang="en" class="hidden flex items-center gap-2">
         <a href={`${import.meta.env.BASE_URL}`} class="text-neuro-paragraph hover:underline">Home</a>
         <span class="text-neuro-paragraph">/</span>
         <a href={`${import.meta.env.BASE_URL}legal/terms`} class="text-neuro-paragraph hover:underline">Legal</a>
@@ -68,12 +68,12 @@ const {
 
   <div class="mx-auto max-w-6xl px-4 py-10">
     <div class="rounded-4xl border border-neuro-detail bg-neuro-background p-6">
-      <div id={`${id}-links-es`} class="flex flex-wrap gap-2">
+      <div id={`${id}-links-es`} data-lang="es" class="flex flex-wrap gap-2">
         <a href={`${import.meta.env.BASE_URL}legal/terms`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Términos</a>
         <a href={`${import.meta.env.BASE_URL}legal/privacy`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Privacidad</a>
         <a href={`${import.meta.env.BASE_URL}legal/cookies`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Cookies</a>
       </div>
-      <div id={`${id}-links-en`} class="hidden flex flex-wrap gap-2">
+      <div id={`${id}-links-en`} data-lang="en" class="hidden flex flex-wrap gap-2">
         <a href={`${import.meta.env.BASE_URL}legal/terms`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Terms</a>
         <a href={`${import.meta.env.BASE_URL}legal/privacy`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Privacy</a>
         <a href={`${import.meta.env.BASE_URL}legal/cookies`} class="rounded-4xl bg-white border border-neuro-detail px-3 py-1.5 text-sm text-neuro-title hover:scale-105 transition-transform">Cookies</a>
@@ -81,7 +81,7 @@ const {
     </div>
 
     <article class="prose prose-lg max-w-none leading-[1.5] mt-6">
-      <div id={`${id}-body-es`}>
+      <div id={`${id}-body-es`} data-lang="es">
         {sectionsEs.map((s: { title: string; list?: string[]; paragraphs?: string[] }) => (
           <Fragment>
             <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
@@ -94,7 +94,7 @@ const {
           </Fragment>
         ))}
       </div>
-      <div id={`${id}-body-en`} class="hidden">
+      <div id={`${id}-body-en`} data-lang="en" class="hidden">
         {sectionsEn.map((s: { title: string; list?: string[]; paragraphs?: string[] }) => (
           <Fragment>
             <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">{s.title}</h2>
@@ -110,41 +110,41 @@ const {
     </article>
 
   <script type="module">
-    const NV = window.NV_LANG || {};
-    const getLang = NV.get || (() => {
+    const EVENT = 'neurovivir:lang';
+    const getCurrentLang = () => {
       try {
-        const k = 'neurovivir:lang';
-        const v = window.localStorage.getItem(k);
+        if (window.NV_LANG && typeof window.NV_LANG.get === 'function') return window.NV_LANG.get();
+        const v = window.localStorage.getItem('neurovivir:lang');
         return (v === 'en' || v === 'es') ? v : 'es';
       } catch { return 'es' }
-    });
-    const onLangChange = NV.onChange || (() => {});
+    };
       const pageId = "${id}";
       const titleEsVal = "${titleEs}";
       const titleEnVal = "${titleEn}";
-      const heroEs = document.getElementById(`${pageId}-hero-es`);
-      const heroEn = document.getElementById(`${pageId}-hero-en`);
-      const bcEs = document.getElementById(`${pageId}-bc-es`);
-      const bcEn = document.getElementById(`${pageId}-bc-en`);
-      const bodyEs = document.getElementById(`${pageId}-body-es`);
-      const bodyEn = document.getElementById(`${pageId}-body-en`);
-      const linksEs = document.getElementById(`${pageId}-links-es`);
-      const linksEn = document.getElementById(`${pageId}-links-en`);
+      const langBlocks = () => Array.from(document.querySelectorAll('[data-lang]'));
       const update = (lang) => {
-        heroEs?.classList.toggle('hidden', lang !== 'es');
-        heroEn?.classList.toggle('hidden', lang !== 'en');
-        bcEs?.classList.toggle('hidden', lang !== 'es');
-        bcEn?.classList.toggle('hidden', lang !== 'en');
-        bodyEs?.classList.toggle('hidden', lang !== 'es');
-        bodyEn?.classList.toggle('hidden', lang !== 'en');
-        linksEs?.classList.toggle('hidden', lang !== 'es');
-        linksEn?.classList.toggle('hidden', lang !== 'en');
+        langBlocks().forEach((el) => {
+          const l = el.getAttribute('data-lang');
+          el.classList.toggle('hidden', l !== lang);
+        });
         document.title = (lang === 'es' ? `${titleEsVal} - NeuroVivir` : `${titleEnVal} - NeuroVivir`);
       };
-      const boot = () => { update(getLang()); };
+      const boot = () => { update(getCurrentLang()); };
       if (document.readyState !== 'loading') boot();
       else window.addEventListener('DOMContentLoaded', boot);
-      onLangChange(update);
+      window.addEventListener(EVENT, (e) => {
+        const lang = (e && e.detail) ? e.detail : getCurrentLang();
+        update(lang);
+      });
+      // Fallbacks to ensure visibility toggles even under heavy caching or race conditions
+      try {
+        setTimeout(() => update(getCurrentLang()), 100);
+        setTimeout(() => update(getCurrentLang()), 600);
+        setTimeout(() => update(getCurrentLang()), 1500);
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) update(getCurrentLang());
+        });
+      } catch {}
     </script>
   </div>
 </BaseLayout>

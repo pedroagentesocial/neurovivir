@@ -18,6 +18,16 @@ const { title = "NeuroVivir" } = Astro.props;
     <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}images/logo.png`} />
     <link rel="mask-icon" href={`${import.meta.env.BASE_URL}icons/cerebro-neurovivir.svg`} color="#42A8AF" />
     <script type="module" src={langUrl}></script>
+    <script type="module">
+      const NV = window.NV_LANG || {};
+      const getLang = NV.get || (() => 'es');
+      const onLangChange = NV.onChange || (() => {});
+      const applyHtmlLang = (lang) => { try { document.documentElement.setAttribute('lang', lang); } catch {} };
+      const boot = () => applyHtmlLang(getLang());
+      if (document.readyState !== 'loading') boot();
+      else window.addEventListener('DOMContentLoaded', boot);
+      onLangChange(applyHtmlLang);
+    </script>
   </head>
   <body class="font-body bg-neuro-background text-neuro-paragraph">
     <Navbar />
