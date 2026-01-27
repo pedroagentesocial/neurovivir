@@ -5,6 +5,7 @@ import "../../styles/fonts.css";
 import "../../styles/theme.css";
 import langUrl from "../../scripts/lang.js?url";
 const { title = "NeuroVivir" } = Astro.props;
+const ver = Date.now();
 ---
 <html lang="es">
   <head>
@@ -17,7 +18,10 @@ const { title = "NeuroVivir" } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}images/logo.png`} />
     <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}images/logo.png`} />
     <link rel="mask-icon" href={`${import.meta.env.BASE_URL}icons/cerebro-neurovivir.svg`} color="#42A8AF" />
-    <script type="module" src={langUrl}></script>
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <script type="module" src={`${langUrl}?v=${ver}`}></script>
     <script type="module">
       const NV = window.NV_LANG || {};
       const getLang = NV.get || (() => 'es');
