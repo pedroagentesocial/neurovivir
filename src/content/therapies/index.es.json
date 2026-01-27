@@ -6,7 +6,7 @@
     { "name": "Terapia de pareja", "description": "Fortalezcan su vínculo.", "href": "/therapies/couples-therapy" },
     { "name": "Adolescentes", "description": "Acompañamiento para jóvenes.", "href": "/therapies/teen-therapy" },
     { "name": "Evaluación psicológica", "description": "Procesos claros y profesionales.", "href": "/therapies/evaluations" },
-    { "name": "Apoyo post choque", "description": "Regulación y retorno gradual tras un accidente.", "href": "/therapies/post-crash-support" },
+    { "name": "Evaluación de impacto post-accidente", "description": "Regulación y retorno gradual tras un accidente.", "href": "/therapies/post-crash-support" },
     { "name": "Violencia doméstica", "description": "Acompañamiento seguro para casos de violencia.", "href": "/therapies/domestic-violence" }
   ]
 }

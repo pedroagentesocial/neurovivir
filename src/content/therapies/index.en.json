@@ -6,7 +6,7 @@
     { "name": "Couples therapy", "description": "Strengthen your bond.", "href": "/therapies/couples-therapy" },
     { "name": "Teen therapy", "description": "Support for youth.", "href": "/therapies/teen-therapy" },
     { "name": "Psychological evaluation", "description": "Clear and professional processes.", "href": "/therapies/evaluations" },
-    { "name": "Post-crash support", "description": "Care after car crash: regulation and return to routine.", "href": "/therapies/post-crash-support" },
+    { "name": "Post-accident impact assessment", "description": "Care after car crash: regulation and return to routine.", "href": "/therapies/post-crash-support" },
     { "name": "Domestic violence", "description": "Safe support for domestic violence cases.", "href": "/therapies/domestic-violence" }
   ]
 }

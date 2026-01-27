@@ -74,8 +74,37 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
   </div>
 </section>
 <div class="mx-auto max-w-6xl px-4 py-10">
-  <section class="mt-8">
-    <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Benefits of <span class="text-neuro-secondaryButton">Neurovivir<sup class="text-sm align-super">®</sup></span></h2>
+  <section id="sp-benefits-es" class="mt-8">
+    <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Beneficios de <span class="text-neuro-secondaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="text-neuro-paragraph">Elimina traslados y problemas de agenda</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><path d="M12 21s-7-4.35-7-9a4 4 0 018-1 4 4 0 018 1c0 4.65-7 9-7 9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 14h10a3 3 0 013 3v2H6l-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span class="text-neuro-paragraph">Sin buscar terapeuta ni largas esperas</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="2"/><path d="M6 18a6 6 0 0112 0" stroke="currentColor" stroke-width="2"/></svg>
+          <span class="text-neuro-paragraph">Cambia de profesional sin costo adicional</span>
+        </div>
+      </Card>
+      <Card class="bg-neuro-detail hover:translate-y-0">
+        <div class="flex flex-col items-center text-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" class="text-neuro-title"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v2M12 15v2M10 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="text-neuro-paragraph">Atención accesible y de alta calidad</span>
+        </div>
+      </Card>
+    </div>
+  </section>
+  <section id="sp-benefits-en" class="mt-8 hidden">
+    <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Benefits of <span class="text-neuro-secondaryButton">NeuroVivir<sup class="text-sm align-super">®</sup></span></h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <Card class="bg-neuro-detail hover:translate-y-0">
         <div class="flex flex-col items-center text-center gap-3">
@@ -103,7 +132,30 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
       </Card>
     </div>
   </section>
-  <section class="mt-10 rounded-4xl bg-neuro-detail p-6 md:p-8">
+  <section id="sp-steps-es" class="mt-10 rounded-4xl bg-neuro-detail p-6 md:p-8">
+    <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Tu camino de atención, simplificado</h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-yellow-100 p-4">
+        <img src={`${import.meta.env.BASE_URL}images/check.png`} alt="Paso 1" class="w-full h-40 object-cover" />
+        <h3 class="mt-3 font-heading text-neuro-title text-lg">Verifica elegibilidad</h3>
+        <p class="text-neuro-paragraph">Confirma cobertura y cuéntanos sobre tus necesidades.</p>
+      </div>
+      <div class="bg-orange-100 p-4">
+        <img src={`${import.meta.env.BASE_URL}images/match.png`} alt="Paso 2" class="w-full h-40 object-cover" />
+        <h3 class="mt-3 font-heading text-neuro-title text-lg">Te conectamos</h3>
+        <p class="text-neuro-paragraph">Te emparejamos con un terapeuta licenciado acorde a tus objetivos.</p>
+      </div>
+      <div class="bg-green-100 p-4">
+        <img src={`${import.meta.env.BASE_URL}images/start.png`} alt="Paso 3" class="w-full h-40 object-cover" />
+        <h3 class="mt-3 font-heading text-neuro-title text-lg">Comienza tus sesiones</h3>
+        <p class="text-neuro-paragraph">Inicia terapia por video, voz o chat—en tu horario.</p>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-center">
+      <ButtonSecondary href={`${import.meta.env.BASE_URL}faq/`} label="Ver elegibilidad" />
+    </div>
+  </section>
+  <section id="sp-steps-en" class="mt-10 rounded-4xl bg-neuro-detail p-6 md:p-8 hidden">
     <h2 class="font-heading text-neuro-title text-3xl md:text-4xl text-center">Your path to care, simplified</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="bg-yellow-100 p-4">
@@ -123,7 +175,7 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
       </div>
     </div>
     <div class="mt-6 flex justify-center">
-      <ButtonSecondary href={`${import.meta.env.BASE_URL}faq/`} label="Check elegibity" />
+      <ButtonSecondary href={`${import.meta.env.BASE_URL}faq/`} label="Check eligibility" />
     </div>
   </section>
   
@@ -156,16 +208,18 @@ const posts = (await import(`../../content/blog/posts.json`)).default.posts;
   </section>
 
   <script type="module">
-    import { initLang, getLang, onLangChange } from "/src/lib/i18n/languageStore.ts";
-    initLang();
-    const blocksEs = ['sp-hero-es','sp-faq-es','sp-cta-es'];
-    const blocksEn = ['sp-hero-en','sp-faq-en','sp-cta-en'];
+    const NV = window.NV_LANG || {};
+    const getLang = NV.get || (() => 'es');
+    const onLangChange = NV.onChange || (() => {});
+    const blocksEs = ['sp-hero-es','sp-benefits-es','sp-steps-es','sp-faq-es','sp-cta-es'];
+    const blocksEn = ['sp-hero-en','sp-benefits-en','sp-steps-en','sp-faq-en','sp-cta-en'];
     const setVisible = (ids, visible) => ids.forEach(id => {
       document.getElementById(id)?.classList.toggle('hidden', !visible);
     });
     const update = (lang) => {
-      setVisible(blocksEs, lang === 'es');
-      setVisible(blocksEn, lang === 'en');
+      const es = lang === 'es';
+      setVisible(blocksEs, es);
+      setVisible(blocksEn, !es);
     };
     update(getLang());
     onLangChange(update);

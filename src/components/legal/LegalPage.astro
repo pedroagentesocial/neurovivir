@@ -111,7 +111,13 @@ const {
 
   <script type="module">
     const NV = window.NV_LANG || {};
-    const getLang = NV.get || (() => 'es');
+    const getLang = NV.get || (() => {
+      try {
+        const k = 'neurovivir:lang';
+        const v = window.localStorage.getItem(k);
+        return (v === 'en' || v === 'es') ? v : 'es';
+      } catch { return 'es' }
+    });
     const onLangChange = NV.onChange || (() => {});
       const pageId = "${id}";
       const titleEsVal = "${titleEs}";
@@ -135,7 +141,9 @@ const {
         linksEn?.classList.toggle('hidden', lang !== 'en');
         document.title = (lang === 'es' ? `${titleEsVal} - NeuroVivir` : `${titleEnVal} - NeuroVivir`);
       };
-      update(getLang());
+      const boot = () => { update(getLang()); };
+      if (document.readyState !== 'loading') boot();
+      else window.addEventListener('DOMContentLoaded', boot);
       onLangChange(update);
     </script>
   </div>
