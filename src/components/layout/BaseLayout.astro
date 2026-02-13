@@ -26,14 +26,14 @@ const ver = Date.now();
         try{var saved=window.localStorage.getItem(KEY);if(saved==='en'||saved==='es')current=saved;}catch{}
         var API={
           get:function(){return current},
-          set:function(next){if(next!=='es'&&next!=='en')return;if(next===current)return;current=next;try{window.localStorage.setItem(KEY,current);window.dispatchEvent(new CustomEvent(EVT,{detail:current}));}catch{}},
-          onChange:function(fn){var h=function(e){if(e&&e.detail)fn(e.detail)};window.addEventListener(EVT,h);return function(){window.removeEventListener(EVT,h)}}
+          set:function(){var next=arguments[0];if(next!=='es'&&next!=='en')return;if(next===current)return;current=next;try{window.localStorage.setItem(KEY,current);window.dispatchEvent(new CustomEvent(EVT,{detail:current}));}catch{}},
+          onChange:function(){var fn=arguments[0];var h=function(){var e=arguments[0];if(e&&e.detail)fn(e.detail)};window.addEventListener(EVT,h);return function(){window.removeEventListener(EVT,h)}}
         };
-        try{window['NV_LANG']=API;}catch{}
+        try{Object.defineProperty(window,'NV_LANG',{value:API,configurable:true});}catch{}
       })();
     </script>
     <script type="module">
-      const NV = (window['NV_LANG'] || {});
+      const NV = (Object.getOwnPropertyDescriptor(window,'NV_LANG')?.value || {});
       const getLang = NV.get || (() => 'es');
       const onLangChange = NV.onChange || (() => {});
       const applyHtmlLang = (lang) => { try { document.documentElement.setAttribute('lang', lang); } catch {} };
@@ -41,6 +41,53 @@ const ver = Date.now();
       if (document.readyState !== 'loading') boot();
       else window.addEventListener('DOMContentLoaded', boot);
       onLangChange(applyHtmlLang);
+    </script>
+    <script type="module">
+      const NV = (Object.getOwnPropertyDescriptor(window,'NV_LANG')?.value || {});
+      const getLang = NV.get || (() => 'es');
+      const onLangChange = NV.onChange || (() => {});
+      const updateDataLang = (lang) => {
+        document.querySelectorAll('[data-lang]').forEach((el) => {
+          const l = el.getAttribute('data-lang');
+          el.classList.toggle('hidden', l !== lang);
+        });
+      };
+      const updateDataText = (lang) => {
+        document.querySelectorAll('[data-es][data-en]').forEach((el) => {
+          const text = el.getAttribute(`data-${lang}`);
+          if (text === null) return;
+          if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
+            el.setAttribute('placeholder', text);
+          } else {
+            el.textContent = text;
+          }
+        });
+      };
+      const updateIdPairs = (lang) => {
+        const groups = new Map();
+        document.querySelectorAll('[id$="-es"], [id$="-en"]').forEach((el) => {
+          const id = el.id || '';
+          const base = id.endsWith('-es') ? id.slice(0, -3) : id.endsWith('-en') ? id.slice(0, -3) : '';
+          if (!base) return;
+          const group = groups.get(base) || {};
+          if (id.endsWith('-es')) group.es = el;
+          if (id.endsWith('-en')) group.en = el;
+          groups.set(base, group);
+        });
+        groups.forEach((group) => {
+          if (group.es) group.es.classList.toggle('hidden', lang !== 'es');
+          if (group.en) group.en.classList.toggle('hidden', lang !== 'en');
+        });
+      };
+      const updateAll = (lang) => {
+        updateDataLang(lang);
+        updateDataText(lang);
+        updateIdPairs(lang);
+      };
+      const boot = () => updateAll(getLang());
+      if (document.readyState !== 'loading') boot();
+      else window.addEventListener('DOMContentLoaded', boot);
+      onLangChange(updateAll);
     </script>
   </head>
   <body class="font-body bg-neuro-background text-neuro-paragraph">
