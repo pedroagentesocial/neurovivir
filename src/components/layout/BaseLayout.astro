@@ -3,7 +3,6 @@ import Navbar from "../navbar/Navbar.astro";
 import Footer from "../footer/Footer.astro";
 import "../../styles/fonts.css";
 import "../../styles/theme.css";
-import langUrl from "../../scripts/lang.js?url";
 const { title = "NeuroVivir" } = Astro.props;
 const ver = Date.now();
 ---
@@ -21,9 +20,20 @@ const ver = Date.now();
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="0" />
-    <script type="module" src={`${langUrl}?v=${ver}`}></script>
+    <script>
+      (function(){
+        var KEY='neurovivir:lang',EVT='neurovivir:lang',current='es';
+        try{var saved=window.localStorage.getItem(KEY);if(saved==='en'||saved==='es')current=saved;}catch{}
+        var API={
+          get:function(){return current},
+          set:function(next){if(next!=='es'&&next!=='en')return;if(next===current)return;current=next;try{window.localStorage.setItem(KEY,current);window.dispatchEvent(new CustomEvent(EVT,{detail:current}));}catch{}},
+          onChange:function(fn){var h=function(e){if(e&&e.detail)fn(e.detail)};window.addEventListener(EVT,h);return function(){window.removeEventListener(EVT,h)}}
+        };
+        try{window['NV_LANG']=API;}catch{}
+      })();
+    </script>
     <script type="module">
-      const NV = window.NV_LANG || {};
+      const NV = (window['NV_LANG'] || {});
       const getLang = NV.get || (() => 'es');
       const onLangChange = NV.onChange || (() => {});
       const applyHtmlLang = (lang) => { try { document.documentElement.setAttribute('lang', lang); } catch {} };

@@ -33,12 +33,12 @@ import CallInvite from "../components/sections/CallInvite.astro";
     <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <div id="ct-form-es" class="space-y-4">
         <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Envíanos un mensaje</h2>
-        <form class="space-y-4">
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Nombre" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Asunto" />
-          <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Mensaje"></textarea>
-          <button type="button" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Enviar</button>
+        <form id="contactFormEs" class="space-y-4">
+          <input id="contactNameEs" name="name" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Nombre" required />
+          <input id="contactEmailEs" name="email" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" required />
+          <input id="contactSubjectEs" name="subject" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Asunto" />
+          <textarea id="contactMessageEs" name="message" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Mensaje" required></textarea>
+          <button type="submit" id="contactSubmitEs" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Enviar</button>
         </form>
       </div>
       <div id="ct-info-es" class="space-y-4">
@@ -53,12 +53,12 @@ import CallInvite from "../components/sections/CallInvite.astro";
 
       <div id="ct-form-en" class="space-y-4 hidden">
         <h2 class="font-heading text-neuro-title text-2xl md:text-3xl">Send us a message</h2>
-        <form class="space-y-4">
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Name" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" />
-          <input class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Subject" />
-          <textarea class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Message"></textarea>
-          <button type="button" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Send</button>
+        <form id="contactFormEn" class="space-y-4">
+          <input id="contactNameEn" name="name" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Name" required />
+          <input id="contactEmailEn" name="email" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" type="email" placeholder="Email" required />
+          <input id="contactSubjectEn" name="subject" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" placeholder="Subject" />
+          <textarea id="contactMessageEn" name="message" class="rounded-4xl border border-neuro-detail bg-white text-neuro-paragraph px-5 py-3 w-full" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" id="contactSubmitEn" class="inline-flex items-center justify-center rounded-4xl bg-neuro-primaryButton text-white px-6 py-3 transition duration-200 hover:opacity-90 hover:scale-105">Send</button>
         </form>
       </div>
       <div id="ct-info-en" class="space-y-4 hidden">
@@ -77,6 +77,7 @@ import CallInvite from "../components/sections/CallInvite.astro";
 
     <script type="module">
       const EVENT = 'neurovivir:lang';
+      const submitUrl = '/send-email.php';
       const getLang = () => {
         try {
           if (window.NV_LANG?.get) return window.NV_LANG.get();
@@ -93,7 +94,56 @@ import CallInvite from "../components/sections/CallInvite.astro";
         setVisible(esBlocks, lang === 'es');
         setVisible(enBlocks, lang === 'en');
       };
-      const boot = () => update(getLang());
+      const setButtonState = (button, state, lang) => {
+        if (!button) return;
+        const labels = {
+          es: { idle: 'Enviar', success: 'Enviado', error: 'Error' },
+          en: { idle: 'Send', success: 'Sent', error: 'Error' }
+        };
+        button.textContent = labels[lang][state];
+        button.disabled = state !== 'idle';
+      };
+      const bindForm = (formId, lang) => {
+        const form = document.getElementById(formId);
+        if (!form) return;
+        const button = form.querySelector('button[type="submit"]');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const payload = {
+            name: (formData.get('name') || '').toString().trim(),
+            email: (formData.get('email') || '').toString().trim(),
+            subject: (formData.get('subject') || '').toString().trim(),
+            message: (formData.get('message') || '').toString().trim(),
+            language: getLang()
+          };
+          setButtonState(button, 'idle', lang);
+          button.disabled = true;
+          try {
+            const response = await fetch(submitUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const result = await response.json().catch(() => null);
+            if (response.ok && (!result || result.success !== false)) {
+              setButtonState(button, 'success', lang);
+              form.reset();
+            } else {
+              setButtonState(button, 'error', lang);
+              setTimeout(() => setButtonState(button, 'idle', lang), 2500);
+            }
+          } catch {
+            setButtonState(button, 'error', lang);
+            setTimeout(() => setButtonState(button, 'idle', lang), 2500);
+          }
+        });
+      };
+      const boot = () => {
+        update(getLang());
+        bindForm('contactFormEs', 'es');
+        bindForm('contactFormEn', 'en');
+      };
       if (document.readyState !== 'loading') boot();
       else window.addEventListener('DOMContentLoaded', boot);
       window.addEventListener(EVENT, () => update(getLang()));
