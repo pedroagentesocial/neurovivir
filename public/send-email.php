@@ -113,6 +113,7 @@ $smtpPass = getenv('SMTP_PASS') ?: '';
 $smtpSecure = getenv('SMTP_SECURE') ?: 'tls';
 $smtpFrom = getenv('SMTP_FROM') ?: 'noreply@neurovivir.com';
 $smtpFromName = getenv('SMTP_FROM_NAME') ?: $siteName;
+$fromEmail = filter_var($smtpFrom, FILTER_VALIDATE_EMAIL) ? $smtpFrom : 'pedro@agentesocial.com';
 $useSmtp = $smtpHost !== '' && $smtpUser !== '' && $smtpPass !== '';
 
 function smtpRead($connection) {
@@ -423,7 +424,7 @@ $subjectCompany = $language === 'es' ? "Nuevo mensaje de contacto - {$siteName}"
 // Configurar headers para enviar email en HTML
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: noreply@neurovivir.com\r\n";
+$headers .= "From: {$smtpFromName} <{$fromEmail}>\r\n";
 $emailHeader = preg_replace("/\r|\n/", "", $email);
 if ($emailHeader !== '') {
     $headers .= "Reply-To: {$emailHeader}\r\n";
@@ -440,7 +441,7 @@ if ($useSmtp) {
         'user' => $smtpUser,
         'pass' => $smtpPass,
         'secure' => $smtpSecure,
-        'fromEmail' => $smtpFrom,
+        'fromEmail' => $fromEmail,
         'fromName' => $smtpFromName
     ], $toCompany, $subjectCompany, $emailContent, $emailHeader);
     $mailToCompany = $smtpResult['ok'];
@@ -451,7 +452,12 @@ if ($useSmtp) {
         echo json_encode(['success' => false, 'message' => 'mail() not available on server']);
         exit;
     }
-    $mailToCompany = mail($toCompany, $subjectCompany, $emailContent, $headers);
+    $mailParams = $fromEmail !== '' ? "-f{$fromEmail}" : '';
+    if ($mailParams !== '') {
+        $mailToCompany = mail($toCompany, $subjectCompany, $emailContent, $headers, $mailParams);
+    } else {
+        $mailToCompany = mail($toCompany, $subjectCompany, $emailContent, $headers);
+    }
 }
 
 // Definir textos del email del cliente según idioma
@@ -659,13 +665,18 @@ CLIENT_HTML;
 // Configurar headers para email del cliente
 $clientHeaders = "MIME-Version: 1.0\r\n";
 $clientHeaders .= "Content-type: text/html; charset=UTF-8\r\n";
-$clientHeaders .= "From: noreply@neurovivir.com\r\n";
+$clientHeaders .= "From: {$smtpFromName} <{$fromEmail}>\r\n";
 
 // Enviar email de confirmación al cliente
 $clientSubject = $language === 'es' ? "Confirmación de envío - {$siteName}" : "Form Submission Confirmed - {$siteName}";
 $mailToClient = null;
 if ($email !== '') {
-    $mailToClient = mail($email, $clientSubject, $clientEmailContent, $clientHeaders);
+    $mailParams = $fromEmail !== '' ? "-f{$fromEmail}" : '';
+    if ($mailParams !== '') {
+        $mailToClient = mail($email, $clientSubject, $clientEmailContent, $clientHeaders, $mailParams);
+    } else {
+        $mailToClient = mail($email, $clientSubject, $clientEmailContent, $clientHeaders);
+    }
 }
 
 // Responder al cliente si se envió correctamente

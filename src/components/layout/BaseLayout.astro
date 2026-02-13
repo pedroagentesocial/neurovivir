@@ -68,6 +68,7 @@ const ver = Date.now();
         document.querySelectorAll('[id$="-es"], [id$="-en"]').forEach((el) => {
           const id = el.id || '';
           const base = id.endsWith('-es') ? id.slice(0, -3) : id.endsWith('-en') ? id.slice(0, -3) : '';
+          if (base === 'lang' || base === 'm-lang') return;
           if (!base) return;
           const group = groups.get(base) || {};
           if (id.endsWith('-es')) group.es = el;
